@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "HSK Learning",
+    "slug": "hsk-learning-ios",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#fff7f2"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "vandinh.hsklearning",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Cho phép ứng dụng dùng micro để luyện nói tiếng Trung.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "vandinh.hsklearning",
+      "permissions": [
+        "RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3690d26e-abee-4de8-9dcb-88e39095bca9"
+      }
+    }
+  }
+}

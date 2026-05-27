@@ -1,0 +1,798 @@
+[
+  {
+    "title": "Buổi 5: Giới thiệu người, nghề nghiệp và đồ uống",
+    "phase": "Giai đoạn nhập môn",
+    "orderNo": 5,
+    "description": "Học cách giới thiệu người, sử dụng cấu trúc Đây là/Kia là, một số nghề nghiệp, chức vụ, đồ uống và mẫu câu mời lịch sự trong tiếng Trung.",
+    "objectives": [
+      "Biết sử dụng 这, 那 để giới thiệu người hoặc sự vật",
+      "Biết dùng 是 để nói ai là ai hoặc cái gì là cái gì",
+      "Biết gọi tên một số nghề nghiệp và chức vụ trong công ty",
+      "Biết sử dụng cấu trúc định ngữ + trung tâm ngữ",
+      "Biết mời người khác vào, ngồi và uống nước",
+      "Biết hỏi thăm công việc và sức khỏe bằng tiếng Trung",
+      "Biết gọi tên một số đồ uống thông dụng"
+    ],
+    "vocabulary": [
+      {
+        "chinese": "这",
+        "pinyin": "zhè",
+        "meaningEn": "this",
+        "meaningVi": "đây, này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那",
+        "pinyin": "nà",
+        "meaningEn": "that",
+        "meaningVi": "kia, đó",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这儿",
+        "pinyin": "zhèr",
+        "meaningEn": "here",
+        "meaningVi": "ở đây, chỗ này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那儿",
+        "pinyin": "nàr",
+        "meaningEn": "there",
+        "meaningVi": "ở kia, chỗ kia",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "是",
+        "pinyin": "shì",
+        "meaningEn": "to be; yes",
+        "meaningVi": "là, phải",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不是",
+        "pinyin": "bú shì",
+        "meaningEn": "not be; is not",
+        "meaningVi": "không phải",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老师",
+        "pinyin": "lǎoshī",
+        "meaningEn": "teacher",
+        "meaningVi": "thầy giáo, cô giáo",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您",
+        "pinyin": "nín",
+        "meaningEn": "you; polite form",
+        "meaningVi": "ngài, ông, bà; cách gọi kính trọng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请",
+        "pinyin": "qǐng",
+        "meaningEn": "please; to invite",
+        "meaningVi": "mời, xin",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "进",
+        "pinyin": "jìn",
+        "meaningEn": "to enter",
+        "meaningVi": "vào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "坐",
+        "pinyin": "zuò",
+        "meaningEn": "to sit",
+        "meaningVi": "ngồi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "喝",
+        "pinyin": "hē",
+        "meaningEn": "to drink",
+        "meaningVi": "uống",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "茶",
+        "pinyin": "chá",
+        "meaningEn": "tea",
+        "meaningVi": "trà",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谢谢",
+        "pinyin": "xièxie",
+        "meaningEn": "thank you",
+        "meaningVi": "cảm ơn",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不客气",
+        "pinyin": "bú kèqi",
+        "meaningEn": "you are welcome",
+        "meaningVi": "không cần khách khí, không có gì",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "客气",
+        "pinyin": "kèqi",
+        "meaningEn": "polite; courteous",
+        "meaningVi": "khách khí, lịch sự",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不谢",
+        "pinyin": "bú xiè",
+        "meaningEn": "no need to thank",
+        "meaningVi": "không cần cảm ơn",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不用谢",
+        "pinyin": "bú yòng xiè",
+        "meaningEn": "you are welcome; no need to thank",
+        "meaningVi": "không cần cảm ơn",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作",
+        "pinyin": "gōngzuò",
+        "meaningEn": "work; job; to work",
+        "meaningVi": "công việc, làm việc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "身体",
+        "pinyin": "shēntǐ",
+        "meaningEn": "body; health",
+        "meaningVi": "thân thể, sức khỏe",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "十",
+        "pinyin": "shí",
+        "meaningEn": "ten",
+        "meaningVi": "số mười",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日",
+        "pinyin": "rì",
+        "meaningEn": "day; date",
+        "meaningVi": "ngày",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "个人",
+        "pinyin": "gè rén",
+        "meaningEn": "person",
+        "meaningVi": "người",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "本",
+        "pinyin": "běn",
+        "meaningEn": "measure word for books",
+        "meaningVi": "lượng từ cho sách",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "书",
+        "pinyin": "shū",
+        "meaningEn": "book",
+        "meaningVi": "sách",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老",
+        "pinyin": "lǎo",
+        "meaningEn": "old",
+        "meaningVi": "già, cũ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "新",
+        "pinyin": "xīn",
+        "meaningEn": "new",
+        "meaningVi": "mới",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "王",
+        "pinyin": "Wáng",
+        "meaningEn": "Wang; surname Wang",
+        "meaningVi": "Vương, họ Vương",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学生",
+        "pinyin": "xuésheng",
+        "meaningEn": "student",
+        "meaningVi": "học sinh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工人",
+        "pinyin": "gōngrén",
+        "meaningEn": "worker",
+        "meaningVi": "công nhân",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "经理",
+        "pinyin": "jīnglǐ",
+        "meaningEn": "manager",
+        "meaningVi": "giám đốc, quản lý",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "总经理",
+        "pinyin": "zǒngjīnglǐ",
+        "meaningEn": "general manager",
+        "meaningVi": "tổng giám đốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "副总经理",
+        "pinyin": "fù zǒng jīnglǐ",
+        "meaningEn": "deputy general manager",
+        "meaningVi": "phó tổng giám đốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "主管",
+        "pinyin": "zhǔguǎn",
+        "meaningEn": "supervisor",
+        "meaningVi": "chủ quản",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "组长",
+        "pinyin": "zǔzhǎng",
+        "meaningEn": "team leader",
+        "meaningVi": "tổ trưởng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "班长",
+        "pinyin": "bānzhǎng",
+        "meaningEn": "class monitor; shift leader",
+        "meaningVi": "lớp trưởng, ca trưởng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "线长",
+        "pinyin": "xiànzhǎng",
+        "meaningEn": "line leader",
+        "meaningVi": "chuyền trưởng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "部门",
+        "pinyin": "bùmén",
+        "meaningEn": "department",
+        "meaningVi": "bộ phận",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "职员",
+        "pinyin": "zhíyuán",
+        "meaningEn": "staff member",
+        "meaningVi": "nhân viên",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "员工",
+        "pinyin": "yuángōng",
+        "meaningEn": "employee",
+        "meaningVi": "công nhân viên, nhân viên",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "管理员",
+        "pinyin": "guǎnlǐyuán",
+        "meaningEn": "administrator; management staff",
+        "meaningVi": "nhân viên quản lý",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "翻译",
+        "pinyin": "fānyì",
+        "meaningEn": "translator; interpreter; to translate",
+        "meaningVi": "phiên dịch, dịch",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "文员",
+        "pinyin": "wényuán",
+        "meaningEn": "office clerk",
+        "meaningVi": "nhân viên văn phòng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "人事",
+        "pinyin": "rénshì",
+        "meaningEn": "human resources staff",
+        "meaningVi": "nhân viên nhân sự",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "财务",
+        "pinyin": "cáiwù",
+        "meaningEn": "finance; accounting staff",
+        "meaningVi": "nhân viên kế toán, tài vụ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "保安",
+        "pinyin": "bǎo'ān",
+        "meaningEn": "security guard",
+        "meaningVi": "nhân viên an ninh, bảo vệ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "保洁",
+        "pinyin": "bǎojié",
+        "meaningEn": "cleaning staff",
+        "meaningVi": "nhân viên vệ sinh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "技术员",
+        "pinyin": "jìshùyuán",
+        "meaningEn": "technician",
+        "meaningVi": "nhân viên kỹ thuật",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工程师",
+        "pinyin": "gōngchéngshī",
+        "meaningEn": "engineer",
+        "meaningVi": "kỹ sư",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "采购员",
+        "pinyin": "cǎigòuyuán",
+        "meaningEn": "purchasing staff",
+        "meaningVi": "nhân viên thu mua",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "的",
+        "pinyin": "de",
+        "meaningEn": "structural particle indicating possession or modification",
+        "meaningVi": "trợ từ kết cấu, biểu thị sở hữu hoặc bổ nghĩa",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁",
+        "pinyin": "shéi",
+        "meaningEn": "who",
+        "meaningVi": "ai",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大家",
+        "pinyin": "dàjiā",
+        "meaningEn": "everyone",
+        "meaningVi": "mọi người",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多",
+        "pinyin": "duō",
+        "meaningEn": "many; much; more",
+        "meaningVi": "nhiều",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多多",
+        "pinyin": "duōduō",
+        "meaningEn": "a lot; more",
+        "meaningVi": "nhiều hơn, nhiều nhiều",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "关照",
+        "pinyin": "guānzhào",
+        "meaningEn": "to look after; to take care of",
+        "meaningVi": "quan tâm, chiếu cố",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请客",
+        "pinyin": "qǐngkè",
+        "meaningEn": "to treat guests; to invite someone for a meal/drink",
+        "meaningVi": "mời khách, bao",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "饮料",
+        "pinyin": "yǐnliào",
+        "meaningEn": "beverage; drink",
+        "meaningVi": "đồ uống",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "水",
+        "pinyin": "shuǐ",
+        "meaningEn": "water",
+        "meaningVi": "nước",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "可乐",
+        "pinyin": "kělè",
+        "meaningEn": "cola",
+        "meaningVi": "coca",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "牛奶",
+        "pinyin": "niúnǎi",
+        "meaningEn": "milk",
+        "meaningVi": "sữa bò",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "奶茶",
+        "pinyin": "nǎichá",
+        "meaningEn": "milk tea",
+        "meaningVi": "trà sữa",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "酸奶",
+        "pinyin": "suānnǎi",
+        "meaningEn": "yogurt",
+        "meaningVi": "sữa chua",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "酒",
+        "pinyin": "jiǔ",
+        "meaningEn": "alcohol; liquor",
+        "meaningVi": "rượu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "啤酒",
+        "pinyin": "píjiǔ",
+        "meaningEn": "beer",
+        "meaningVi": "bia",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "咖啡",
+        "pinyin": "kāfēi",
+        "meaningEn": "coffee",
+        "meaningVi": "cà phê",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "果汁",
+        "pinyin": "guǒzhī",
+        "meaningEn": "fruit juice",
+        "meaningVi": "nước hoa quả",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多少",
+        "pinyin": "duōshao",
+        "meaningEn": "how many; how much",
+        "meaningVi": "bao nhiêu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪个",
+        "pinyin": "nǎge",
+        "meaningEn": "which",
+        "meaningVi": "cái nào, bộ phận nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "父母",
+        "pinyin": "fùmǔ",
+        "meaningEn": "parents",
+        "meaningVi": "bố mẹ, cha mẹ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爸妈",
+        "pinyin": "bàmā",
+        "meaningEn": "dad and mom; parents",
+        "meaningVi": "bố mẹ",
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "那是你爸爸吗？",
+        "pinyin": "Nà shì nǐ bàba ma?",
+        "meaningEn": "Is that your father?",
+        "meaningVi": "Kia là bố bạn phải không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是不是你爸爸？",
+        "pinyin": "Nà shì bu shì nǐ bàba?",
+        "meaningEn": "Is that your father or not?",
+        "meaningVi": "Kia có phải là bố bạn không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是我爸爸。",
+        "pinyin": "Zhè shì wǒ bàba.",
+        "meaningEn": "This is my father.",
+        "meaningVi": "Đây là bố tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这不是我爸爸。",
+        "pinyin": "Zhè bú shì wǒ bàba.",
+        "meaningEn": "This is not my father.",
+        "meaningVi": "Đây không phải là bố tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这个人",
+        "pinyin": "zhè gè rén",
+        "meaningEn": "this person",
+        "meaningVi": "người này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这本书",
+        "pinyin": "zhè běn shū",
+        "meaningEn": "this book",
+        "meaningVi": "quyển sách này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "新老师",
+        "pinyin": "xīn lǎoshī",
+        "meaningEn": "new teacher",
+        "meaningVi": "giáo viên mới",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "王老师",
+        "pinyin": "Wáng lǎoshī",
+        "meaningEn": "Teacher Wang",
+        "meaningVi": "thầy/cô giáo Vương",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我公司",
+        "pinyin": "wǒ gōngsī",
+        "meaningEn": "my company",
+        "meaningVi": "công ty tôi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国人",
+        "pinyin": "Zhōngguó rén",
+        "meaningEn": "Chinese person",
+        "meaningVi": "người Trung Quốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "北宁公园",
+        "pinyin": "Běiníng gōngyuán",
+        "meaningEn": "Bac Ninh Park",
+        "meaningVi": "công viên Bắc Ninh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "公司的工人",
+        "pinyin": "gōngsī de gōngrén",
+        "meaningEn": "the company’s worker",
+        "meaningVi": "công nhân của công ty",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我的钱",
+        "pinyin": "wǒ de qián",
+        "meaningEn": "my money",
+        "meaningVi": "tiền của tôi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我家的茶",
+        "pinyin": "wǒjiā de chá",
+        "meaningEn": "my family’s tea",
+        "meaningVi": "trà của nhà tôi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "妈妈的生日",
+        "pinyin": "māma de shēngrì",
+        "meaningEn": "mother’s birthday",
+        "meaningVi": "sinh nhật của mẹ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是谁？",
+        "pinyin": "Nà shì shéi?",
+        "meaningEn": "Who is that?",
+        "meaningVi": "Kia là ai?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁是经理？",
+        "pinyin": "Shéi shì jīnglǐ?",
+        "meaningEn": "Who is the manager?",
+        "meaningVi": "Ai là giám đốc?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁是我们班的新老师？",
+        "pinyin": "Shéi shì wǒmen bān de xīn lǎoshī?",
+        "meaningEn": "Who is the new teacher of our class?",
+        "meaningVi": "Ai là giáo viên mới của lớp chúng ta?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁是我们公司的新翻译？",
+        "pinyin": "Shéi shì wǒmen gōngsī de xīn fānyì?",
+        "meaningEn": "Who is the new interpreter of our company?",
+        "meaningVi": "Ai là phiên dịch mới của công ty chúng ta?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请进",
+        "pinyin": "qǐng jìn",
+        "meaningEn": "Please come in.",
+        "meaningVi": "Mời vào.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请坐",
+        "pinyin": "qǐng zuò",
+        "meaningEn": "Please sit down.",
+        "meaningVi": "Mời ngồi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请喝茶",
+        "pinyin": "qǐng hē chá",
+        "meaningEn": "Please drink tea.",
+        "meaningVi": "Mời uống trà.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请问",
+        "pinyin": "qǐng wèn",
+        "meaningEn": "Excuse me; may I ask",
+        "meaningVi": "xin hỏi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我是新职员，请大家多多关照。",
+        "pinyin": "Wǒ shì xīn zhíyuán, qǐng dàjiā duōduō guānzhào.",
+        "meaningEn": "I am a new employee, please take care of me.",
+        "meaningVi": "Tôi là nhân viên mới, mong mọi người quan tâm nhiều hơn.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "最近你工作忙吗？",
+        "pinyin": "Zuìjìn nǐ gōngzuò máng ma?",
+        "meaningEn": "Have you been busy with work recently?",
+        "meaningVi": "Gần đây công việc bạn bận không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你在哪里工作？",
+        "pinyin": "Nǐ zài nǎlǐ gōngzuò?",
+        "meaningEn": "Where do you work?",
+        "meaningVi": "Bạn làm việc ở đâu?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我在三星公司工作。",
+        "pinyin": "Wǒ zài Sānxīng gōngsī gōngzuò.",
+        "meaningEn": "I work at Samsung company.",
+        "meaningVi": "Tôi làm việc ở công ty Samsung.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你身体好吗？",
+        "pinyin": "Nǐ shēntǐ hǎo ma?",
+        "meaningEn": "Are you in good health?",
+        "meaningVi": "Bạn khỏe không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你爸妈身体好吗？",
+        "pinyin": "Nǐ bàmā shēntǐ hǎo ma?",
+        "meaningEn": "Are your parents healthy?",
+        "meaningVi": "Bố mẹ bạn khỏe không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是王老师，这是我爸爸。",
+        "pinyin": "Zhè shì Wáng lǎoshī, zhè shì wǒ bàba.",
+        "meaningEn": "This is Teacher Wang, and this is my father.",
+        "meaningVi": "Đây là thầy giáo Vương, đây là bố tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "王老师，您好！",
+        "pinyin": "Wáng lǎoshī, nín hǎo!",
+        "meaningEn": "Hello, Teacher Wang!",
+        "meaningVi": "Chào thầy giáo Vương!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您好！请进！请坐！请喝茶！",
+        "pinyin": "Nín hǎo! Qǐng jìn! Qǐng zuò! Qǐng hē chá!",
+        "meaningEn": "Hello! Please come in! Please sit down! Please drink tea!",
+        "meaningVi": "Xin chào! Mời vào! Mời ngồi! Mời uống trà!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谢谢！",
+        "pinyin": "Xièxie!",
+        "meaningEn": "Thank you!",
+        "meaningVi": "Cảm ơn!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不客气！",
+        "pinyin": "Bú kèqi!",
+        "meaningEn": "You are welcome!",
+        "meaningVi": "Không có gì!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作忙吗？",
+        "pinyin": "Gōngzuò máng ma?",
+        "meaningEn": "Is work busy?",
+        "meaningVi": "Công việc bận không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太忙。",
+        "pinyin": "Bú tài máng.",
+        "meaningEn": "Not too busy.",
+        "meaningVi": "Không bận lắm.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "身体好吗？",
+        "pinyin": "Shēntǐ hǎo ma?",
+        "meaningEn": "Are you healthy?",
+        "meaningVi": "Sức khỏe tốt không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很好！",
+        "pinyin": "Hěn hǎo!",
+        "meaningEn": "Very good!",
+        "meaningVi": "Rất tốt!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你公司有多少员工？",
+        "pinyin": "Nǐ gōngsī yǒu duōshao yuángōng?",
+        "meaningEn": "How many employees does your company have?",
+        "meaningVi": "Công ty bạn có bao nhiêu công nhân viên?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你在哪个部门工作？",
+        "pinyin": "Nǐ zài nǎge bùmén gōngzuò?",
+        "meaningEn": "Which department do you work in?",
+        "meaningVi": "Bạn làm việc ở bộ phận nào?",
+        "level": "HSK1"
+      }
+    ]
+  }
+]

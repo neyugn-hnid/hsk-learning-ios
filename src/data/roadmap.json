@@ -1,0 +1,5189 @@
+[
+  {
+    "id": "cmpffsqz80000e5tkxxtp9plu",
+    "title": "Buổi 1: Xin Chào",
+    "description": "Học các đại từ nhân xưng, cách chào hỏi cơ bản, số đếm và một số mẫu câu đơn giản.",
+    "phase": "HSK1",
+    "weekLabel": null,
+    "level": null,
+    "orderNo": 1,
+    "duration": null,
+    "objectives": [
+      "Nhận biết các đại từ nhân xưng cơ bản",
+      "Biết cách chào hỏi bằng tiếng Trung",
+      "Làm quen với số đếm từ 0 đến 10",
+      "Biết sử dụng câu hỏi với 吗",
+      "Biết nói một số câu đơn giản về tình trạng và cảm xúc"
+    ],
+    "materials": [],
+    "vocabulary": [
+      {
+        "chinese": "你",
+        "pinyin": "nǐ",
+        "meaningVi": "bạn, anh, chị",
+        "meaningEn": "you",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您",
+        "pinyin": "nín",
+        "meaningVi": "ngài, ông, bà; cách gọi kính trọng",
+        "meaningEn": "you; polite form",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我",
+        "pinyin": "wǒ",
+        "meaningVi": "tôi, tớ, mình",
+        "meaningEn": "I; me",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "他",
+        "pinyin": "tā",
+        "meaningVi": "anh ấy, ông ấy",
+        "meaningEn": "he; him",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "她",
+        "pinyin": "tā",
+        "meaningVi": "cô ấy, chị ấy",
+        "meaningEn": "she; her",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "们",
+        "pinyin": "men",
+        "meaningVi": "hậu tố chỉ số nhiều cho người",
+        "meaningEn": "plural suffix for people",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我们",
+        "pinyin": "wǒmen",
+        "meaningVi": "chúng tôi, chúng ta",
+        "meaningEn": "we; us",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你们",
+        "pinyin": "nǐmen",
+        "meaningVi": "các bạn, các anh, các chị",
+        "meaningEn": "you plural",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "他们",
+        "pinyin": "tāmen",
+        "meaningVi": "bọn họ, các anh ấy",
+        "meaningEn": "they; them",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "她们",
+        "pinyin": "tāmen",
+        "meaningVi": "bọn họ, các chị ấy",
+        "meaningEn": "they; them, female group",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老师",
+        "pinyin": "lǎoshī",
+        "meaningVi": "thầy giáo, cô giáo",
+        "meaningEn": "teacher",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老师们",
+        "pinyin": "lǎoshī men",
+        "meaningVi": "các thầy cô giáo",
+        "meaningEn": "teachers",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好",
+        "pinyin": "hǎo",
+        "meaningVi": "tốt, khỏe, đẹp, hay, ngon, được",
+        "meaningEn": "good; well; fine",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "一",
+        "pinyin": "yī",
+        "meaningVi": "số một",
+        "meaningEn": "one",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "二",
+        "pinyin": "èr",
+        "meaningVi": "số hai",
+        "meaningEn": "two",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "三",
+        "pinyin": "sān",
+        "meaningVi": "số ba",
+        "meaningEn": "three",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "四",
+        "pinyin": "sì",
+        "meaningVi": "số bốn",
+        "meaningEn": "four",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "五",
+        "pinyin": "wǔ",
+        "meaningVi": "số năm",
+        "meaningEn": "five",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "六",
+        "pinyin": "liù",
+        "meaningVi": "số sáu",
+        "meaningEn": "six",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "七",
+        "pinyin": "qī",
+        "meaningVi": "số bảy",
+        "meaningEn": "seven",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "八",
+        "pinyin": "bā",
+        "meaningVi": "số tám",
+        "meaningEn": "eight",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "九",
+        "pinyin": "jiǔ",
+        "meaningVi": "số chín",
+        "meaningEn": "nine",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "十",
+        "pinyin": "shí",
+        "meaningVi": "số mười",
+        "meaningEn": "ten",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "零",
+        "pinyin": "líng",
+        "meaningVi": "số không",
+        "meaningEn": "zero",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大",
+        "pinyin": "dà",
+        "meaningVi": "to, lớn",
+        "meaningEn": "big; large",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "小",
+        "pinyin": "xiǎo",
+        "meaningVi": "nhỏ, bé",
+        "meaningEn": "small",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不",
+        "pinyin": "bù",
+        "meaningVi": "không",
+        "meaningEn": "not; no",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "口",
+        "pinyin": "kǒu",
+        "meaningVi": "miệng",
+        "meaningEn": "mouth",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "白",
+        "pinyin": "bái",
+        "meaningVi": "trắng",
+        "meaningEn": "white",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "女",
+        "pinyin": "nǚ",
+        "meaningVi": "nữ, phụ nữ",
+        "meaningEn": "female; woman",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "马",
+        "pinyin": "mǎ",
+        "meaningVi": "con ngựa",
+        "meaningEn": "horse",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "吗",
+        "pinyin": "ma",
+        "meaningVi": "trợ từ nghi vấn, đặt cuối câu hỏi",
+        "meaningEn": "question particle",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爱",
+        "pinyin": "ài",
+        "meaningVi": "yêu",
+        "meaningEn": "to love",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很",
+        "pinyin": "hěn",
+        "meaningVi": "rất",
+        "meaningEn": "very",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "也",
+        "pinyin": "yě",
+        "meaningVi": "cũng",
+        "meaningEn": "also; too",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "呢",
+        "pinyin": "ne",
+        "meaningVi": "trợ từ ngữ khí, dùng để hỏi lại hoặc tiếp nối chủ đề",
+        "meaningEn": "particle used to ask back or continue a topic",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那",
+        "pinyin": "nà",
+        "meaningVi": "vậy, thế",
+        "meaningEn": "then; in that case",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "小白",
+        "pinyin": "xiǎo Bái",
+        "meaningVi": "Tiểu Bạch",
+        "meaningEn": "Xiao Bai; Little Bai",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "阿兰",
+        "pinyin": "Ā Lán",
+        "meaningVi": "Lan",
+        "meaningEn": "A Lan; Lan",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下课",
+        "pinyin": "xiàkè",
+        "meaningVi": "tan học",
+        "meaningEn": "class is over; finish class",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "再见",
+        "pinyin": "zàijiàn",
+        "meaningVi": "tạm biệt",
+        "meaningEn": "goodbye",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "你好",
+        "pinyin": "nǐ hǎo",
+        "meaningVi": "Xin chào.",
+        "meaningEn": "Hello.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您好",
+        "pinyin": "nín hǎo",
+        "meaningVi": "Xin chào ngài/ông/bà.",
+        "meaningEn": "Hello; polite form.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "阿兰好",
+        "pinyin": "Ā Lán hǎo",
+        "meaningVi": "Chào Lan.",
+        "meaningEn": "Hello, Lan.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老师好",
+        "pinyin": "lǎoshī hǎo",
+        "meaningVi": "Chào thầy/cô giáo.",
+        "meaningEn": "Hello, teacher.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你们好",
+        "pinyin": "nǐmen hǎo",
+        "meaningVi": "Chào các bạn.",
+        "meaningEn": "Hello, everyone.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不小",
+        "pinyin": "bù xiǎo",
+        "meaningVi": "không nhỏ",
+        "meaningEn": "not small",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不大",
+        "pinyin": "bú dà",
+        "meaningVi": "không to, không lớn",
+        "meaningEn": "not big",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不好",
+        "pinyin": "bù hǎo",
+        "meaningVi": "không tốt, không khỏe",
+        "meaningEn": "not good; not well",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我不好",
+        "pinyin": "wǒ bù hǎo",
+        "meaningVi": "Tôi không khỏe.",
+        "meaningEn": "I am not well.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我也不好",
+        "pinyin": "wǒ yě bù hǎo",
+        "meaningVi": "Tôi cũng không khỏe.",
+        "meaningEn": "I am also not well.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我爱你",
+        "pinyin": "wǒ ài nǐ",
+        "meaningVi": "Tôi yêu bạn.",
+        "meaningEn": "I love you.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我也爱你",
+        "pinyin": "wǒ yě ài nǐ",
+        "meaningVi": "Tôi cũng yêu bạn.",
+        "meaningEn": "I love you too.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我不爱他",
+        "pinyin": "wǒ bú ài tā",
+        "meaningVi": "Tôi không yêu anh ấy.",
+        "meaningEn": "I do not love him.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你好吗？",
+        "pinyin": "Nǐ hǎo ma?",
+        "meaningVi": "Bạn khỏe không?",
+        "meaningEn": "How are you?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你爱我吗？",
+        "pinyin": "Nǐ ài wǒ ma?",
+        "meaningVi": "Bạn yêu tôi không?",
+        "meaningEn": "Do you love me?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "马白吗？",
+        "pinyin": "Mǎ bái ma?",
+        "meaningVi": "Ngựa trắng không?",
+        "meaningEn": "Is the horse white?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "口大吗？",
+        "pinyin": "Kǒu dà ma?",
+        "meaningVi": "Miệng to không?",
+        "meaningEn": "Is the mouth big?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我很好，你呢？",
+        "pinyin": "Wǒ hěn hǎo, nǐ ne?",
+        "meaningVi": "Tôi rất khỏe, còn bạn?",
+        "meaningEn": "I am very well. And you?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我也很好。",
+        "pinyin": "Wǒ yě hěn hǎo.",
+        "meaningVi": "Tôi cũng rất khỏe.",
+        "meaningEn": "I am also very well.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你爱小白吗？",
+        "pinyin": "Nǐ ài xiǎo Bái ma?",
+        "meaningVi": "Bạn yêu Tiểu Bạch à?",
+        "meaningEn": "Do you love Xiao Bai?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我不爱她。",
+        "pinyin": "Wǒ bú ài tā.",
+        "meaningVi": "Tôi không yêu cô ấy.",
+        "meaningEn": "I do not love her.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那你爱我吗？",
+        "pinyin": "Nà nǐ ài wǒ ma?",
+        "meaningVi": "Vậy bạn yêu tôi không?",
+        "meaningEn": "Then do you love me?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我爱你。",
+        "pinyin": "Wǒ ài nǐ.",
+        "meaningVi": "Tôi yêu bạn.",
+        "meaningEn": "I love you.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ]
+  },
+  {
+    "id": "cmpffu6w30001e5tkg2h99h4u",
+    "title": "Buổi 2: Tiếng Hán không khó lắm",
+    "description": "Học cách hỏi tên, hỏi trạng thái bận, nói về tiếng Trung khó hay không khó, giới thiệu thành viên gia đình và số người trong nhà.",
+    "phase": "HSK1",
+    "weekLabel": null,
+    "level": null,
+    "orderNo": 2,
+    "duration": null,
+    "objectives": [
+      "Biết hỏi và trả lời tên bằng tiếng Trung",
+      "Biết hỏi và trả lời về trạng thái bận",
+      "Biết sử dụng 很, 太, 不太 trong câu đơn giản",
+      "Biết nói tiếng Trung khó hoặc không khó",
+      "Biết gọi tên các thành viên trong gia đình",
+      "Biết hỏi và trả lời nhà có mấy người"
+    ],
+    "materials": [],
+    "vocabulary": [
+      {
+        "chinese": "汉语",
+        "pinyin": "Hànyǔ",
+        "meaningVi": "tiếng Hán, tiếng Trung",
+        "meaningEn": "Chinese language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太",
+        "pinyin": "bú tài",
+        "meaningVi": "không... lắm",
+        "meaningEn": "not very; not too",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "难",
+        "pinyin": "nán",
+        "meaningVi": "khó",
+        "meaningEn": "difficult",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "忙",
+        "pinyin": "máng",
+        "meaningVi": "bận",
+        "meaningEn": "busy",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "吗",
+        "pinyin": "ma",
+        "meaningVi": "trợ từ nghi vấn",
+        "meaningEn": "question particle",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很",
+        "pinyin": "hěn",
+        "meaningVi": "rất",
+        "meaningEn": "very",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "太",
+        "pinyin": "tài",
+        "meaningVi": "quá, lắm",
+        "meaningEn": "too; very",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "了",
+        "pinyin": "le",
+        "meaningVi": "trợ từ ngữ khí, biểu thị sự thay đổi hoặc hoàn thành",
+        "meaningEn": "modal particle; completed action particle",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爸爸",
+        "pinyin": "bàba",
+        "meaningVi": "bố, ba",
+        "meaningEn": "father; dad",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "妈妈",
+        "pinyin": "māma",
+        "meaningVi": "mẹ",
+        "meaningEn": "mother; mom",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "他",
+        "pinyin": "tā",
+        "meaningVi": "anh ấy, ông ấy",
+        "meaningEn": "he; him",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "她",
+        "pinyin": "tā",
+        "meaningVi": "cô ấy, bà ấy",
+        "meaningEn": "she; her",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "男",
+        "pinyin": "nán",
+        "meaningVi": "nam, con trai",
+        "meaningEn": "male; man",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哥哥",
+        "pinyin": "gēge",
+        "meaningVi": "anh trai",
+        "meaningEn": "elder brother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "弟弟",
+        "pinyin": "dìdi",
+        "meaningVi": "em trai",
+        "meaningEn": "younger brother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "姐姐",
+        "pinyin": "jiějie",
+        "meaningVi": "chị gái",
+        "meaningEn": "elder sister",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "妹妹",
+        "pinyin": "mèimei",
+        "meaningVi": "em gái",
+        "meaningEn": "younger sister",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "叫",
+        "pinyin": "jiào",
+        "meaningVi": "gọi, tên là",
+        "meaningEn": "to be called; to call",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么",
+        "pinyin": "shénme",
+        "meaningVi": "gì, cái gì",
+        "meaningEn": "what",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "名字",
+        "pinyin": "míngzi",
+        "meaningVi": "tên",
+        "meaningEn": "name",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作",
+        "pinyin": "gōngzuò",
+        "meaningVi": "công việc, làm việc",
+        "meaningEn": "work; job",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "白",
+        "pinyin": "bái",
+        "meaningVi": "trắng",
+        "meaningEn": "white",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大",
+        "pinyin": "dà",
+        "meaningVi": "to, lớn",
+        "meaningEn": "big; large",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "小",
+        "pinyin": "xiǎo",
+        "meaningVi": "nhỏ, bé",
+        "meaningEn": "small",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好",
+        "pinyin": "hǎo",
+        "meaningVi": "tốt, khỏe",
+        "meaningEn": "good; well",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爱",
+        "pinyin": "ài",
+        "meaningVi": "yêu",
+        "meaningEn": "to love",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "喜欢",
+        "pinyin": "xǐhuan",
+        "meaningVi": "thích",
+        "meaningEn": "to like",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "讨厌",
+        "pinyin": "tǎoyàn",
+        "meaningVi": "ghét",
+        "meaningEn": "to dislike; to hate",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "课文",
+        "pinyin": "kèwén",
+        "meaningVi": "bài khóa",
+        "meaningEn": "text; lesson text",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "最近",
+        "pinyin": "zuìjìn",
+        "meaningVi": "gần đây",
+        "meaningEn": "recently",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "但是",
+        "pinyin": "dànshì",
+        "meaningVi": "nhưng",
+        "meaningEn": "but; however",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "因为",
+        "pinyin": "yīnwèi",
+        "meaningVi": "bởi vì",
+        "meaningEn": "because",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "经理",
+        "pinyin": "jīnglǐ",
+        "meaningVi": "giám đốc, quản lý",
+        "meaningEn": "manager",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国人",
+        "pinyin": "Zhōngguó rén",
+        "meaningVi": "người Trung Quốc",
+        "meaningEn": "Chinese person",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "所以",
+        "pinyin": "suǒyǐ",
+        "meaningVi": "cho nên, vì vậy",
+        "meaningEn": "so; therefore",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去",
+        "pinyin": "qù",
+        "meaningVi": "đi",
+        "meaningEn": "to go",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学",
+        "pinyin": "xué",
+        "meaningVi": "học",
+        "meaningEn": "to study; to learn",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "问",
+        "pinyin": "wèn",
+        "meaningVi": "hỏi",
+        "meaningEn": "to ask",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "觉得",
+        "pinyin": "juéde",
+        "meaningVi": "cảm thấy, cho rằng",
+        "meaningEn": "to feel; to think",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "回答",
+        "pinyin": "huídá",
+        "meaningVi": "trả lời",
+        "meaningEn": "to answer; to reply",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "为什么",
+        "pinyin": "wèi shénme",
+        "meaningVi": "tại sao",
+        "meaningEn": "why",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "女",
+        "pinyin": "nǚ",
+        "meaningVi": "nữ, phụ nữ",
+        "meaningEn": "female; woman",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "有",
+        "pinyin": "yǒu",
+        "meaningVi": "có",
+        "meaningEn": "to have; there is",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "没有",
+        "pinyin": "méiyǒu",
+        "meaningVi": "không có",
+        "meaningEn": "not have; there is not",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爷爷",
+        "pinyin": "yéye",
+        "meaningVi": "ông nội",
+        "meaningEn": "paternal grandfather",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "奶奶",
+        "pinyin": "nǎinai",
+        "meaningVi": "bà nội",
+        "meaningEn": "paternal grandmother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "外公",
+        "pinyin": "wàigōng",
+        "meaningVi": "ông ngoại",
+        "meaningEn": "maternal grandfather",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "外婆",
+        "pinyin": "wàipó",
+        "meaningVi": "bà ngoại",
+        "meaningEn": "maternal grandmother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老公",
+        "pinyin": "lǎogōng",
+        "meaningVi": "chồng",
+        "meaningEn": "husband",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老婆",
+        "pinyin": "lǎopó",
+        "meaningVi": "vợ",
+        "meaningEn": "wife",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "孩子",
+        "pinyin": "háizi",
+        "meaningVi": "con, đứa trẻ",
+        "meaningEn": "child",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "儿子",
+        "pinyin": "érzi",
+        "meaningVi": "con trai",
+        "meaningEn": "son",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "女儿",
+        "pinyin": "nǚ'ér",
+        "meaningVi": "con gái",
+        "meaningEn": "daughter",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "家",
+        "pinyin": "jiā",
+        "meaningVi": "nhà, gia đình",
+        "meaningEn": "home; family",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "几个人",
+        "pinyin": "jǐ gè rén",
+        "meaningVi": "mấy người",
+        "meaningEn": "how many people",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "三个人",
+        "pinyin": "sān gè rén",
+        "meaningVi": "ba người",
+        "meaningEn": "three people",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "两个弟弟",
+        "pinyin": "liǎng gè dìdi",
+        "meaningVi": "hai em trai",
+        "meaningEn": "two younger brothers",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "和",
+        "pinyin": "hé",
+        "meaningVi": "và",
+        "meaningEn": "and",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "可爱",
+        "pinyin": "kě'ài",
+        "meaningVi": "dễ thương, đáng yêu",
+        "meaningEn": "cute; lovely",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大哥",
+        "pinyin": "dàgē",
+        "meaningVi": "anh cả, đại ca",
+        "meaningEn": "eldest brother; big brother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "帅哥",
+        "pinyin": "shuàigē",
+        "meaningVi": "anh chàng đẹp trai",
+        "meaningEn": "handsome guy",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下课",
+        "pinyin": "xiàkè",
+        "meaningVi": "tan học",
+        "meaningEn": "class is over; finish class",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "再见",
+        "pinyin": "zàijiàn",
+        "meaningVi": "tạm biệt",
+        "meaningEn": "goodbye",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "汉语不太难",
+        "pinyin": "Hànyǔ bú tài nán",
+        "meaningVi": "Tiếng Hán không khó lắm.",
+        "meaningEn": "Chinese is not too difficult.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你叫什么？",
+        "pinyin": "Nǐ jiào shénme?",
+        "meaningVi": "Bạn tên là gì?",
+        "meaningEn": "What are you called?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "meaningVi": "Bạn tên là gì?",
+        "meaningEn": "What is your name?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我叫阮氏青恒。",
+        "pinyin": "Wǒ jiào Ruǎn Shì Qīng Héng.",
+        "meaningVi": "Tôi tên là Nguyễn Thị Thanh Hằng.",
+        "meaningEn": "My name is Nguyễn Thị Thanh Hằng.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我叫阿恒。",
+        "pinyin": "Wǒ jiào Ā Héng.",
+        "meaningVi": "Tôi tên là Hằng.",
+        "meaningEn": "My name is Hằng.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你忙吗？",
+        "pinyin": "Nǐ máng ma?",
+        "meaningVi": "Bạn bận không?",
+        "meaningEn": "Are you busy?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我不忙。",
+        "pinyin": "Wǒ bù máng.",
+        "meaningVi": "Tôi không bận.",
+        "meaningEn": "I am not busy.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我很忙。",
+        "pinyin": "Wǒ hěn máng.",
+        "meaningVi": "Tôi rất bận.",
+        "meaningEn": "I am very busy.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我也很忙。",
+        "pinyin": "Wǒ yě hěn máng.",
+        "meaningVi": "Tôi cũng rất bận.",
+        "meaningEn": "I am also very busy.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很忙",
+        "pinyin": "hěn máng",
+        "meaningVi": "rất bận",
+        "meaningEn": "very busy",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很白",
+        "pinyin": "hěn bái",
+        "meaningVi": "rất trắng",
+        "meaningEn": "very white",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很大",
+        "pinyin": "hěn dà",
+        "meaningVi": "rất to, rất lớn",
+        "meaningEn": "very big",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很小",
+        "pinyin": "hěn xiǎo",
+        "meaningVi": "rất nhỏ",
+        "meaningEn": "very small",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很好",
+        "pinyin": "hěn hǎo",
+        "meaningVi": "rất tốt",
+        "meaningEn": "very good",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很爱",
+        "pinyin": "hěn ài",
+        "meaningVi": "rất yêu",
+        "meaningEn": "love very much",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作忙吗？",
+        "pinyin": "Gōngzuò máng ma?",
+        "meaningVi": "Công việc bận không?",
+        "meaningEn": "Is work busy?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作很忙。",
+        "pinyin": "Gōngzuò hěn máng.",
+        "meaningVi": "Công việc rất bận.",
+        "meaningEn": "Work is very busy.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作不忙。",
+        "pinyin": "Gōngzuò bù máng.",
+        "meaningVi": "Công việc không bận.",
+        "meaningEn": "Work is not busy.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉语难吗？",
+        "pinyin": "Hànyǔ nán ma?",
+        "meaningVi": "Tiếng Trung khó không?",
+        "meaningEn": "Is Chinese difficult?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉语很难。",
+        "pinyin": "Hànyǔ hěn nán.",
+        "meaningVi": "Tiếng Trung rất khó.",
+        "meaningEn": "Chinese is very difficult.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉语不难。",
+        "pinyin": "Hànyǔ bù nán.",
+        "meaningVi": "Tiếng Trung không khó.",
+        "meaningEn": "Chinese is not difficult.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "太难了",
+        "pinyin": "tài nán le",
+        "meaningVi": "khó quá",
+        "meaningEn": "too difficult",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "太忙了",
+        "pinyin": "tài máng le",
+        "meaningVi": "bận quá",
+        "meaningEn": "too busy",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "太好了",
+        "pinyin": "tài hǎo le",
+        "meaningVi": "tốt quá",
+        "meaningEn": "very good; great",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "太大了",
+        "pinyin": "tài dà le",
+        "meaningVi": "to quá, lớn quá",
+        "meaningEn": "too big",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太难",
+        "pinyin": "bú tài nán",
+        "meaningVi": "không khó lắm",
+        "meaningEn": "not too difficult",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太忙",
+        "pinyin": "bú tài máng",
+        "meaningVi": "không bận lắm",
+        "meaningEn": "not too busy",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太好",
+        "pinyin": "bú tài hǎo",
+        "meaningVi": "không tốt lắm",
+        "meaningEn": "not very good",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太大",
+        "pinyin": "bú tài dà",
+        "meaningVi": "không to lắm",
+        "meaningEn": "not too big",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我妈妈",
+        "pinyin": "wǒ māma",
+        "meaningVi": "mẹ tôi",
+        "meaningEn": "my mother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你妈妈",
+        "pinyin": "nǐ māma",
+        "meaningVi": "mẹ bạn",
+        "meaningEn": "your mother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "他妈妈",
+        "pinyin": "tā māma",
+        "meaningVi": "mẹ anh ấy",
+        "meaningEn": "his mother",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你有哥哥姐姐吗？",
+        "pinyin": "Nǐ yǒu gēge jiějie ma?",
+        "meaningVi": "Bạn có anh trai, chị gái không?",
+        "meaningEn": "Do you have older brothers or older sisters?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我有哥哥，没有姐姐。",
+        "pinyin": "Wǒ yǒu gēge, méiyǒu jiějie.",
+        "meaningVi": "Tôi có anh trai, không có chị gái.",
+        "meaningEn": "I have an older brother, but I do not have an older sister.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你家",
+        "pinyin": "nǐ jiā",
+        "meaningVi": "nhà bạn",
+        "meaningEn": "your home; your family",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我家",
+        "pinyin": "wǒ jiā",
+        "meaningVi": "nhà tôi",
+        "meaningEn": "my home; my family",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "她家",
+        "pinyin": "tā jiā",
+        "meaningVi": "nhà cô ấy",
+        "meaningEn": "her home; her family",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你家有几个人？",
+        "pinyin": "Nǐ jiā yǒu jǐ gè rén?",
+        "meaningVi": "Nhà bạn có mấy người?",
+        "meaningEn": "How many people are there in your family?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我家有三个人：爸爸、妈妈和我。",
+        "pinyin": "Wǒ jiā yǒu sān gè rén: bàba, māma hé wǒ.",
+        "meaningVi": "Nhà tôi có ba người: bố, mẹ và tôi.",
+        "meaningEn": "There are three people in my family: my father, my mother, and me.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好吗",
+        "pinyin": "hǎo ma",
+        "meaningVi": "có tốt không? / được không?",
+        "meaningEn": "Is it good?; okay?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "忙吗",
+        "pinyin": "máng ma",
+        "meaningVi": "bận không?",
+        "meaningEn": "Are you busy?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大吗",
+        "pinyin": "dà ma",
+        "meaningVi": "to không? / lớn không?",
+        "meaningEn": "Is it big?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "难吗",
+        "pinyin": "nán ma",
+        "meaningVi": "khó không?",
+        "meaningEn": "Is it difficult?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很难",
+        "pinyin": "hěn nán",
+        "meaningVi": "rất khó",
+        "meaningEn": "very difficult",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ]
+  },
+  {
+    "id": "cmpfis1xe0000e5foew6glivp",
+    "title": "Buổi 3: Ngày mai gặp lại",
+    "description": "Học cách nói về quốc gia, ngôn ngữ, thời gian, địa điểm và mẫu câu đi đâu làm gì trong tiếng Trung.",
+    "phase": "HSK1",
+    "weekLabel": null,
+    "level": null,
+    "orderNo": 3,
+    "duration": null,
+    "objectives": [
+      "Biết gọi tên một số quốc gia và ngôn ngữ bằng tiếng Trung",
+      "Biết hỏi và trả lời về việc học ngôn ngữ",
+      "Biết sử dụng các từ chỉ thời gian như hôm qua, hôm nay, ngày mai",
+      "Biết nói đi đến địa điểm để làm gì",
+      "Biết hỏi địa điểm bằng 哪儿 hoặc 哪里",
+      "Biết sử dụng cấu trúc câu: Người + Thời gian + đi/ở + Địa điểm + Hành động"
+    ],
+    "materials": [],
+    "vocabulary": [
+      {
+        "chinese": "学",
+        "pinyin": "xué",
+        "meaningVi": "học",
+        "meaningEn": "to study; to learn",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "英语",
+        "pinyin": "Yīngyǔ",
+        "meaningVi": "tiếng Anh",
+        "meaningEn": "English language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "阿拉伯语",
+        "pinyin": "Ālābóyǔ",
+        "meaningVi": "tiếng Ả Rập",
+        "meaningEn": "Arabic language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "德语",
+        "pinyin": "Déyǔ",
+        "meaningVi": "tiếng Đức",
+        "meaningEn": "German language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "俄语",
+        "pinyin": "Éyǔ",
+        "meaningVi": "tiếng Nga",
+        "meaningEn": "Russian language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "法语",
+        "pinyin": "Fǎyǔ",
+        "meaningVi": "tiếng Pháp",
+        "meaningEn": "French language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "韩国语",
+        "pinyin": "Hánguóyǔ",
+        "meaningVi": "tiếng Hàn",
+        "meaningEn": "Korean language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日语",
+        "pinyin": "Rìyǔ",
+        "meaningVi": "tiếng Nhật",
+        "meaningEn": "Japanese language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "西班牙语",
+        "pinyin": "Xībānyáyǔ",
+        "meaningVi": "tiếng Tây Ban Nha",
+        "meaningEn": "Spanish language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对",
+        "pinyin": "duì",
+        "meaningVi": "đúng, phải",
+        "meaningEn": "right; correct",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "明天",
+        "pinyin": "míngtiān",
+        "meaningVi": "ngày mai",
+        "meaningEn": "tomorrow",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "见",
+        "pinyin": "jiàn",
+        "meaningVi": "gặp",
+        "meaningEn": "to see; to meet",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去",
+        "pinyin": "qù",
+        "meaningVi": "đi",
+        "meaningEn": "to go",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "邮局",
+        "pinyin": "yóujú",
+        "meaningVi": "bưu điện",
+        "meaningEn": "post office",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "寄",
+        "pinyin": "jì",
+        "meaningVi": "gửi",
+        "meaningEn": "to send; to mail",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "信",
+        "pinyin": "xìn",
+        "meaningVi": "thư",
+        "meaningEn": "letter",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "银行",
+        "pinyin": "yínháng",
+        "meaningVi": "ngân hàng",
+        "meaningEn": "bank",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "取",
+        "pinyin": "qǔ",
+        "meaningVi": "rút, lấy",
+        "meaningEn": "to withdraw; to take",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "钱",
+        "pinyin": "qián",
+        "meaningVi": "tiền",
+        "meaningEn": "money",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉语",
+        "pinyin": "Hànyǔ",
+        "meaningVi": "tiếng Hán, tiếng Trung",
+        "meaningEn": "Chinese language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "喜欢",
+        "pinyin": "xǐhuan",
+        "meaningVi": "thích",
+        "meaningEn": "to like",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "国家",
+        "pinyin": "guójiā",
+        "meaningVi": "quốc gia",
+        "meaningEn": "country; nation",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "语言",
+        "pinyin": "yǔyán",
+        "meaningVi": "ngôn ngữ",
+        "meaningEn": "language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国",
+        "pinyin": "Zhōngguó",
+        "meaningVi": "Trung Quốc",
+        "meaningEn": "China",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "越南",
+        "pinyin": "Yuènán",
+        "meaningVi": "Việt Nam",
+        "meaningEn": "Vietnam",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "越南语",
+        "pinyin": "Yuènányǔ",
+        "meaningVi": "tiếng Việt Nam",
+        "meaningEn": "Vietnamese language",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "英国",
+        "pinyin": "Yīngguó",
+        "meaningVi": "nước Anh",
+        "meaningEn": "England; Britain",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "美国",
+        "pinyin": "Měiguó",
+        "meaningVi": "nước Mỹ",
+        "meaningEn": "America; the United States",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "韩国",
+        "pinyin": "Hánguó",
+        "meaningVi": "Hàn Quốc",
+        "meaningEn": "South Korea",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日本",
+        "pinyin": "Rìběn",
+        "meaningVi": "Nhật Bản",
+        "meaningEn": "Japan",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好",
+        "pinyin": "hǎo",
+        "meaningVi": "tốt, được",
+        "meaningEn": "good; okay",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好的",
+        "pinyin": "hǎo de",
+        "meaningVi": "được, vâng",
+        "meaningEn": "okay; all right",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好啊",
+        "pinyin": "hǎo a",
+        "meaningVi": "được thôi",
+        "meaningEn": "okay; sure",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "行",
+        "pinyin": "xíng",
+        "meaningVi": "được, ổn",
+        "meaningEn": "okay; all right",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "是",
+        "pinyin": "shì",
+        "meaningVi": "là, phải",
+        "meaningEn": "to be; yes",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "是的",
+        "pinyin": "shì de",
+        "meaningVi": "đúng vậy",
+        "meaningEn": "yes; that is right",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "是啊",
+        "pinyin": "shì a",
+        "meaningVi": "đúng rồi",
+        "meaningEn": "yes; right",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对啊",
+        "pinyin": "duì a",
+        "meaningVi": "đúng rồi",
+        "meaningEn": "right; exactly",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "吧",
+        "pinyin": "ba",
+        "meaningVi": "trợ từ ngữ khí, dùng để gợi ý",
+        "meaningEn": "modal particle indicating suggestion",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "昨天",
+        "pinyin": "zuótiān",
+        "meaningVi": "hôm qua",
+        "meaningEn": "yesterday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "今天",
+        "pinyin": "jīntiān",
+        "meaningVi": "hôm nay",
+        "meaningEn": "today",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "天",
+        "pinyin": "tiān",
+        "meaningVi": "ngày, trời",
+        "meaningEn": "day; sky",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "天啊",
+        "pinyin": "tiān ā",
+        "meaningVi": "trời ơi",
+        "meaningEn": "Oh my God!",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去年",
+        "pinyin": "qùnián",
+        "meaningVi": "năm ngoái",
+        "meaningEn": "last year",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "今年",
+        "pinyin": "jīnnián",
+        "meaningVi": "năm nay",
+        "meaningEn": "this year",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "明年",
+        "pinyin": "míngnián",
+        "meaningVi": "sang năm, năm sau",
+        "meaningEn": "next year",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "年",
+        "pinyin": "nián",
+        "meaningVi": "năm",
+        "meaningEn": "year",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "再见",
+        "pinyin": "zàijiàn",
+        "meaningVi": "tạm biệt, hẹn gặp lại",
+        "meaningEn": "goodbye; see you again",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "理由",
+        "pinyin": "lǐyóu",
+        "meaningVi": "lý do",
+        "meaningEn": "reason",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "耳机",
+        "pinyin": "ěrjī",
+        "meaningVi": "tai nghe",
+        "meaningEn": "earphones; headphones",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "北京",
+        "pinyin": "Běijīng",
+        "meaningVi": "Bắc Kinh",
+        "meaningEn": "Beijing",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "北宁",
+        "pinyin": "Běiníng",
+        "meaningVi": "Bắc Ninh",
+        "meaningEn": "Bac Ninh",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "太原",
+        "pinyin": "Tàiyuán",
+        "meaningVi": "Thái Nguyên",
+        "meaningEn": "Thai Nguyen",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "宣光",
+        "pinyin": "Xuānguāng",
+        "meaningVi": "Tuyên Quang",
+        "meaningEn": "Tuyen Quang",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "河内",
+        "pinyin": "Hénèi",
+        "meaningVi": "Hà Nội",
+        "meaningEn": "Hanoi",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "胡志明",
+        "pinyin": "Húzhìmíng",
+        "meaningVi": "Hồ Chí Minh",
+        "meaningEn": "Ho Chi Minh",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "海洋",
+        "pinyin": "Hǎiyáng",
+        "meaningVi": "Hải Dương",
+        "meaningEn": "Hai Duong",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪儿",
+        "pinyin": "nǎr",
+        "meaningVi": "đâu, chỗ nào",
+        "meaningEn": "where",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪里",
+        "pinyin": "nǎlǐ",
+        "meaningVi": "đâu, chỗ nào",
+        "meaningEn": "where",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "在",
+        "pinyin": "zài",
+        "meaningVi": "ở, tại, đang",
+        "meaningEn": "at; in; to be located at",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "做什么",
+        "pinyin": "zuò shénme",
+        "meaningVi": "làm gì",
+        "meaningEn": "do what",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "干嘛",
+        "pinyin": "gànma",
+        "meaningVi": "làm gì",
+        "meaningEn": "do what; why",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "语法",
+        "pinyin": "yǔfǎ",
+        "meaningVi": "ngữ pháp",
+        "meaningEn": "grammar",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "吃饭",
+        "pinyin": "chī fàn",
+        "meaningVi": "ăn cơm",
+        "meaningEn": "to eat; to have a meal",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "课文",
+        "pinyin": "kèwén",
+        "meaningVi": "bài khóa, bài đọc",
+        "meaningEn": "text; lesson text",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多",
+        "pinyin": "duō",
+        "meaningVi": "nhiều",
+        "meaningEn": "many; much",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国公司",
+        "pinyin": "Zhōngguó gōngsī",
+        "meaningVi": "công ty Trung Quốc",
+        "meaningEn": "Chinese company",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "想",
+        "pinyin": "xiǎng",
+        "meaningVi": "muốn, nghĩ",
+        "meaningEn": "to want; to think",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "换",
+        "pinyin": "huàn",
+        "meaningVi": "đổi",
+        "meaningEn": "to change; to exchange",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "新工作",
+        "pinyin": "xīn gōngzuò",
+        "meaningVi": "công việc mới",
+        "meaningEn": "new job",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "家",
+        "pinyin": "jiā",
+        "meaningVi": "nhà",
+        "meaningEn": "home; family",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "公司",
+        "pinyin": "gōngsī",
+        "meaningVi": "công ty",
+        "meaningEn": "company",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "超市",
+        "pinyin": "chāoshì",
+        "meaningVi": "siêu thị",
+        "meaningEn": "supermarket",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "公园",
+        "pinyin": "gōngyuán",
+        "meaningVi": "công viên",
+        "meaningEn": "park",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "医院",
+        "pinyin": "yīyuàn",
+        "meaningVi": "bệnh viện",
+        "meaningEn": "hospital",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "生产车间",
+        "pinyin": "shēngchǎn chējiān",
+        "meaningVi": "xưởng sản xuất",
+        "meaningEn": "production workshop",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "仓库",
+        "pinyin": "cāngkù",
+        "meaningVi": "kho",
+        "meaningEn": "warehouse",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "领料",
+        "pinyin": "lǐngliào",
+        "meaningVi": "lĩnh liệu",
+        "meaningEn": "to receive materials",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "发料",
+        "pinyin": "fāliào",
+        "meaningVi": "phát liệu",
+        "meaningEn": "to issue materials",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "买东西",
+        "pinyin": "mǎi dōngxi",
+        "meaningVi": "mua đồ",
+        "meaningEn": "to buy things",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "看病",
+        "pinyin": "kànbìng",
+        "meaningVi": "khám bệnh",
+        "meaningEn": "to see a doctor",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "玩",
+        "pinyin": "wán",
+        "meaningVi": "chơi",
+        "meaningEn": "to play; to have fun",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "上班",
+        "pinyin": "shàngbān",
+        "meaningVi": "đi làm",
+        "meaningEn": "to go to work",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下班",
+        "pinyin": "xiàbān",
+        "meaningVi": "tan làm",
+        "meaningEn": "to get off work",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "组装",
+        "pinyin": "zǔzhuāng",
+        "meaningVi": "lắp ráp",
+        "meaningEn": "to assemble",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我们",
+        "pinyin": "wǒmen",
+        "meaningVi": "chúng tôi, chúng ta",
+        "meaningEn": "we; us",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您",
+        "pinyin": "nín",
+        "meaningVi": "ngài, ông, bà",
+        "meaningEn": "you; polite form",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你们",
+        "pinyin": "nǐmen",
+        "meaningVi": "các bạn",
+        "meaningEn": "you plural",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "他们",
+        "pinyin": "tāmen",
+        "meaningVi": "bọn họ, các anh ấy",
+        "meaningEn": "they; them",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "她们",
+        "pinyin": "tāmen",
+        "meaningVi": "bọn họ, các chị ấy",
+        "meaningEn": "they; them, female group",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老师",
+        "pinyin": "lǎoshī",
+        "meaningVi": "giáo viên, thầy cô",
+        "meaningEn": "teacher",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "主管",
+        "pinyin": "zhǔguǎn",
+        "meaningVi": "chủ quản",
+        "meaningEn": "supervisor",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "经理",
+        "pinyin": "jīnglǐ",
+        "meaningVi": "giám đốc, quản lý",
+        "meaningEn": "manager",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "朋友",
+        "pinyin": "péngyou",
+        "meaningVi": "bạn bè",
+        "meaningEn": "friend",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "现在",
+        "pinyin": "xiànzài",
+        "meaningVi": "bây giờ",
+        "meaningEn": "now",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "每天",
+        "pinyin": "měitiān",
+        "meaningVi": "mỗi ngày",
+        "meaningEn": "every day",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "旅行",
+        "pinyin": "lǚxíng",
+        "meaningVi": "du lịch",
+        "meaningEn": "to travel",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这儿",
+        "pinyin": "zhèr",
+        "meaningVi": "chỗ này, ở đây",
+        "meaningEn": "here",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下课",
+        "pinyin": "xiàkè",
+        "meaningVi": "tan học",
+        "meaningEn": "class is over; finish class",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "学汉语",
+        "pinyin": "xué Hànyǔ",
+        "meaningVi": "học tiếng Trung",
+        "meaningEn": "study Chinese",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "喜欢学汉语",
+        "pinyin": "xǐhuan xué Hànyǔ",
+        "meaningVi": "thích học tiếng Trung",
+        "meaningEn": "like studying Chinese",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去中国学汉语。",
+        "pinyin": "Qù Zhōngguó xué Hànyǔ.",
+        "meaningVi": "Đi Trung Quốc học tiếng Trung.",
+        "meaningEn": "Go to China to study Chinese.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你学汉语吗？",
+        "pinyin": "Nǐ xué Hànyǔ ma?",
+        "meaningVi": "Bạn học tiếng Trung không?",
+        "meaningEn": "Do you study Chinese?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "明天见",
+        "pinyin": "Míngtiān jiàn",
+        "meaningVi": "Ngày mai gặp.",
+        "meaningEn": "See you tomorrow.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去哪儿",
+        "pinyin": "qù nǎr",
+        "meaningVi": "đi đâu",
+        "meaningEn": "go where",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去哪里",
+        "pinyin": "qù nǎlǐ",
+        "meaningVi": "đi đâu",
+        "meaningEn": "go where",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去银行干吗？",
+        "pinyin": "Nǐ qù yínháng gànma?",
+        "meaningVi": "Bạn đi ngân hàng làm gì?",
+        "meaningEn": "Why are you going to the bank?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我今天在家吃饭。",
+        "pinyin": "Wǒ jīntiān zài jiā chī fàn.",
+        "meaningVi": "Hôm nay tôi ăn cơm ở nhà.",
+        "meaningEn": "I eat at home today.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "今天我在家吃饭。",
+        "pinyin": "Jīntiān wǒ zài jiā chī fàn.",
+        "meaningVi": "Hôm nay tôi ăn cơm ở nhà.",
+        "meaningEn": "Today I eat at home.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你学英语吗？",
+        "pinyin": "Nǐ xué Yīngyǔ ma?",
+        "meaningVi": "Bạn học tiếng Anh không?",
+        "meaningEn": "Do you study English?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不。学汉语。",
+        "pinyin": "Bù. Xué Hànyǔ.",
+        "meaningVi": "Không. Học tiếng Trung.",
+        "meaningEn": "No. I study Chinese.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去北京吗？",
+        "pinyin": "Qù Běijīng ma?",
+        "meaningVi": "Đi Bắc Kinh à?",
+        "meaningEn": "Are you going to Beijing?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对。",
+        "pinyin": "Duì.",
+        "meaningVi": "Đúng.",
+        "meaningEn": "Correct.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去邮局寄信吗？",
+        "pinyin": "Nǐ qù yóujú jì xìn ma?",
+        "meaningVi": "Bạn đi bưu điện gửi thư à?",
+        "meaningEn": "Are you going to the post office to send a letter?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不去。去银行取钱。",
+        "pinyin": "Bú qù. Qù yínháng qǔ qián.",
+        "meaningVi": "Không đi. Đi ngân hàng rút tiền.",
+        "meaningEn": "No. I am going to the bank to withdraw money.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "明天见！",
+        "pinyin": "Míngtiān jiàn!",
+        "meaningVi": "Ngày mai gặp!",
+        "meaningEn": "See you tomorrow!",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "取钱",
+        "pinyin": "qǔ qián",
+        "meaningVi": "rút tiền",
+        "meaningEn": "withdraw money",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "寄信",
+        "pinyin": "jì xìn",
+        "meaningVi": "gửi thư",
+        "meaningEn": "send a letter",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去邮局",
+        "pinyin": "qù yóujú",
+        "meaningVi": "đi bưu điện",
+        "meaningEn": "go to the post office",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去银行",
+        "pinyin": "qù yínháng",
+        "meaningVi": "đi ngân hàng",
+        "meaningEn": "go to the bank",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去取钱",
+        "pinyin": "qù qǔ qián",
+        "meaningVi": "đi rút tiền",
+        "meaningEn": "go to withdraw money",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去寄信",
+        "pinyin": "qù jì xìn",
+        "meaningVi": "đi gửi thư",
+        "meaningEn": "go to send a letter",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学英语",
+        "pinyin": "xué Yīngyǔ",
+        "meaningVi": "học tiếng Anh",
+        "meaningEn": "study English",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去北京吗？",
+        "pinyin": "Nǐ qù Běijīng ma?",
+        "meaningVi": "Bạn đi Bắc Kinh à?",
+        "meaningEn": "Are you going to Beijing?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这儿是哪里？",
+        "pinyin": "Zhèr shì nǎlǐ?",
+        "meaningVi": "Chỗ này là chỗ nào?",
+        "meaningEn": "Where is this?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去银行做什么？",
+        "pinyin": "Nǐ qù yínháng zuò shénme?",
+        "meaningVi": "Bạn đi ngân hàng làm gì?",
+        "meaningEn": "What are you going to the bank to do?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去邮局做什么？",
+        "pinyin": "Nǐ qù yóujú zuò shénme?",
+        "meaningVi": "Bạn đi bưu điện làm gì?",
+        "meaningEn": "What are you going to the post office to do?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去超市做什么？",
+        "pinyin": "Nǐ qù chāoshì zuò shénme?",
+        "meaningVi": "Bạn đi siêu thị làm gì?",
+        "meaningEn": "What are you going to the supermarket to do?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去公园做什么？",
+        "pinyin": "Nǐ qù gōngyuán zuò shénme?",
+        "meaningVi": "Bạn đi công viên làm gì?",
+        "meaningEn": "What are you going to the park to do?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去医院做什么？",
+        "pinyin": "Nǐ qù yīyuàn zuò shénme?",
+        "meaningVi": "Bạn đi bệnh viện làm gì?",
+        "meaningEn": "What are you going to the hospital to do?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ]
+  },
+  {
+    "id": "cmpfis7680001e5fo46birvjw",
+    "title": "Buổi 4: Bạn đi đâu",
+    "description": "Học cách nói về thời gian, thứ trong tuần, ngày tháng năm, giờ giấc và cách hỏi đi đâu, làm gì bằng tiếng Trung.",
+    "phase": "HSK1",
+    "weekLabel": null,
+    "level": null,
+    "orderNo": 4,
+    "duration": null,
+    "objectives": [
+      "Biết nói hôm qua, hôm nay, ngày mai bằng tiếng Trung",
+      "Biết gọi tên các thứ trong tuần",
+      "Biết hỏi thứ mấy, ngày mấy tháng mấy và mấy giờ",
+      "Biết hỏi và trả lời đi đâu",
+      "Biết sử dụng câu hỏi chính phản như 去不去, 回不回",
+      "Biết sử dụng một số câu giao tiếp thường dùng trên lớp"
+    ],
+    "materials": [],
+    "vocabulary": [
+      {
+        "chinese": "今天",
+        "pinyin": "jīntiān",
+        "meaningVi": "hôm nay",
+        "meaningEn": "today",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "天",
+        "pinyin": "tiān",
+        "meaningVi": "ngày, trời",
+        "meaningEn": "day; sky",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "昨天",
+        "pinyin": "zuótiān",
+        "meaningVi": "hôm qua",
+        "meaningEn": "yesterday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "明天",
+        "pinyin": "míngtiān",
+        "meaningVi": "ngày mai",
+        "meaningEn": "tomorrow",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期",
+        "pinyin": "xīngqī",
+        "meaningVi": "tuần, thứ",
+        "meaningEn": "week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期一",
+        "pinyin": "xīngqīyī",
+        "meaningVi": "thứ hai",
+        "meaningEn": "Monday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期二",
+        "pinyin": "xīngqī'èr",
+        "meaningVi": "thứ ba",
+        "meaningEn": "Tuesday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期三",
+        "pinyin": "xīngqīsān",
+        "meaningVi": "thứ tư",
+        "meaningEn": "Wednesday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期四",
+        "pinyin": "xīngqīsì",
+        "meaningVi": "thứ năm",
+        "meaningEn": "Thursday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期五",
+        "pinyin": "xīngqīwǔ",
+        "meaningVi": "thứ sáu",
+        "meaningEn": "Friday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期六",
+        "pinyin": "xīngqīliù",
+        "meaningVi": "thứ bảy",
+        "meaningEn": "Saturday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期天",
+        "pinyin": "xīngqītiān",
+        "meaningVi": "chủ nhật",
+        "meaningEn": "Sunday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期日",
+        "pinyin": "xīngqīrì",
+        "meaningVi": "chủ nhật",
+        "meaningEn": "Sunday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "周",
+        "pinyin": "zhōu",
+        "meaningVi": "tuần",
+        "meaningEn": "week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "礼拜",
+        "pinyin": "lǐbài",
+        "meaningVi": "tuần",
+        "meaningEn": "week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "上周",
+        "pinyin": "shàngzhōu",
+        "meaningVi": "tuần trước",
+        "meaningEn": "last week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这周",
+        "pinyin": "zhèzhōu",
+        "meaningVi": "tuần này",
+        "meaningEn": "this week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下周",
+        "pinyin": "xiàzhōu",
+        "meaningVi": "tuần sau",
+        "meaningEn": "next week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "周末",
+        "pinyin": "zhōumò",
+        "meaningVi": "cuối tuần",
+        "meaningEn": "weekend",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "上周一",
+        "pinyin": "shàngzhōuyī",
+        "meaningVi": "thứ hai tuần trước",
+        "meaningEn": "last Monday",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "几",
+        "pinyin": "jǐ",
+        "meaningVi": "mấy",
+        "meaningEn": "how many; which",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪儿",
+        "pinyin": "nǎr",
+        "meaningVi": "đâu, chỗ nào",
+        "meaningEn": "where",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪里",
+        "pinyin": "nǎlǐ",
+        "meaningVi": "đâu, chỗ nào",
+        "meaningEn": "where",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那儿",
+        "pinyin": "nàr",
+        "meaningVi": "chỗ kia, nơi đó",
+        "meaningEn": "there",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那里",
+        "pinyin": "nàlǐ",
+        "meaningVi": "chỗ kia, nơi đó",
+        "meaningEn": "there",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这儿",
+        "pinyin": "zhèr",
+        "meaningVi": "chỗ này, ở đây",
+        "meaningEn": "here",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这里",
+        "pinyin": "zhèlǐ",
+        "meaningVi": "chỗ này, ở đây",
+        "meaningEn": "here",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我",
+        "pinyin": "wǒ",
+        "meaningVi": "tôi",
+        "meaningEn": "I; me",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "回",
+        "pinyin": "huí",
+        "meaningVi": "về, trở về",
+        "meaningEn": "to return; to go back",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去",
+        "pinyin": "qù",
+        "meaningVi": "đi, đi đến",
+        "meaningEn": "to go",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "来",
+        "pinyin": "lái",
+        "meaningVi": "đến",
+        "meaningEn": "to come",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学校",
+        "pinyin": "xuéxiào",
+        "meaningVi": "trường học",
+        "meaningEn": "school",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "上课",
+        "pinyin": "shàngkè",
+        "meaningVi": "đi học, vào lớp",
+        "meaningEn": "to attend class; to have class",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "再见",
+        "pinyin": "zàijiàn",
+        "meaningVi": "tạm biệt, hẹn gặp lại",
+        "meaningEn": "goodbye",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对不起",
+        "pinyin": "duìbuqǐ",
+        "meaningVi": "xin lỗi",
+        "meaningEn": "sorry",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "没关系",
+        "pinyin": "méi guānxi",
+        "meaningVi": "không sao đâu",
+        "meaningEn": "it does not matter; no problem",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "现在",
+        "pinyin": "xiànzài",
+        "meaningVi": "bây giờ",
+        "meaningEn": "now",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "问",
+        "pinyin": "wèn",
+        "meaningVi": "hỏi",
+        "meaningEn": "to ask",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你们",
+        "pinyin": "nǐmen",
+        "meaningVi": "các bạn",
+        "meaningEn": "you plural",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "回答",
+        "pinyin": "huídá",
+        "meaningVi": "trả lời",
+        "meaningEn": "to answer; reply",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好",
+        "pinyin": "hǎo",
+        "meaningVi": "tốt, được",
+        "meaningEn": "good; okay",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好的",
+        "pinyin": "hǎo de",
+        "meaningVi": "được, vâng",
+        "meaningEn": "okay; all right",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对",
+        "pinyin": "duì",
+        "meaningVi": "đúng",
+        "meaningEn": "right; correct",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对了",
+        "pinyin": "duì le",
+        "meaningVi": "đúng rồi",
+        "meaningEn": "right; correct",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "懂",
+        "pinyin": "dǒng",
+        "meaningVi": "hiểu",
+        "meaningEn": "to understand",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "懂了",
+        "pinyin": "dǒng le",
+        "meaningVi": "hiểu rồi",
+        "meaningEn": "understood",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "写",
+        "pinyin": "xiě",
+        "meaningVi": "viết",
+        "meaningEn": "to write",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "完",
+        "pinyin": "wán",
+        "meaningVi": "xong, hoàn thành",
+        "meaningEn": "to finish",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "还没",
+        "pinyin": "hái méi",
+        "meaningVi": "vẫn chưa",
+        "meaningEn": "not yet",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请",
+        "pinyin": "qǐng",
+        "meaningVi": "mời, xin",
+        "meaningEn": "please",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "再",
+        "pinyin": "zài",
+        "meaningVi": "lại, nữa",
+        "meaningEn": "again",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "说",
+        "pinyin": "shuō",
+        "meaningVi": "nói",
+        "meaningEn": "to speak; to say",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "一遍",
+        "pinyin": "yí biàn",
+        "meaningVi": "một lượt, một lần",
+        "meaningEn": "one time; once",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "读",
+        "pinyin": "dú",
+        "meaningVi": "đọc",
+        "meaningEn": "to read",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么",
+        "pinyin": "shénme",
+        "meaningVi": "gì, cái gì",
+        "meaningEn": "what",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "意思",
+        "pinyin": "yìsi",
+        "meaningVi": "ý nghĩa, nghĩa",
+        "meaningEn": "meaning",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "零",
+        "pinyin": "líng",
+        "meaningVi": "số không",
+        "meaningEn": "zero",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "一",
+        "pinyin": "yī",
+        "meaningVi": "số một",
+        "meaningEn": "one",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "二",
+        "pinyin": "èr",
+        "meaningVi": "số hai",
+        "meaningEn": "two",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "三",
+        "pinyin": "sān",
+        "meaningVi": "số ba",
+        "meaningEn": "three",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "四",
+        "pinyin": "sì",
+        "meaningVi": "số bốn",
+        "meaningEn": "four",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "五",
+        "pinyin": "wǔ",
+        "meaningVi": "số năm",
+        "meaningEn": "five",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "六",
+        "pinyin": "liù",
+        "meaningVi": "số sáu",
+        "meaningEn": "six",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "七",
+        "pinyin": "qī",
+        "meaningVi": "số bảy",
+        "meaningEn": "seven",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "八",
+        "pinyin": "bā",
+        "meaningVi": "số tám",
+        "meaningEn": "eight",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "九",
+        "pinyin": "jiǔ",
+        "meaningVi": "số chín",
+        "meaningEn": "nine",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "十",
+        "pinyin": "shí",
+        "meaningVi": "số mười",
+        "meaningEn": "ten",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "十一",
+        "pinyin": "shíyī",
+        "meaningVi": "số mười một",
+        "meaningEn": "eleven",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "十二",
+        "pinyin": "shí'èr",
+        "meaningVi": "số mười hai",
+        "meaningEn": "twelve",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "二十",
+        "pinyin": "èrshí",
+        "meaningVi": "số hai mươi",
+        "meaningEn": "twenty",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "年",
+        "pinyin": "nián",
+        "meaningVi": "năm",
+        "meaningEn": "year",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "月",
+        "pinyin": "yuè",
+        "meaningVi": "tháng",
+        "meaningEn": "month",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日",
+        "pinyin": "rì",
+        "meaningVi": "ngày",
+        "meaningEn": "day; date",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "号",
+        "pinyin": "hào",
+        "meaningVi": "ngày, số",
+        "meaningEn": "date; number",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "点",
+        "pinyin": "diǎn",
+        "meaningVi": "giờ",
+        "meaningEn": "o'clock",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "分钟",
+        "pinyin": "fēnzhōng",
+        "meaningVi": "phút",
+        "meaningEn": "minute",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "分",
+        "pinyin": "fēn",
+        "meaningVi": "phút",
+        "meaningEn": "minute",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "半",
+        "pinyin": "bàn",
+        "meaningVi": "rưỡi, một nửa",
+        "meaningEn": "half",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "两",
+        "pinyin": "liǎng",
+        "meaningVi": "hai",
+        "meaningEn": "two",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "时候",
+        "pinyin": "shíhou",
+        "meaningVi": "thời điểm, lúc",
+        "meaningEn": "time; moment",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么时候",
+        "pinyin": "shénme shíhou",
+        "meaningVi": "khi nào, bao giờ",
+        "meaningEn": "when",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "几点",
+        "pinyin": "jǐ diǎn",
+        "meaningVi": "mấy giờ",
+        "meaningEn": "what time",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "打算",
+        "pinyin": "dǎsuan",
+        "meaningVi": "dự định",
+        "meaningEn": "to plan; to intend",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "旅行",
+        "pinyin": "lǚxíng",
+        "meaningVi": "du lịch",
+        "meaningEn": "to travel",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国",
+        "pinyin": "Zhōngguó",
+        "meaningVi": "Trung Quốc",
+        "meaningEn": "China",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "天安门",
+        "pinyin": "Tiān'ānmén",
+        "meaningVi": "Thiên An Môn",
+        "meaningEn": "Tiananmen",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "知道",
+        "pinyin": "zhīdào",
+        "meaningVi": "biết",
+        "meaningEn": "to know",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "课文",
+        "pinyin": "kèwén",
+        "meaningVi": "bài đọc, bài khóa",
+        "meaningEn": "text; lesson text",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那天",
+        "pinyin": "nà tiān",
+        "meaningVi": "hôm đó",
+        "meaningEn": "that day",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请假",
+        "pinyin": "qǐngjià",
+        "meaningVi": "xin nghỉ",
+        "meaningEn": "to ask for leave",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "晚",
+        "pinyin": "wǎn",
+        "meaningVi": "muộn",
+        "meaningEn": "late",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "睡觉",
+        "pinyin": "shuìjiào",
+        "meaningVi": "ngủ",
+        "meaningEn": "to sleep",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "放假",
+        "pinyin": "fàngjià",
+        "meaningVi": "được nghỉ, nghỉ lễ",
+        "meaningEn": "to have a holiday; to be off",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "倒班",
+        "pinyin": "dǎobān",
+        "meaningVi": "đổi ca",
+        "meaningEn": "to change shifts",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "加班",
+        "pinyin": "jiābān",
+        "meaningVi": "tăng ca",
+        "meaningEn": "to work overtime",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下班",
+        "pinyin": "xiàbān",
+        "meaningVi": "tan làm",
+        "meaningEn": "to get off work",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "起床",
+        "pinyin": "qǐchuáng",
+        "meaningVi": "thức dậy",
+        "meaningEn": "to get up",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "洗澡",
+        "pinyin": "xǐzǎo",
+        "meaningVi": "tắm",
+        "meaningEn": "to take a shower; to bathe",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "送礼物",
+        "pinyin": "sòng lǐwù",
+        "meaningVi": "tặng quà",
+        "meaningEn": "to give a gift",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "现在我问，你们回答，好吗？",
+        "pinyin": "Xiànzài wǒ wèn, nǐmen huídá, hǎo ma?",
+        "meaningVi": "Bây giờ cô hỏi, các bạn trả lời, được không?",
+        "meaningEn": "Now I ask, you answer, okay?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好的。",
+        "pinyin": "Hǎo de.",
+        "meaningVi": "Được.",
+        "meaningEn": "Okay.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对不对？",
+        "pinyin": "Duì bu duì?",
+        "meaningVi": "Đúng không?",
+        "meaningEn": "Is it correct?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对了。",
+        "pinyin": "Duì le.",
+        "meaningVi": "Đúng rồi.",
+        "meaningEn": "Correct.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "懂了吗？",
+        "pinyin": "Dǒng le ma?",
+        "meaningVi": "Hiểu chưa?",
+        "meaningEn": "Do you understand?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "懂了。",
+        "pinyin": "Dǒng le.",
+        "meaningVi": "Hiểu rồi.",
+        "meaningEn": "I understand.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "写完了吗？",
+        "pinyin": "Xiě wán le ma?",
+        "meaningVi": "Viết xong chưa?",
+        "meaningEn": "Have you finished writing?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "写完了。",
+        "pinyin": "Xiě wán le.",
+        "meaningVi": "Viết xong rồi.",
+        "meaningEn": "Finished writing.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "还没。",
+        "pinyin": "Hái méi.",
+        "meaningVi": "Vẫn chưa.",
+        "meaningEn": "Not yet.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请再说一遍。",
+        "pinyin": "Qǐng zài shuō yí biàn.",
+        "meaningVi": "Xin nói lại một lượt.",
+        "meaningEn": "Please say it again.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请读一遍。",
+        "pinyin": "Qǐng dú yí biàn.",
+        "meaningVi": "Xin đọc một lượt.",
+        "meaningEn": "Please read it once.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么意思？",
+        "pinyin": "Shénme yìsi?",
+        "meaningVi": "Có nghĩa là gì?",
+        "meaningEn": "What does it mean?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "星期几",
+        "pinyin": "xīngqī jǐ",
+        "meaningVi": "thứ mấy",
+        "meaningEn": "what day of the week",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "几月几日",
+        "pinyin": "jǐ yuè jǐ rì",
+        "meaningVi": "ngày mấy tháng mấy",
+        "meaningEn": "what month and what date",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么时候",
+        "pinyin": "shénme shíhou",
+        "meaningVi": "khi nào, bao giờ",
+        "meaningEn": "when",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "现在几点？",
+        "pinyin": "Xiànzài jǐ diǎn?",
+        "meaningVi": "Bây giờ mấy giờ?",
+        "meaningEn": "What time is it now?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你打算什么时候去旅行？",
+        "pinyin": "Nǐ dǎsuan shénme shíhou qù lǚxíng?",
+        "meaningVi": "Bạn dự định khi nào đi du lịch?",
+        "meaningEn": "When do you plan to travel?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "下周我打算去中国旅行。",
+        "pinyin": "Xiàzhōu wǒ dǎsuan qù Zhōngguó lǚxíng.",
+        "meaningVi": "Tuần sau tôi dự định đi Trung Quốc du lịch.",
+        "meaningEn": "Next week I plan to travel to China.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "去不去",
+        "pinyin": "qù bu qù",
+        "meaningVi": "có đi không",
+        "meaningEn": "go or not",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你知道天安门在哪里吗？",
+        "pinyin": "Nǐ zhīdào Tiān'ānmén zài nǎlǐ ma?",
+        "meaningVi": "Bạn biết Thiên An Môn ở đâu không?",
+        "meaningEn": "Do you know where Tiananmen is?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "今天星期几？",
+        "pinyin": "Jīntiān xīngqī jǐ?",
+        "meaningVi": "Hôm nay là thứ mấy?",
+        "meaningEn": "What day of the week is today?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "今天星期二。",
+        "pinyin": "Jīntiān xīngqī'èr.",
+        "meaningVi": "Hôm nay là thứ ba.",
+        "meaningEn": "Today is Tuesday.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你去哪儿？",
+        "pinyin": "Nǐ qù nǎr?",
+        "meaningVi": "Bạn đi đâu?",
+        "meaningEn": "Where are you going?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我去天安门，你去不去？",
+        "pinyin": "Wǒ qù Tiān'ānmén, nǐ qù bu qù?",
+        "meaningVi": "Tôi đi Thiên An Môn, bạn có đi không?",
+        "meaningEn": "I am going to Tiananmen. Are you going?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不去，我回学校。",
+        "pinyin": "Bú qù, wǒ huí xuéxiào.",
+        "meaningVi": "Không đi, tôi về trường.",
+        "meaningEn": "No, I am going back to school.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "再见！",
+        "pinyin": "Zàijiàn!",
+        "meaningVi": "Tạm biệt!",
+        "meaningEn": "Goodbye!",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "对不起！",
+        "pinyin": "Duìbuqǐ!",
+        "meaningVi": "Xin lỗi!",
+        "meaningEn": "Sorry!",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "没关系。",
+        "pinyin": "Méi guānxi.",
+        "meaningVi": "Không sao đâu.",
+        "meaningEn": "It does not matter.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "回学校，你回不回？",
+        "pinyin": "Huí xuéxiào, nǐ huí bu huí?",
+        "meaningVi": "Về trường, bạn có về không?",
+        "meaningEn": "I am going back to school. Are you going back?",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不回。我去天安门。",
+        "pinyin": "Bù huí. Wǒ qù Tiān'ānmén.",
+        "meaningVi": "Không về. Tôi đi Thiên An Môn.",
+        "meaningEn": "No. I am going to Tiananmen.",
+        "exampleChinese": null,
+        "examplePinyin": null,
+        "exampleMeaning": null,
+        "level": "HSK1"
+      }
+    ]
+  },
+  {
+    "title": "Buổi 5: Đây là thầy giáo Vương",
+    "phase": "HSK1",
+    "orderNo": 5,
+    "description": "Học cách giới thiệu người, sử dụng cấu trúc Đây là/Kia là, một số nghề nghiệp, chức vụ, đồ uống và mẫu câu mời lịch sự trong tiếng Trung.",
+    "objectives": [
+      "Biết sử dụng 这, 那 để giới thiệu người hoặc sự vật",
+      "Biết dùng 是 để nói ai là ai hoặc cái gì là cái gì",
+      "Biết gọi tên một số nghề nghiệp và chức vụ trong công ty",
+      "Biết sử dụng cấu trúc định ngữ + trung tâm ngữ",
+      "Biết mời người khác vào, ngồi và uống nước",
+      "Biết hỏi thăm công việc và sức khỏe bằng tiếng Trung",
+      "Biết gọi tên một số đồ uống thông dụng"
+    ],
+    "vocabulary": [
+      {
+        "chinese": "这",
+        "pinyin": "zhè",
+        "meaningEn": "this",
+        "meaningVi": "đây, này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那",
+        "pinyin": "nà",
+        "meaningEn": "that",
+        "meaningVi": "kia, đó",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这儿",
+        "pinyin": "zhèr",
+        "meaningEn": "here",
+        "meaningVi": "ở đây, chỗ này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那儿",
+        "pinyin": "nàr",
+        "meaningEn": "there",
+        "meaningVi": "ở kia, chỗ kia",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "是",
+        "pinyin": "shì",
+        "meaningEn": "to be; yes",
+        "meaningVi": "là, phải",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不是",
+        "pinyin": "bú shì",
+        "meaningEn": "not be; is not",
+        "meaningVi": "không phải",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老师",
+        "pinyin": "lǎoshī",
+        "meaningEn": "teacher",
+        "meaningVi": "thầy giáo, cô giáo",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您",
+        "pinyin": "nín",
+        "meaningEn": "you; polite form",
+        "meaningVi": "ngài, ông, bà; cách gọi kính trọng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请",
+        "pinyin": "qǐng",
+        "meaningEn": "please; to invite",
+        "meaningVi": "mời, xin",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "进",
+        "pinyin": "jìn",
+        "meaningEn": "to enter",
+        "meaningVi": "vào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "坐",
+        "pinyin": "zuò",
+        "meaningEn": "to sit",
+        "meaningVi": "ngồi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "喝",
+        "pinyin": "hē",
+        "meaningEn": "to drink",
+        "meaningVi": "uống",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "茶",
+        "pinyin": "chá",
+        "meaningEn": "tea",
+        "meaningVi": "trà",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谢谢",
+        "pinyin": "xièxie",
+        "meaningEn": "thank you",
+        "meaningVi": "cảm ơn",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不客气",
+        "pinyin": "bú kèqi",
+        "meaningEn": "you are welcome",
+        "meaningVi": "không cần khách khí, không có gì",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "客气",
+        "pinyin": "kèqi",
+        "meaningEn": "polite; courteous",
+        "meaningVi": "khách khí, lịch sự",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不谢",
+        "pinyin": "bú xiè",
+        "meaningEn": "no need to thank",
+        "meaningVi": "không cần cảm ơn",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不用谢",
+        "pinyin": "bú yòng xiè",
+        "meaningEn": "you are welcome; no need to thank",
+        "meaningVi": "không cần cảm ơn",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作",
+        "pinyin": "gōngzuò",
+        "meaningEn": "work; job; to work",
+        "meaningVi": "công việc, làm việc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "身体",
+        "pinyin": "shēntǐ",
+        "meaningEn": "body; health",
+        "meaningVi": "thân thể, sức khỏe",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "十",
+        "pinyin": "shí",
+        "meaningEn": "ten",
+        "meaningVi": "số mười",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日",
+        "pinyin": "rì",
+        "meaningEn": "day; date",
+        "meaningVi": "ngày",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "个人",
+        "pinyin": "gè rén",
+        "meaningEn": "person",
+        "meaningVi": "người",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "本",
+        "pinyin": "běn",
+        "meaningEn": "measure word for books",
+        "meaningVi": "lượng từ cho sách",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "书",
+        "pinyin": "shū",
+        "meaningEn": "book",
+        "meaningVi": "sách",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "老",
+        "pinyin": "lǎo",
+        "meaningEn": "old",
+        "meaningVi": "già, cũ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "新",
+        "pinyin": "xīn",
+        "meaningEn": "new",
+        "meaningVi": "mới",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "王",
+        "pinyin": "Wáng",
+        "meaningEn": "Wang; surname Wang",
+        "meaningVi": "Vương, họ Vương",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学生",
+        "pinyin": "xuésheng",
+        "meaningEn": "student",
+        "meaningVi": "học sinh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工人",
+        "pinyin": "gōngrén",
+        "meaningEn": "worker",
+        "meaningVi": "công nhân",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "经理",
+        "pinyin": "jīnglǐ",
+        "meaningEn": "manager",
+        "meaningVi": "giám đốc, quản lý",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "总经理",
+        "pinyin": "zǒngjīnglǐ",
+        "meaningEn": "general manager",
+        "meaningVi": "tổng giám đốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "副总经理",
+        "pinyin": "fù zǒng jīnglǐ",
+        "meaningEn": "deputy general manager",
+        "meaningVi": "phó tổng giám đốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "主管",
+        "pinyin": "zhǔguǎn",
+        "meaningEn": "supervisor",
+        "meaningVi": "chủ quản",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "组长",
+        "pinyin": "zǔzhǎng",
+        "meaningEn": "team leader",
+        "meaningVi": "tổ trưởng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "班长",
+        "pinyin": "bānzhǎng",
+        "meaningEn": "class monitor; shift leader",
+        "meaningVi": "lớp trưởng, ca trưởng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "线长",
+        "pinyin": "xiànzhǎng",
+        "meaningEn": "line leader",
+        "meaningVi": "chuyền trưởng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "部门",
+        "pinyin": "bùmén",
+        "meaningEn": "department",
+        "meaningVi": "bộ phận",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "职员",
+        "pinyin": "zhíyuán",
+        "meaningEn": "staff member",
+        "meaningVi": "nhân viên",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "员工",
+        "pinyin": "yuángōng",
+        "meaningEn": "employee",
+        "meaningVi": "công nhân viên, nhân viên",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "管理员",
+        "pinyin": "guǎnlǐyuán",
+        "meaningEn": "administrator; management staff",
+        "meaningVi": "nhân viên quản lý",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "翻译",
+        "pinyin": "fānyì",
+        "meaningEn": "translator; interpreter; to translate",
+        "meaningVi": "phiên dịch, dịch",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "文员",
+        "pinyin": "wényuán",
+        "meaningEn": "office clerk",
+        "meaningVi": "nhân viên văn phòng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "人事",
+        "pinyin": "rénshì",
+        "meaningEn": "human resources staff",
+        "meaningVi": "nhân viên nhân sự",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "财务",
+        "pinyin": "cáiwù",
+        "meaningEn": "finance; accounting staff",
+        "meaningVi": "nhân viên kế toán, tài vụ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "保安",
+        "pinyin": "bǎo'ān",
+        "meaningEn": "security guard",
+        "meaningVi": "nhân viên an ninh, bảo vệ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "保洁",
+        "pinyin": "bǎojié",
+        "meaningEn": "cleaning staff",
+        "meaningVi": "nhân viên vệ sinh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "技术员",
+        "pinyin": "jìshùyuán",
+        "meaningEn": "technician",
+        "meaningVi": "nhân viên kỹ thuật",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工程师",
+        "pinyin": "gōngchéngshī",
+        "meaningEn": "engineer",
+        "meaningVi": "kỹ sư",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "采购员",
+        "pinyin": "cǎigòuyuán",
+        "meaningEn": "purchasing staff",
+        "meaningVi": "nhân viên thu mua",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "的",
+        "pinyin": "de",
+        "meaningEn": "structural particle indicating possession or modification",
+        "meaningVi": "trợ từ kết cấu, biểu thị sở hữu hoặc bổ nghĩa",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁",
+        "pinyin": "shéi",
+        "meaningEn": "who",
+        "meaningVi": "ai",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大家",
+        "pinyin": "dàjiā",
+        "meaningEn": "everyone",
+        "meaningVi": "mọi người",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多",
+        "pinyin": "duō",
+        "meaningEn": "many; much; more",
+        "meaningVi": "nhiều",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多多",
+        "pinyin": "duōduō",
+        "meaningEn": "a lot; more",
+        "meaningVi": "nhiều hơn, nhiều nhiều",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "关照",
+        "pinyin": "guānzhào",
+        "meaningEn": "to look after; to take care of",
+        "meaningVi": "quan tâm, chiếu cố",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请客",
+        "pinyin": "qǐngkè",
+        "meaningEn": "to treat guests; to invite someone for a meal/drink",
+        "meaningVi": "mời khách, bao",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "饮料",
+        "pinyin": "yǐnliào",
+        "meaningEn": "beverage; drink",
+        "meaningVi": "đồ uống",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "水",
+        "pinyin": "shuǐ",
+        "meaningEn": "water",
+        "meaningVi": "nước",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "可乐",
+        "pinyin": "kělè",
+        "meaningEn": "cola",
+        "meaningVi": "coca",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "牛奶",
+        "pinyin": "niúnǎi",
+        "meaningEn": "milk",
+        "meaningVi": "sữa bò",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "奶茶",
+        "pinyin": "nǎichá",
+        "meaningEn": "milk tea",
+        "meaningVi": "trà sữa",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "酸奶",
+        "pinyin": "suānnǎi",
+        "meaningEn": "yogurt",
+        "meaningVi": "sữa chua",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "酒",
+        "pinyin": "jiǔ",
+        "meaningEn": "alcohol; liquor",
+        "meaningVi": "rượu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "啤酒",
+        "pinyin": "píjiǔ",
+        "meaningEn": "beer",
+        "meaningVi": "bia",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "咖啡",
+        "pinyin": "kāfēi",
+        "meaningEn": "coffee",
+        "meaningVi": "cà phê",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "果汁",
+        "pinyin": "guǒzhī",
+        "meaningEn": "fruit juice",
+        "meaningVi": "nước hoa quả",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "多少",
+        "pinyin": "duōshao",
+        "meaningEn": "how many; how much",
+        "meaningVi": "bao nhiêu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪个",
+        "pinyin": "nǎge",
+        "meaningEn": "which",
+        "meaningVi": "cái nào, bộ phận nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "父母",
+        "pinyin": "fùmǔ",
+        "meaningEn": "parents",
+        "meaningVi": "bố mẹ, cha mẹ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爸妈",
+        "pinyin": "bàmā",
+        "meaningEn": "dad and mom; parents",
+        "meaningVi": "bố mẹ",
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "那是你爸爸吗？",
+        "pinyin": "Nà shì nǐ bàba ma?",
+        "meaningEn": "Is that your father?",
+        "meaningVi": "Kia là bố bạn phải không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是不是你爸爸？",
+        "pinyin": "Nà shì bu shì nǐ bàba?",
+        "meaningEn": "Is that your father or not?",
+        "meaningVi": "Kia có phải là bố bạn không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是我爸爸。",
+        "pinyin": "Zhè shì wǒ bàba.",
+        "meaningEn": "This is my father.",
+        "meaningVi": "Đây là bố tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这不是我爸爸。",
+        "pinyin": "Zhè bú shì wǒ bàba.",
+        "meaningEn": "This is not my father.",
+        "meaningVi": "Đây không phải là bố tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这个人",
+        "pinyin": "zhè gè rén",
+        "meaningEn": "this person",
+        "meaningVi": "người này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这本书",
+        "pinyin": "zhè běn shū",
+        "meaningEn": "this book",
+        "meaningVi": "quyển sách này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "新老师",
+        "pinyin": "xīn lǎoshī",
+        "meaningEn": "new teacher",
+        "meaningVi": "giáo viên mới",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "王老师",
+        "pinyin": "Wáng lǎoshī",
+        "meaningEn": "Teacher Wang",
+        "meaningVi": "thầy/cô giáo Vương",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我公司",
+        "pinyin": "wǒ gōngsī",
+        "meaningEn": "my company",
+        "meaningVi": "công ty tôi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国人",
+        "pinyin": "Zhōngguó rén",
+        "meaningEn": "Chinese person",
+        "meaningVi": "người Trung Quốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "北宁公园",
+        "pinyin": "Běiníng gōngyuán",
+        "meaningEn": "Bac Ninh Park",
+        "meaningVi": "công viên Bắc Ninh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "公司的工人",
+        "pinyin": "gōngsī de gōngrén",
+        "meaningEn": "the company’s worker",
+        "meaningVi": "công nhân của công ty",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我的钱",
+        "pinyin": "wǒ de qián",
+        "meaningEn": "my money",
+        "meaningVi": "tiền của tôi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我家的茶",
+        "pinyin": "wǒjiā de chá",
+        "meaningEn": "my family’s tea",
+        "meaningVi": "trà của nhà tôi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "妈妈的生日",
+        "pinyin": "māma de shēngrì",
+        "meaningEn": "mother’s birthday",
+        "meaningVi": "sinh nhật của mẹ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是谁？",
+        "pinyin": "Nà shì shéi?",
+        "meaningEn": "Who is that?",
+        "meaningVi": "Kia là ai?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁是经理？",
+        "pinyin": "Shéi shì jīnglǐ?",
+        "meaningEn": "Who is the manager?",
+        "meaningVi": "Ai là giám đốc?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁是我们班的新老师？",
+        "pinyin": "Shéi shì wǒmen bān de xīn lǎoshī?",
+        "meaningEn": "Who is the new teacher of our class?",
+        "meaningVi": "Ai là giáo viên mới của lớp chúng ta?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁是我们公司的新翻译？",
+        "pinyin": "Shéi shì wǒmen gōngsī de xīn fānyì?",
+        "meaningEn": "Who is the new interpreter of our company?",
+        "meaningVi": "Ai là phiên dịch mới của công ty chúng ta?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请进",
+        "pinyin": "qǐng jìn",
+        "meaningEn": "Please come in.",
+        "meaningVi": "Mời vào.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请坐",
+        "pinyin": "qǐng zuò",
+        "meaningEn": "Please sit down.",
+        "meaningVi": "Mời ngồi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请喝茶",
+        "pinyin": "qǐng hē chá",
+        "meaningEn": "Please drink tea.",
+        "meaningVi": "Mời uống trà.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请问",
+        "pinyin": "qǐng wèn",
+        "meaningEn": "Excuse me; may I ask",
+        "meaningVi": "xin hỏi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我是新职员，请大家多多关照。",
+        "pinyin": "Wǒ shì xīn zhíyuán, qǐng dàjiā duōduō guānzhào.",
+        "meaningEn": "I am a new employee, please take care of me.",
+        "meaningVi": "Tôi là nhân viên mới, mong mọi người quan tâm nhiều hơn.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "最近你工作忙吗？",
+        "pinyin": "Zuìjìn nǐ gōngzuò máng ma?",
+        "meaningEn": "Have you been busy with work recently?",
+        "meaningVi": "Gần đây công việc bạn bận không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你在哪里工作？",
+        "pinyin": "Nǐ zài nǎlǐ gōngzuò?",
+        "meaningEn": "Where do you work?",
+        "meaningVi": "Bạn làm việc ở đâu?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我在三星公司工作。",
+        "pinyin": "Wǒ zài Sānxīng gōngsī gōngzuò.",
+        "meaningEn": "I work at Samsung company.",
+        "meaningVi": "Tôi làm việc ở công ty Samsung.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你身体好吗？",
+        "pinyin": "Nǐ shēntǐ hǎo ma?",
+        "meaningEn": "Are you in good health?",
+        "meaningVi": "Bạn khỏe không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你爸妈身体好吗？",
+        "pinyin": "Nǐ bàmā shēntǐ hǎo ma?",
+        "meaningEn": "Are your parents healthy?",
+        "meaningVi": "Bố mẹ bạn khỏe không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是王老师，这是我爸爸。",
+        "pinyin": "Zhè shì Wáng lǎoshī, zhè shì wǒ bàba.",
+        "meaningEn": "This is Teacher Wang, and this is my father.",
+        "meaningVi": "Đây là thầy giáo Vương, đây là bố tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "王老师，您好！",
+        "pinyin": "Wáng lǎoshī, nín hǎo!",
+        "meaningEn": "Hello, Teacher Wang!",
+        "meaningVi": "Chào thầy giáo Vương!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您好！请进！请坐！请喝茶！",
+        "pinyin": "Nín hǎo! Qǐng jìn! Qǐng zuò! Qǐng hē chá!",
+        "meaningEn": "Hello! Please come in! Please sit down! Please drink tea!",
+        "meaningVi": "Xin chào! Mời vào! Mời ngồi! Mời uống trà!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谢谢！",
+        "pinyin": "Xièxie!",
+        "meaningEn": "Thank you!",
+        "meaningVi": "Cảm ơn!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不客气！",
+        "pinyin": "Bú kèqi!",
+        "meaningEn": "You are welcome!",
+        "meaningVi": "Không có gì!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作忙吗？",
+        "pinyin": "Gōngzuò máng ma?",
+        "meaningEn": "Is work busy?",
+        "meaningVi": "Công việc bận không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "不太忙。",
+        "pinyin": "Bú tài máng.",
+        "meaningEn": "Not too busy.",
+        "meaningVi": "Không bận lắm.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "身体好吗？",
+        "pinyin": "Shēntǐ hǎo ma?",
+        "meaningEn": "Are you healthy?",
+        "meaningVi": "Sức khỏe tốt không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很好！",
+        "pinyin": "Hěn hǎo!",
+        "meaningEn": "Very good!",
+        "meaningVi": "Rất tốt!",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你公司有多少员工？",
+        "pinyin": "Nǐ gōngsī yǒu duōshao yuángōng?",
+        "meaningEn": "How many employees does your company have?",
+        "meaningVi": "Công ty bạn có bao nhiêu công nhân viên?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你在哪个部门工作？",
+        "pinyin": "Nǐ zài nǎge bùmén gōngzuò?",
+        "meaningEn": "Which department do you work in?",
+        "meaningVi": "Bạn làm việc ở bộ phận nào?",
+        "level": "HSK1"
+      }
+    ]
+  }
+]
