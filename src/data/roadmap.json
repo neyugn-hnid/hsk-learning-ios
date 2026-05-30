@@ -5185,5 +5185,1053 @@
         "level": "HSK1"
       }
     ]
+  },
+  {
+    "title": "Buổi 6: Giới thiệu bản thân và học tiếng Hán",
+    "phase": "HSK1",
+    "orderNo": 6,
+    "description": "Học cách giới thiệu bản thân bằng tiếng Trung, bao gồm họ tên, quốc tịch, quê quán, năm sinh, tuổi, công việc, lý do học tiếng Trung và sở thích.",
+    "objectives": [
+      "Biết hỏi và trả lời họ tên bằng tiếng Trung",
+      "Biết hỏi và trả lời là người nước nào",
+      "Biết nói đến từ đâu và là người ở đâu",
+      "Biết hỏi và trả lời năm sinh, tuổi",
+      "Biết hỏi học gì và nhận xét về tiếng Hán, chữ Hán, phát âm",
+      "Biết hỏi đồ vật là sách hay tạp chí của ai",
+      "Biết giới thiệu bản thân bằng một đoạn văn ngắn"
+    ],
+    "vocabulary": [
+      {
+        "chinese": "请问",
+        "pinyin": "qǐngwèn",
+        "meaningEn": "excuse me; may I ask",
+        "meaningVi": "xin hỏi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "问",
+        "pinyin": "wèn",
+        "meaningEn": "to ask",
+        "meaningVi": "hỏi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "回答",
+        "pinyin": "huídá",
+        "meaningEn": "to answer",
+        "meaningVi": "trả lời",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "贵姓",
+        "pinyin": "guìxìng",
+        "meaningEn": "your honorable surname",
+        "meaningVi": "quý danh, quý họ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "贵",
+        "pinyin": "guì",
+        "meaningEn": "expensive; honorable",
+        "meaningVi": "đắt, quý",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "姓",
+        "pinyin": "xìng",
+        "meaningEn": "surname; to be surnamed",
+        "meaningVi": "họ, mang họ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "叫",
+        "pinyin": "jiào",
+        "meaningEn": "to be called; to call",
+        "meaningVi": "gọi, tên là",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "名字",
+        "pinyin": "míngzi",
+        "meaningEn": "name",
+        "meaningVi": "tên",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪",
+        "pinyin": "nǎ",
+        "meaningEn": "which",
+        "meaningVi": "nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪儿",
+        "pinyin": "nǎr",
+        "meaningEn": "where",
+        "meaningVi": "đâu, chỗ nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪里",
+        "pinyin": "nǎlǐ",
+        "meaningEn": "where",
+        "meaningVi": "đâu, chỗ nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "国",
+        "pinyin": "guó",
+        "meaningEn": "country",
+        "meaningVi": "nước, quốc gia",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国",
+        "pinyin": "Zhōngguó",
+        "meaningEn": "China",
+        "meaningVi": "Trung Quốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "德国",
+        "pinyin": "Déguó",
+        "meaningEn": "Germany",
+        "meaningVi": "nước Đức",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "俄国",
+        "pinyin": "Éguó",
+        "meaningEn": "Russia",
+        "meaningVi": "nước Nga",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "法国",
+        "pinyin": "Fǎguó",
+        "meaningEn": "France",
+        "meaningVi": "nước Pháp",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "韩国",
+        "pinyin": "Hánguó",
+        "meaningEn": "South Korea",
+        "meaningVi": "Hàn Quốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "美国",
+        "pinyin": "Měiguó",
+        "meaningEn": "America; the United States",
+        "meaningVi": "nước Mỹ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日本",
+        "pinyin": "Rìběn",
+        "meaningEn": "Japan",
+        "meaningVi": "Nhật Bản",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "英国",
+        "pinyin": "Yīngguó",
+        "meaningEn": "England; Britain",
+        "meaningVi": "nước Anh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "越南",
+        "pinyin": "Yuènán",
+        "meaningEn": "Vietnam",
+        "meaningVi": "Việt Nam",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "人",
+        "pinyin": "rén",
+        "meaningEn": "person; people",
+        "meaningVi": "người",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中国人",
+        "pinyin": "Zhōngguó rén",
+        "meaningEn": "Chinese person",
+        "meaningVi": "người Trung Quốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "美国人",
+        "pinyin": "Měiguó rén",
+        "meaningEn": "American person",
+        "meaningVi": "người Mỹ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "越南人",
+        "pinyin": "Yuènán rén",
+        "meaningEn": "Vietnamese person",
+        "meaningVi": "người Việt Nam",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学习",
+        "pinyin": "xuéxí",
+        "meaningEn": "to study; to learn",
+        "meaningVi": "học tập",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉语",
+        "pinyin": "Hànyǔ",
+        "meaningEn": "Chinese language",
+        "meaningVi": "tiếng Hán, tiếng Trung",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉字",
+        "pinyin": "Hànzì",
+        "meaningEn": "Chinese characters",
+        "meaningVi": "chữ Hán",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "发音",
+        "pinyin": "fāyīn",
+        "meaningEn": "pronunciation",
+        "meaningVi": "phát âm",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么",
+        "pinyin": "shénme",
+        "meaningEn": "what",
+        "meaningVi": "gì, cái gì",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "书",
+        "pinyin": "shū",
+        "meaningEn": "book",
+        "meaningVi": "sách",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "谁",
+        "pinyin": "shéi",
+        "meaningEn": "who",
+        "meaningVi": "ai",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "的",
+        "pinyin": "de",
+        "meaningEn": "structural particle indicating possession or modification",
+        "meaningVi": "trợ từ kết cấu, biểu thị sở hữu hoặc bổ nghĩa",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那",
+        "pinyin": "nà",
+        "meaningEn": "that",
+        "meaningVi": "kia, đó",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "杂志",
+        "pinyin": "zázhì",
+        "meaningEn": "magazine",
+        "meaningVi": "tạp chí",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中文",
+        "pinyin": "Zhōngwén",
+        "meaningEn": "Chinese written language",
+        "meaningVi": "tiếng Trung, chữ Trung",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "阿拉伯文",
+        "pinyin": "Ālābówén",
+        "meaningEn": "Arabic written language",
+        "meaningVi": "chữ Ả Rập",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "德文",
+        "pinyin": "Déwén",
+        "meaningEn": "German written language",
+        "meaningVi": "chữ Đức, tiếng Đức viết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "俄文",
+        "pinyin": "Éwén",
+        "meaningEn": "Russian written language",
+        "meaningVi": "chữ Nga, tiếng Nga viết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "法文",
+        "pinyin": "Fǎwén",
+        "meaningEn": "French written language",
+        "meaningVi": "chữ Pháp, tiếng Pháp viết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "韩文",
+        "pinyin": "Hánwén",
+        "meaningEn": "Korean written language",
+        "meaningVi": "chữ Hàn, tiếng Hàn viết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "日文",
+        "pinyin": "Rìwén",
+        "meaningEn": "Japanese written language",
+        "meaningVi": "chữ Nhật, tiếng Nhật viết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "西班牙文",
+        "pinyin": "Xībānyáwén",
+        "meaningEn": "Spanish written language",
+        "meaningVi": "chữ Tây Ban Nha",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "英文",
+        "pinyin": "Yīngwén",
+        "meaningEn": "English written language",
+        "meaningVi": "chữ Anh, tiếng Anh viết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "朋友",
+        "pinyin": "péngyou",
+        "meaningEn": "friend",
+        "meaningVi": "bạn bè",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "男朋友",
+        "pinyin": "nán péngyou",
+        "meaningEn": "boyfriend",
+        "meaningVi": "bạn trai",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "女朋友",
+        "pinyin": "nǚ péngyou",
+        "meaningEn": "girlfriend",
+        "meaningVi": "bạn gái",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "好朋友",
+        "pinyin": "hǎo péngyou",
+        "meaningEn": "good friend",
+        "meaningVi": "bạn tốt",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "麦克",
+        "pinyin": "Màikè",
+        "meaningEn": "Mike",
+        "meaningVi": "Mike",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "张东",
+        "pinyin": "Zhāng Dōng",
+        "meaningEn": "Zhang Dong",
+        "meaningVi": "Trương Đông",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大家好",
+        "pinyin": "dàjiā hǎo",
+        "meaningEn": "Hello everyone.",
+        "meaningVi": "Chào mọi người.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "介绍",
+        "pinyin": "jièshào",
+        "meaningEn": "to introduce",
+        "meaningVi": "giới thiệu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "一下",
+        "pinyin": "yíxià",
+        "meaningEn": "a bit; for a moment",
+        "meaningVi": "một chút, một lát",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "爱好",
+        "pinyin": "àihào",
+        "meaningEn": "hobby",
+        "meaningVi": "sở thích",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "看书",
+        "pinyin": "kàn shū",
+        "meaningEn": "to read books",
+        "meaningVi": "đọc sách, xem sách",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "认识",
+        "pinyin": "rènshi",
+        "meaningEn": "to know; to meet",
+        "meaningVi": "quen biết",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "高兴",
+        "pinyin": "gāoxìng",
+        "meaningEn": "happy; glad",
+        "meaningVi": "vui, vui mừng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "省",
+        "pinyin": "shěng",
+        "meaningEn": "province",
+        "meaningVi": "tỉnh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "生产部门",
+        "pinyin": "shēngchǎn bùmén",
+        "meaningEn": "production department",
+        "meaningVi": "bộ phận sản xuất",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "质量部门",
+        "pinyin": "zhìliàng bùmén",
+        "meaningEn": "quality department",
+        "meaningVi": "bộ phận chất lượng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "品保部门",
+        "pinyin": "pǐnbǎo bùmén",
+        "meaningEn": "quality assurance department",
+        "meaningVi": "bộ phận đảm bảo chất lượng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "技术部门",
+        "pinyin": "jìshù bùmén",
+        "meaningEn": "technical department",
+        "meaningVi": "bộ phận kỹ thuật",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "行政部门",
+        "pinyin": "xíngzhèng bùmén",
+        "meaningEn": "administrative department",
+        "meaningVi": "bộ phận hành chính",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "人事部门",
+        "pinyin": "rénshì bùmén",
+        "meaningEn": "human resources department",
+        "meaningVi": "bộ phận nhân sự",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "采购部门",
+        "pinyin": "cǎigòu bùmén",
+        "meaningEn": "purchasing department",
+        "meaningVi": "bộ phận thu mua",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "主要",
+        "pinyin": "zhǔyào",
+        "meaningEn": "main; mainly",
+        "meaningVi": "chủ yếu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "电子零件",
+        "pinyin": "diànzǐ língjiàn",
+        "meaningEn": "electronic components",
+        "meaningVi": "linh kiện điện tử",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "填写报表",
+        "pinyin": "tiánxiě bàobiǎo",
+        "meaningEn": "to fill in reports",
+        "meaningVi": "điền bảng biểu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工资",
+        "pinyin": "gōngzī",
+        "meaningEn": "salary; wages",
+        "meaningVi": "lương",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "青恒汉语中心",
+        "pinyin": "Qīnghéng Hànyǔ Zhōngxīn",
+        "meaningEn": "Qingheng Chinese Center",
+        "meaningVi": "Trung tâm tiếng Trung Thanh Hằng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "以后",
+        "pinyin": "yǐhòu",
+        "meaningEn": "after; later",
+        "meaningVi": "sau khi, sau này",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "找",
+        "pinyin": "zhǎo",
+        "meaningEn": "to look for; to find",
+        "meaningVi": "tìm",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "升职",
+        "pinyin": "shēngzhí",
+        "meaningEn": "to get promoted",
+        "meaningVi": "thăng chức",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "加薪",
+        "pinyin": "jiāxīn",
+        "meaningEn": "to get a raise",
+        "meaningVi": "tăng lương",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "和中国同事沟通",
+        "pinyin": "hé Zhōngguó tóngshì gōutōng",
+        "meaningEn": "to communicate with Chinese colleagues",
+        "meaningVi": "giao tiếp với đồng nghiệp Trung Quốc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "工作需要",
+        "pinyin": "gōngzuò xūyào",
+        "meaningEn": "work requirement",
+        "meaningVi": "công việc yêu cầu",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "想做生意",
+        "pinyin": "xiǎng zuò shēngyì",
+        "meaningEn": "to want to do business",
+        "meaningVi": "muốn kinh doanh, buôn bán",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "大学毕业需要考外语证书",
+        "pinyin": "dàxué bìyè xūyào kǎo wàiyǔ zhèngshū",
+        "meaningEn": "graduation requires taking a foreign language certificate exam",
+        "meaningVi": "tốt nghiệp đại học cần thi chứng chỉ ngoại ngữ",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "听音乐",
+        "pinyin": "tīng yīnyuè",
+        "meaningEn": "to listen to music",
+        "meaningVi": "nghe nhạc",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "看电影",
+        "pinyin": "kàn diànyǐng",
+        "meaningEn": "to watch movies",
+        "meaningVi": "xem phim điện ảnh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "看电视剧",
+        "pinyin": "kàn diànshìjù",
+        "meaningEn": "to watch TV series",
+        "meaningVi": "xem phim truyền hình",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "看电视",
+        "pinyin": "kàn diànshì",
+        "meaningEn": "to watch TV",
+        "meaningVi": "xem tivi",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "上网",
+        "pinyin": "shàngwǎng",
+        "meaningEn": "to go online",
+        "meaningVi": "lên mạng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "跟朋友聊天",
+        "pinyin": "gēn péngyou liáotiān",
+        "meaningEn": "to chat with friends",
+        "meaningVi": "nói chuyện với bạn bè",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "打羽毛球",
+        "pinyin": "dǎ yǔmáoqiú",
+        "meaningEn": "to play badminton",
+        "meaningVi": "đánh cầu lông",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "购物",
+        "pinyin": "gòuwù",
+        "meaningEn": "shopping",
+        "meaningVi": "mua sắm",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "踢足球",
+        "pinyin": "tī zúqiú",
+        "meaningEn": "to play football",
+        "meaningVi": "đá bóng",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "运动",
+        "pinyin": "yùndòng",
+        "meaningEn": "sport; exercise",
+        "meaningVi": "vận động, thể thao",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "做饭",
+        "pinyin": "zuòfàn",
+        "meaningEn": "to cook",
+        "meaningVi": "nấu ăn",
+        "level": "HSK1"
+      }
+    ],
+    "phrases": [
+      {
+        "chinese": "请问，您贵姓？",
+        "pinyin": "Qǐngwèn, nín guìxìng?",
+        "meaningEn": "Excuse me, what is your surname?",
+        "meaningVi": "Xin hỏi, quý danh ngài là gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你姓什么？",
+        "pinyin": "Nǐ xìng shénme?",
+        "meaningEn": "What is your surname?",
+        "meaningVi": "Bạn họ gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我姓阮。",
+        "pinyin": "Wǒ xìng Ruǎn.",
+        "meaningEn": "My surname is Nguyen.",
+        "meaningVi": "Tôi họ Nguyễn.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "meaningEn": "What is your name?",
+        "meaningVi": "Bạn tên là gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我叫阮氏青恒。",
+        "pinyin": "Wǒ jiào Ruǎn Shì Qīng Héng.",
+        "meaningEn": "My name is Nguyen Thi Thanh Hang.",
+        "meaningVi": "Tôi tên là Nguyễn Thị Thanh Hằng.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我叫阿恒。",
+        "pinyin": "Wǒ jiào Ā Héng.",
+        "meaningEn": "My name is A Hang.",
+        "meaningVi": "Tôi tên là Hằng.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪年",
+        "pinyin": "nǎ nián",
+        "meaningEn": "which year",
+        "meaningVi": "năm nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪国",
+        "pinyin": "nǎ guó",
+        "meaningEn": "which country",
+        "meaningVi": "nước nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "哪国人",
+        "pinyin": "nǎ guó rén",
+        "meaningEn": "person from which country",
+        "meaningVi": "người nước nào",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你是哪国人？",
+        "pinyin": "Nǐ shì nǎ guó rén?",
+        "meaningEn": "What country are you from?",
+        "meaningVi": "Bạn là người nước nào?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你来自哪里？",
+        "pinyin": "Nǐ láizì nǎlǐ?",
+        "meaningEn": "Where are you from?",
+        "meaningVi": "Bạn đến từ đâu?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你从哪里来？",
+        "pinyin": "Nǐ cóng nǎlǐ lái?",
+        "meaningEn": "Where do you come from?",
+        "meaningVi": "Bạn từ đâu đến?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我来自北宁。",
+        "pinyin": "Wǒ láizì Běiníng.",
+        "meaningEn": "I come from Bac Ninh.",
+        "meaningVi": "Tôi đến từ Bắc Ninh.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我从北宁来。",
+        "pinyin": "Wǒ cóng Běiníng lái.",
+        "meaningEn": "I come from Bac Ninh.",
+        "meaningVi": "Tôi từ Bắc Ninh đến.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你是哪里人？",
+        "pinyin": "Nǐ shì nǎlǐ rén?",
+        "meaningEn": "Where are you from?",
+        "meaningVi": "Bạn là người ở đâu?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我是北宁人。",
+        "pinyin": "Wǒ shì Běiníng rén.",
+        "meaningEn": "I am from Bac Ninh.",
+        "meaningVi": "Tôi là người Bắc Ninh.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你哪年出生？",
+        "pinyin": "Nǐ nǎ nián chūshēng?",
+        "meaningEn": "What year were you born?",
+        "meaningVi": "Bạn sinh năm nào?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我2001年出生。",
+        "pinyin": "Wǒ 2001 nián chūshēng.",
+        "meaningEn": "I was born in 2001.",
+        "meaningVi": "Tôi sinh năm 2001.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你几岁？",
+        "pinyin": "Nǐ jǐ suì?",
+        "meaningEn": "How old are you?",
+        "meaningVi": "Bạn mấy tuổi?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你多少岁？",
+        "pinyin": "Nǐ duōshao suì?",
+        "meaningEn": "How old are you?",
+        "meaningVi": "Bạn bao nhiêu tuổi?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "您多大年纪了？",
+        "pinyin": "Nín duō dà niánjì le?",
+        "meaningEn": "How old are you?",
+        "meaningVi": "Ông/bà bao nhiêu tuổi ạ?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你多大？",
+        "pinyin": "Nǐ duō dà?",
+        "meaningEn": "How old are you?",
+        "meaningVi": "Bạn bao nhiêu tuổi?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我21岁。",
+        "pinyin": "Wǒ 21 suì.",
+        "meaningEn": "I am 21 years old.",
+        "meaningVi": "Tôi 21 tuổi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你学习什么？",
+        "pinyin": "Nǐ xuéxí shénme?",
+        "meaningEn": "What do you study?",
+        "meaningVi": "Bạn học gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "学汉语难吗？",
+        "pinyin": "Xué Hànyǔ nán ma?",
+        "meaningEn": "Is studying Chinese difficult?",
+        "meaningVi": "Học tiếng Trung khó không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "你觉得汉语的发音难吗？",
+        "pinyin": "Nǐ juéde Hànyǔ de fāyīn nán ma?",
+        "meaningEn": "Do you think Chinese pronunciation is difficult?",
+        "meaningVi": "Bạn cảm thấy phát âm tiếng Trung khó không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那汉字呢？",
+        "pinyin": "Nà Hànzì ne?",
+        "meaningEn": "What about Chinese characters?",
+        "meaningVi": "Thế chữ Hán thì sao?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是谁的书？",
+        "pinyin": "Zhè shì shéi de shū?",
+        "meaningEn": "Whose book is this?",
+        "meaningVi": "Đây là sách của ai?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是谁的杂志？",
+        "pinyin": "Nà shì shéi de zázhì?",
+        "meaningEn": "Whose magazine is that?",
+        "meaningVi": "Kia là tạp chí của ai?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "买什么东西",
+        "pinyin": "mǎi shénme dōngxi",
+        "meaningEn": "buy what things",
+        "meaningVi": "mua đồ gì",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "吃什么？",
+        "pinyin": "Chī shénme?",
+        "meaningEn": "What to eat?",
+        "meaningVi": "Ăn gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "喝什么？",
+        "pinyin": "Hē shénme?",
+        "meaningEn": "What to drink?",
+        "meaningVi": "Uống gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么书？",
+        "pinyin": "Shénme shū?",
+        "meaningEn": "What book?",
+        "meaningVi": "Sách gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "什么杂志？",
+        "pinyin": "Shénme zázhì?",
+        "meaningEn": "What magazine?",
+        "meaningVi": "Tạp chí gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "中文书",
+        "pinyin": "Zhōngwén shū",
+        "meaningEn": "Chinese book",
+        "meaningVi": "sách tiếng Trung",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "英文杂志",
+        "pinyin": "Yīngwén zázhì",
+        "meaningEn": "English magazine",
+        "meaningVi": "tạp chí tiếng Anh",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "请问您贵姓？",
+        "pinyin": "Qǐngwèn nín guìxìng?",
+        "meaningEn": "May I ask your surname?",
+        "meaningVi": "Xin hỏi quý danh ngài là gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我姓张。",
+        "pinyin": "Wǒ xìng Zhāng.",
+        "meaningEn": "My surname is Zhang.",
+        "meaningVi": "Tôi họ Trương.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我叫张东。",
+        "pinyin": "Wǒ jiào Zhāng Dōng.",
+        "meaningEn": "My name is Zhang Dong.",
+        "meaningVi": "Tôi tên là Trương Đông.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "meaningEn": "I am Chinese.",
+        "meaningVi": "Tôi là người Trung Quốc.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我是美国人。",
+        "pinyin": "Wǒ shì Měiguó rén.",
+        "meaningEn": "I am American.",
+        "meaningVi": "Tôi là người Mỹ.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我学习汉语。",
+        "pinyin": "Wǒ xuéxí Hànyǔ.",
+        "meaningEn": "I study Chinese.",
+        "meaningVi": "Tôi học tiếng Hán.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉语难吗？",
+        "pinyin": "Hànyǔ nán ma?",
+        "meaningEn": "Is Chinese difficult?",
+        "meaningVi": "Tiếng Hán khó không?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "汉字很难，发音不太难。",
+        "pinyin": "Hànzì hěn nán, fāyīn bú tài nán.",
+        "meaningEn": "Chinese characters are very difficult, pronunciation is not too difficult.",
+        "meaningVi": "Chữ Hán rất khó, phát âm không khó lắm.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是什么？",
+        "pinyin": "Zhè shì shénme?",
+        "meaningEn": "What is this?",
+        "meaningVi": "Đây là cái gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是书。",
+        "pinyin": "Zhè shì shū.",
+        "meaningEn": "This is a book.",
+        "meaningVi": "Đây là sách.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是什么书？",
+        "pinyin": "Zhè shì shénme shū?",
+        "meaningEn": "What kind of book is this?",
+        "meaningVi": "Đây là sách gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是中文书。",
+        "pinyin": "Zhè shì Zhōngwén shū.",
+        "meaningEn": "This is a Chinese book.",
+        "meaningVi": "Đây là sách tiếng Trung.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "这是老师的书。",
+        "pinyin": "Zhè shì lǎoshī de shū.",
+        "meaningEn": "This is the teacher’s book.",
+        "meaningVi": "Đây là sách của giáo viên.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是什么？",
+        "pinyin": "Nà shì shénme?",
+        "meaningEn": "What is that?",
+        "meaningVi": "Kia là cái gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是杂志。",
+        "pinyin": "Nà shì zázhì.",
+        "meaningEn": "That is a magazine.",
+        "meaningVi": "Kia là tạp chí.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是什么杂志？",
+        "pinyin": "Nà shì shénme zázhì?",
+        "meaningEn": "What kind of magazine is that?",
+        "meaningVi": "Kia là tạp chí gì?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是英文杂志。",
+        "pinyin": "Nà shì Yīngwén zázhì.",
+        "meaningEn": "That is an English magazine.",
+        "meaningVi": "Kia là tạp chí tiếng Anh.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是谁的杂志？",
+        "pinyin": "Nà shì shéi de zázhì?",
+        "meaningEn": "Whose magazine is that?",
+        "meaningVi": "Kia là tạp chí của ai?",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "那是我朋友的杂志。",
+        "pinyin": "Nà shì wǒ péngyou de zázhì.",
+        "meaningEn": "That is my friend’s magazine.",
+        "meaningVi": "Kia là tạp chí của bạn tôi.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "我来介绍一下。",
+        "pinyin": "Wǒ lái jièshào yíxià.",
+        "meaningEn": "Let me introduce myself briefly.",
+        "meaningVi": "Để tôi giới thiệu một chút.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "认识你们我很高兴。",
+        "pinyin": "Rènshi nǐmen wǒ hěn gāoxìng.",
+        "meaningEn": "I am very happy to know you.",
+        "meaningVi": "Tôi rất vui được quen biết các bạn.",
+        "level": "HSK1"
+      },
+      {
+        "chinese": "很高兴认识你们。",
+        "pinyin": "Hěn gāoxìng rènshi nǐmen.",
+        "meaningEn": "Nice to meet you.",
+        "meaningVi": "Rất vui được quen biết các bạn.",
+        "level": "HSK1"
+      }
+    ]
   }
 ]
