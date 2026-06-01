@@ -1,6 +1,8 @@
 import * as FileSystem from "expo-file-system";
 import bundledLessonsData from "@/data/lessons.json";
 import bundledRoadmapData from "@/data/roadmap.json";
+import bundledHsk20Data from "@/data/hsk2.0.json";
+import bundledHsk30Data from "@/data/hsk3.0.json";
 import { getStoredUsers, setStoredUsers } from "@/lib/storage";
 import type {
   LearningStats,
@@ -41,6 +43,19 @@ type OfflineRoadmap = {
   materials: string[];
   vocabulary: Vocabulary[];
   phrases: Vocabulary[];
+};
+
+type OfflineStructuredLesson = {
+  id: string;
+  title: string;
+  description?: string | null;
+  phase: string;
+  level: string;
+  orderNo: number;
+  objectives: string[];
+  vocabularies: Vocabulary[];
+  grammars: LessonDetail["grammars"];
+  quizzes: QuizQuestion[];
 };
 
 const defaultUsers: LocalUser[] = [
@@ -158,6 +173,56 @@ function normalizeRoadmap(raw: unknown): OfflineRoadmap[] {
   }));
 }
 
+function normalizeStructuredLessons(raw: unknown, label: string, idPrefix: string): OfflineStructuredLesson[] {
+  return ensureArrayPayload(raw, label).map((lesson, lessonIndex) => {
+    const phase = String(lesson.phase ?? label);
+    const orderNo = Number(lesson.orderNo ?? lessonIndex + 1);
+    const normalizedPhase = normalizeText(phase).replace(/[^a-z0-9]+/g, "-");
+
+    return {
+      id: String(lesson.id ?? `${idPrefix}-${normalizedPhase}-${lessonIndex + 1}`),
+      title: String(lesson.title ?? `Bài ${orderNo}`),
+      description: lesson.description == null ? null : String(lesson.description),
+      phase,
+      level: String(lesson.level ?? phase),
+      orderNo,
+      objectives: Array.isArray(lesson.objectives) ? lesson.objectives.map((value) => String(value)) : [],
+      vocabularies: Array.isArray(lesson.vocabulary)
+        ? lesson.vocabulary.map((item, vocabIndex) =>
+            mapVocabulary(item as RawRow, `${idPrefix}-vocab-${lessonIndex}-${vocabIndex}`),
+          )
+        : [],
+      grammars: Array.isArray(lesson.grammars)
+        ? lesson.grammars.map((item, grammarIndex) => {
+            const row = item as RawRow;
+            return {
+              id: `${idPrefix}-grammar-${lessonIndex}-${grammarIndex}`,
+              title: String(row.title ?? ""),
+              structure: String(row.structure ?? ""),
+              explanation: String(row.explanation ?? ""),
+              example: row.example == null ? null : String(row.example),
+              meaning: row.meaning == null ? null : String(row.meaning),
+            };
+          })
+        : [],
+      quizzes: Array.isArray(lesson.quizzes)
+        ? lesson.quizzes.map((item, quizIndex) => {
+            const row = item as RawRow;
+            return {
+              id: `${idPrefix}-quiz-${lessonIndex}-${quizIndex}`,
+              type: String(row.type ?? "MEANING") as QuizQuestion["type"],
+              question: String(row.question ?? ""),
+              promptMeaning: row.promptMeaning == null ? null : String(row.promptMeaning),
+              promptPinyin: row.promptPinyin == null ? null : String(row.promptPinyin),
+              options: Array.isArray(row.options) ? row.options.map((option) => String(option)) : [],
+              answer: String(row.answer ?? ""),
+            };
+          })
+        : [],
+    };
+  });
+}
+
 async function loadUsers() {
   const stored = await getStoredUsers();
   if (!stored) {
@@ -188,11 +253,15 @@ async function readImportedJson(uri: string) {
   const info = await FileSystem.getInfoAsync(uri);
   if (!info.exists) return null;
 
-  const content = await FileSystem.readAsStringAsync(uri, {
-    encoding: FileSystem.EncodingType.UTF8,
-  });
+  try {
+    const content = await FileSystem.readAsStringAsync(uri, {
+      encoding: FileSystem.EncodingType.UTF8,
+    });
 
-  return JSON.parse(content) as unknown;
+    return JSON.parse(content) as unknown;
+  } catch {
+    return null;
+  }
 }
 
 async function writeImportedJson(uri: string, value: unknown) {
@@ -213,6 +282,14 @@ async function getLessonsDataset() {
 async function getRoadmapDataset() {
   const imported = await readImportedJson(roadmapImportUri);
   return normalizeRoadmap(imported ?? bundledRoadmapData);
+}
+
+function getHsk30Dataset() {
+  return normalizeStructuredLessons(bundledHsk30Data, "File HSK 3.0", "hsk30");
+}
+
+function getHsk20Dataset() {
+  return normalizeStructuredLessons(bundledHsk20Data, "File HSK 2.0", "hsk20");
 }
 
 export async function getOfflineDataStatus() {
@@ -390,9 +467,64 @@ export async function fetchLessons(params?: { level?: string; q?: string }) {
   return { lessons };
 }
 
+export async function fetchHsk20Lessons(params?: { level?: string; q?: string }) {
+  const normalizedQuery = normalizeText(params?.q || "");
+  const source = getHsk20Dataset();
+  const lessons = source
+    .filter((item) => (params?.level ? item.level === params.level || item.phase === params.level : true))
+    .filter((item) => {
+      if (!normalizedQuery) return true;
+      return (
+        normalizeText(item.title).includes(normalizedQuery) ||
+        normalizeText(item.description || "").includes(normalizedQuery)
+      );
+    })
+    .map<LessonSummary>((item) => ({
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      level: item.level,
+      orderNo: item.orderNo,
+      vocabularyCount: item.vocabularies.length,
+      quizCount: item.quizzes.length,
+    }));
+
+  return { lessons };
+}
+
+export async function fetchHsk30Lessons(params?: { level?: string; q?: string }) {
+  const normalizedQuery = normalizeText(params?.q || "");
+  const source = getHsk30Dataset();
+  const lessons = source
+    .filter((item) => (params?.level ? item.level === params.level || item.phase === params.level : true))
+    .filter((item) => {
+      if (!normalizedQuery) return true;
+      return (
+        normalizeText(item.title).includes(normalizedQuery) ||
+        normalizeText(item.description || "").includes(normalizedQuery)
+      );
+    })
+    .map<LessonSummary>((item) => ({
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      level: item.level,
+      orderNo: item.orderNo,
+      vocabularyCount: item.vocabularies.length,
+      quizCount: item.quizzes.length,
+    }));
+
+  return { lessons };
+}
+
 export async function fetchLessonDetail(id: string) {
   const lessons = await getLessonsDataset();
-  const lesson = lessons.find((item) => item.id === id);
+  const hsk20Lessons = getHsk20Dataset();
+  const hsk30Lessons = getHsk30Dataset();
+  const lesson =
+    lessons.find((item) => item.id === id) ??
+    hsk20Lessons.find((item) => item.id === id) ??
+    hsk30Lessons.find((item) => item.id === id);
   if (!lesson) {
     throw new Error("Không tìm thấy bài học.");
   }

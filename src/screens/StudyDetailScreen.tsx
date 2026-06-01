@@ -1,5 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
+import { Audio } from "expo-av";
 import * as Speech from "expo-speech";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -9,6 +10,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  Vibration,
   View,
 } from "react-native";
 import { APP_COLORS } from "@/config";
@@ -17,9 +19,29 @@ import { fetchLessonDetail } from "@/lib/api";
 import { RootStackParamList } from "@/navigation/AppNavigator";
 import type { LessonDetail } from "@/types";
 
-type Props = NativeStackScreenProps<RootStackParamList, "LessonDetail">;
+type Props = NativeStackScreenProps<RootStackParamList, "StudyDetail">;
+type QuizMode = "meaning" | "pinyin" | "recognition";
+type PracticeQuestion = {
+  type: "MEANING" | "PINYIN" | "CHAR_RECOGNITION" | "HANZI_WRITING";
+  question: string;
+  options: string[];
+  answer: string;
+  promptPinyin?: string | null;
+};
 
-export function LessonDetailScreen({ route }: Props) {
+const CORRECT_SOUND_URI =
+  "data:audio/wav;base64,UklGRiQPAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAPAAAAABkAXwDBACYBcgGKAVsB3AAVABn/B/4J/Un87/sW/Mv8Bv6s/40BcQMWBT4GtQZcBi0FPgO+APb9Ovvk+Ej3pfYh9774Wfuu/l0C9wUHCSULAQxwC3MJNQYPAnr9/vgr9X/yWvHy8UP0GfgK/YUC5weGDMwPRhG3EB4OuwkGBKf9W/fo8f3tH+yX7GnvT/TC+gMCOwmJDyUUdRYiFiQTxg2eBn7+WPYo79DpAech5zzqBfDb99YA7AkEEiEYfRugG3UYTRLTCQAA+/X07AfmE+Ke4crkRetb9AD/9QnuE7QbTiAiIQQeQxecDSsCR/ZW66/iYt0g3CLfG+ZJ8ID8Uwk+Fc8e2iSYJsIjnhz0Ef4EP/dX6tPf/ti31lLZlOCu61v5AwjsFWghEinyK58pTyLRFnQI5vj86YDd99Rx0WzT99rj5sf13wVHFSsiBSvILgMt7CVZGqgLl/sL7Nvel9VW0ZrSPNlz5O3y8QKdEhYgxCmBLr8tkye6HHwOiP6/7gHh7da00fXRqNcf4iDwAADgD+EdWCgLLkwuEyn/HkEReAGE8UbjbdhB0n/RPNbq32PtD/0TDY0bxCZmLaouaSolIfUTaQRY9KflFNr90jjR+9TV3bnqIfo5Ch0ZCSWULNoulCwJJR0ZOQoh+rnq1d371DjR/dIU2qflWPRpBPUTJSFpKqouZi3EJo0bEw0P/WPt6t881n/RQdJt2EbjhPF4AUER/x4TKUwuCy5YKOEd4A8AACDwH+Ko1/XRtNHt1gHhv+6I/nwOuhyTJ78tgS7EKRYgnRLxAu3yc+Q82ZrSVtGX1dveC+yX+6gLWRrsJQMtyC4FKysiRxXfBcf14+b32mzTJtFr1Nfca+mr+MgI3BceJBos4C4aLB4k3BfICKv4a+nX3GvUJtFs0/fa4+bH9d8FRxUrIgUryC4DLewlWRqoC5f7C+zb3pfVVtGa0jzZc+Tt8vECnRIWIMQpgS6/LZMnuhx8Doj+v+4B4e3WtNH10ajXH+Ig8AAA4A/hHVgoCy5MLhMp/x5BEXgBhPFG423YQdJ/0TzW6t9j7Q/9Ew2NG8QmZi2qLmkqJSH1E2kEWPSn5RTa/dI40fvU1d256iH6OQodGQkllCzaLpUrKSOVFlUHOPck6OLb5tMg0ebT4tsk6Dj3VQeVFikjlSvaLpQsCSUdGTkKIfq56tXd+9Q40f3SFNqn5Vj0aQT1EyUhaSqqLmYtxCaNGxMND/1j7erfPNZ/0UHSbdhG44TxeAFBEf8eEylMLgsuWCjhHeAPAAAg8B/iqNf10bTR7dYB4b/uiP58Drockye/LYEuxCkWIJ0S8QLt8nPkPNma0lbRl9Xb3gvsl/uoC1ka7CUDLcguBSsrIkcV3wXH9ePm99ps0ybRa9TX3Gvpq/jICNwXHiQaLOAuGiweJNwXyAir+Gvp19xr1CbRbNMy2zPn+PW6BZ0U4yAjKXEseyqNI4kYyArz+8rt9+HU2UvWtdfW3eXnpPSJAvAPRhs9I/ImBiamIIUXxAvR/jPyZuen39XbUdz84Djp/vMAAM8LCRaBHWEhRiFEHeQVFAwFAQv2buxJ5WnhMeGY5CXrBfQg/kEIOBH9F88bShxyGa4TuQuQAk35BPGs6vfmRuac6KPtsvTr/E0F3wzAEkoWIhc/FesQuQpvA/H7HfXA727sfuv77KfwA/Zh/PoCCAnYDeMQ3BG3EKgmkA/L9sPh49MDxzPCn8Sf07/eB/EsBvAVSCakLigzrC+8J4wYwA07/svvI+N72H/aR9hb4b/pJ/UQABQM7BawGOwfoBswFGwQVAgAAHv6k/Lf7Zvup+2j8fP21/uf/5wCdAfoBAAK+AU4BzQBZAAkA7P8=";
+
+function shuffleItems<T>(items: T[]) {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+export function StudyDetailScreen({ route }: Props) {
   const [lesson, setLesson] = useState<LessonDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState<"vocabulary" | "translation" | "hanzi" | "quiz">("vocabulary");
@@ -30,6 +52,7 @@ export function LessonDetailScreen({ route }: Props) {
   const [checkedTranslation, setCheckedTranslation] = useState(false);
   const [hanziAnswer, setHanziAnswer] = useState("");
   const [checkedHanzi, setCheckedHanzi] = useState(false);
+  const [quizMode, setQuizMode] = useState<QuizMode>("meaning");
 
   useEffect(() => {
     void load();
@@ -45,18 +68,70 @@ export function LessonDetailScreen({ route }: Props) {
     setCheckedHanzi(false);
   }, [tab]);
 
+  useEffect(() => {
+    setIndex(0);
+    setQuizResponse("");
+  }, [quizMode]);
+
   async function load() {
     try {
       setLoading(true);
       const response = await fetchLessonDetail(route.params.lessonId);
       setLesson(response.lesson);
+      setIndex(0);
     } finally {
       setLoading(false);
     }
   }
 
-  const currentVocab = lesson?.vocabularies[index];
-  const currentQuiz = lesson?.quizzes[index];
+  const shuffledVocabularies = useMemo(
+    () => shuffleItems(lesson?.vocabularies ?? []),
+    [lesson?.id],
+  );
+  const shuffledQuizzes = useMemo(
+    () => shuffleItems(lesson?.quizzes ?? []),
+    [lesson?.id],
+  );
+  const generatedQuizzes = useMemo<PracticeQuestion[]>(() => {
+    return shuffledVocabularies.map((vocab) => {
+      const distractorValues = shuffledVocabularies
+        .filter((item) => item.chinese !== vocab.chinese)
+        .map((item) => {
+          if (quizMode === "pinyin") return item.pinyin;
+          if (quizMode === "recognition") return item.chinese;
+          return item.meaningVi;
+        })
+        .filter(Boolean);
+      const answer =
+        quizMode === "pinyin"
+          ? vocab.pinyin
+          : quizMode === "recognition"
+            ? vocab.chinese
+            : vocab.meaningVi;
+      const options = shuffleItems(Array.from(new Set([answer, ...distractorValues])).slice(0, 4));
+
+      return {
+        type:
+          quizMode === "pinyin"
+            ? "PINYIN"
+            : quizMode === "recognition"
+              ? "CHAR_RECOGNITION"
+              : "MEANING",
+        question:
+          quizMode === "pinyin"
+            ? `"${vocab.chinese}" đọc pinyin là gì?`
+            : quizMode === "recognition"
+              ? `Chữ Hán nào có nghĩa "${vocab.meaningVi}"?`
+              : `"${vocab.chinese}" nghĩa là gì?`,
+        options,
+        answer,
+        promptPinyin: vocab.pinyin,
+      };
+    });
+  }, [quizMode, shuffledVocabularies]);
+  const practiceQuestions: PracticeQuestion[] = shuffledQuizzes.length && quizMode === "meaning" ? shuffledQuizzes : generatedQuizzes;
+  const currentVocab = shuffledVocabularies[index];
+  const currentQuiz = practiceQuestions[index];
   const isWritingQuiz = currentQuiz?.type === "HANZI_WRITING";
   const quizSpeechText =
     currentQuiz?.promptPinyin ||
@@ -78,7 +153,7 @@ export function LessonDetailScreen({ route }: Props) {
     checkedHanzi &&
     normalizedUserHanzi.length > 0 &&
     normalizedUserHanzi === normalizedCorrectHanzi;
-  const pronunciationTargetText = lesson?.vocabularies[index]?.chinese || "";
+  const pronunciationTargetText = currentVocab?.chinese || "";
   const quizPronunciationTargetText = currentQuiz?.answer || "";
   const pronunciation = usePronunciationRecorder(pronunciationTargetText);
   const quizPronunciation = usePronunciationRecorder(quizPronunciationTargetText);
@@ -86,10 +161,10 @@ export function LessonDetailScreen({ route }: Props) {
   const activeCount = useMemo(() => {
     if (!lesson) return 0;
     if (tab === "vocabulary" || tab === "translation" || tab === "hanzi") {
-      return lesson.vocabularies.length;
+      return shuffledVocabularies.length;
     }
-    return lesson.quizzes.length;
-  }, [lesson, tab]);
+    return practiceQuestions.length;
+  }, [lesson, practiceQuestions.length, shuffledVocabularies.length, tab]);
 
   function next() {
     if (!activeCount) return;
@@ -114,6 +189,32 @@ export function LessonDetailScreen({ route }: Props) {
     });
   }
 
+  async function playCorrectSound() {
+    try {
+      const { sound } = await Audio.Sound.createAsync({ uri: CORRECT_SOUND_URI });
+      sound.setOnPlaybackStatusUpdate((status) => {
+        if (status.isLoaded && status.didJustFinish) {
+          void sound.unloadAsync();
+        }
+      });
+      await sound.playAsync();
+    } catch {
+      // Feedback audio is best-effort so quiz interaction is never blocked.
+    }
+  }
+
+  function answerQuiz(option: string) {
+    setQuizResponse(option);
+    if (!currentQuiz) return;
+
+    if (option === currentQuiz.answer) {
+      void playCorrectSound();
+      return;
+    }
+
+    Vibration.vibrate(120);
+  }
+
   if (loading || !lesson) {
     return (
       <View style={styles.loading}>
@@ -126,10 +227,10 @@ export function LessonDetailScreen({ route }: Props) {
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
       <View style={styles.tabRow}>
         {[
-          { key: "vocabulary", label: "Từ vựng" },
-          { key: "translation", label: "Dịch nghĩa" },
+          { key: "vocabulary", label: "Từ Vựng" },
+          { key: "translation", label: "Dịch Nghĩa" },
           { key: "hanzi", label: "Chữ Hán" },
-          { key: "quiz", label: "Quiz" },
+          { key: "quiz", label: "Luyện Tập" },
         ].map((item) => (
           <Pressable key={item.key} style={[styles.tab, tab === item.key && styles.tabActive]} onPress={() => setTab(item.key as typeof tab)}>
             <Text style={[styles.tabText, tab === item.key && styles.tabTextActive]}>{item.label}</Text>
@@ -252,6 +353,23 @@ export function LessonDetailScreen({ route }: Props) {
 
       {tab === "quiz" && currentQuiz ? (
         <View style={styles.card}>
+          <View style={styles.quizModeRow}>
+            {[
+              { key: "meaning", label: "Nghĩa" },
+              { key: "pinyin", label: "Pinyin" },
+              { key: "recognition", label: "Chữ Hán" },
+            ].map((item) => (
+              <Pressable
+                key={item.key}
+                style={[styles.quizModeTab, quizMode === item.key && styles.quizModeTabActive]}
+                onPress={() => setQuizMode(item.key as QuizMode)}
+              >
+                <Text style={[styles.quizModeText, quizMode === item.key && styles.quizModeTextActive]}>
+                  {item.label}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
 
           <Text style={styles.quizQuestion}>{currentQuiz.question}</Text>
          
@@ -260,7 +378,12 @@ export function LessonDetailScreen({ route }: Props) {
             <TextInput
               style={[styles.input, { marginTop: 16 }]}
               value={quizResponse}
-              onChangeText={setQuizResponse}
+              onChangeText={(value) => {
+                setQuizResponse(value);
+                if (value.trim() === currentQuiz.answer.trim()) {
+                  void playCorrectSound();
+                }
+              }}
               placeholder="Nhập chữ Hán"
             />
           ) : (
@@ -272,7 +395,7 @@ export function LessonDetailScreen({ route }: Props) {
                     styles.optionButton,
                     quizResponse === option && styles.optionButtonActive,
                   ]}
-                  onPress={() => setQuizResponse(option)}
+                  onPress={() => answerQuiz(option)}
                 >
                   <Text style={styles.optionText}>{option}</Text>
                 </Pressable>
@@ -332,11 +455,34 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: APP_COLORS.background },
   content: { padding: 20, gap: 16 },
   loading: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: APP_COLORS.background },
-  tabRow: { flexDirection: "row", gap: 8 },
-  tab: { paddingHorizontal: 16, paddingVertical: 10, borderRadius: 999, backgroundColor: "#fff", borderWidth: 1, borderColor: APP_COLORS.border },
+  tabRow: { flexDirection: "row", alignItems: "center", gap: 8 },
+  tab: {
+    height: 42,
+    paddingHorizontal: 15,
+    borderRadius: 999,
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: APP_COLORS.border,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   tabActive: { backgroundColor: "#fef2f2", borderColor: "#fecaca" },
-  tabText: { color: APP_COLORS.muted, fontWeight: "700" },
+  tabText: { color: APP_COLORS.muted, fontWeight: "700", lineHeight: 18 },
   tabTextActive: { color: APP_COLORS.primaryDark },
+  quizModeRow: { flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8 },
+  quizModeTab: {
+    height: 36,
+    paddingHorizontal: 12,
+    borderRadius: 999,
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: APP_COLORS.border,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  quizModeTabActive: { backgroundColor: "#0f172a", borderColor: "#0f172a" },
+  quizModeText: { color: APP_COLORS.muted, fontWeight: "800" },
+  quizModeTextActive: { color: "#fff" },
   card: { position: "relative", backgroundColor: "#fff", borderRadius: 32, borderWidth: 1, borderColor: APP_COLORS.border, paddingHorizontal: 22, paddingVertical: 28, minHeight: 440 },
   hanzi: { fontSize: 72, fontWeight: "900", color: APP_COLORS.primary, textAlign: "center", minHeight: 108, lineHeight: 88 },
   pinyin: { fontSize: 28, fontWeight: "800", color: APP_COLORS.text, textAlign: "center", marginTop: 18 },

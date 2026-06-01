@@ -126,10 +126,7 @@ export function RoadmapDetailScreen({ route }: Props) {
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-      <View style={styles.hero}>
-        <Text style={styles.heroTitle}>{roadmap.title}</Text>
-        <Text style={styles.heroText}>{roadmap.description || "Buổi học trong lộ trình lớp."}</Text>
-      </View>
+      
 
       <View style={styles.tabRow}>
         <Pressable style={[styles.tab, tab === "vocabulary" && styles.tabActive]} onPress={() => setTab("vocabulary")}>

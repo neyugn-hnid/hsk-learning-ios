@@ -4,28 +4,26 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ActivityIndicator, Text, View } from "react-native";
 import { useAuth } from "@/context/AuthContext";
 import { APP_COLORS } from "@/config";
-import { LessonsScreen } from "@/screens/LessonsScreen";
-import { LessonsLevelScreen } from "@/screens/LessonsLevelScreen";
-import { LessonDetailScreen } from "@/screens/LessonDetailScreen";
+import { HSK20Screen } from "@/screens/HSK20Screen";
+import { StudyDetailScreen } from "@/screens/StudyDetailScreen";
 import { LoginScreen } from "@/screens/LoginScreen";
 import { RegisterScreen } from "@/screens/RegisterScreen";
 import { RoadmapScreen } from "@/screens/RoadmapScreen";
-import { RoadmapPhaseScreen } from "@/screens/RoadmapPhaseScreen";
 import { RoadmapDetailScreen } from "@/screens/RoadmapDetailScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
+import { HSK30Screen } from "@/screens/HSK30Screen";
 
 export type RootStackParamList = {
   AuthLogin: undefined;
   AuthRegister: undefined;
   MainTabs: undefined;
-  LessonsLevel: { level: string };
-  LessonDetail: { lessonId: string; title: string };
-  RoadmapPhase: { phase: string };
+  StudyDetail: { lessonId: string; title: string };
   RoadmapDetail: { roadmapId: string; title: string };
 };
 
 export type MainTabParamList = {
-  Lessons: undefined;
+  HSK20: undefined;
+  HSK30: undefined;
   Roadmap: undefined;
   Profile: undefined;
 };
@@ -53,10 +51,14 @@ function MainTabs() {
         },
         tabBarIcon: ({ color, size, focused }) => {
           const iconName =
-            route.name === "Lessons"
+            route.name === "HSK20"
               ? focused
                 ? "book"
                 : "book-outline"
+              : route.name === "HSK30"
+                ? focused
+                  ? "sparkles"
+                  : "sparkles-outline"
               : route.name === "Roadmap"
                 ? focused
                   ? "map"
@@ -69,7 +71,8 @@ function MainTabs() {
         },
       })}
     >
-      <Tab.Screen name="Lessons" component={LessonsScreen} options={{ title: "Bài học" }} />
+      <Tab.Screen name="HSK20" component={HSK20Screen} options={{ title: "HSK 2.0" }} />
+      <Tab.Screen name="HSK30" component={HSK30Screen} options={{ title: "HSK 3.0" }} />
       <Tab.Screen name="Roadmap" component={RoadmapScreen} options={{ title: "Lộ trình" }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: "Tài khoản" }} />
     </Tab.Navigator>
@@ -100,9 +103,7 @@ export function AppNavigator() {
       {user ? (
         <>
           <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
-          <Stack.Screen name="LessonsLevel" component={LessonsLevelScreen} options={({ route }) => ({ title: route.params.level })} />
-          <Stack.Screen name="LessonDetail" component={LessonDetailScreen} options={({ route }) => ({ title: route.params.title })} />
-          <Stack.Screen name="RoadmapPhase" component={RoadmapPhaseScreen} options={({ route }) => ({ title: route.params.phase })} />
+          <Stack.Screen name="StudyDetail" component={StudyDetailScreen} options={({ route }) => ({ title: route.params.title })} />
           <Stack.Screen name="RoadmapDetail" component={RoadmapDetailScreen} options={({ route }) => ({ title: route.params.title })} />
         </>
       ) : (
