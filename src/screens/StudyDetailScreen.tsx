@@ -20,7 +20,7 @@ import { RootStackParamList } from "@/navigation/AppNavigator";
 import type { LessonDetail } from "@/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "StudyDetail">;
-type QuizMode = "meaning" | "pinyin" | "recognition";
+type QuizMode = "meaning" | "pinyin" | "recognition" | "listening";
 type PracticeQuestion = {
   type: "MEANING" | "PINYIN" | "CHAR_RECOGNITION" | "HANZI_WRITING";
   question: string;
@@ -98,14 +98,14 @@ export function StudyDetailScreen({ route }: Props) {
         .filter((item) => item.chinese !== vocab.chinese)
         .map((item) => {
           if (quizMode === "pinyin") return item.pinyin;
-          if (quizMode === "recognition") return item.chinese;
+          if (quizMode === "recognition" || quizMode === "listening") return item.chinese;
           return item.meaningVi;
         })
         .filter(Boolean);
       const answer =
         quizMode === "pinyin"
           ? vocab.pinyin
-          : quizMode === "recognition"
+          : quizMode === "recognition" || quizMode === "listening"
             ? vocab.chinese
             : vocab.meaningVi;
       const options = shuffleItems(Array.from(new Set([answer, ...distractorValues])).slice(0, 4));
@@ -114,14 +114,16 @@ export function StudyDetailScreen({ route }: Props) {
         type:
           quizMode === "pinyin"
             ? "PINYIN"
-            : quizMode === "recognition"
+            : quizMode === "recognition" || quizMode === "listening"
               ? "CHAR_RECOGNITION"
               : "MEANING",
         question:
           quizMode === "pinyin"
             ? `"${vocab.chinese}" đọc pinyin là gì?`
+            : quizMode === "listening"
+              ? "Nghe và chọn chữ Hán đúng"
             : quizMode === "recognition"
-              ? `Chữ Hán nào có nghĩa "${vocab.meaningVi}"?`
+              ? `Chữ Hán nào có pinyin "${vocab.pinyin}"?`
               : `"${vocab.chinese}" nghĩa là gì?`,
         options,
         answer,
@@ -134,11 +136,26 @@ export function StudyDetailScreen({ route }: Props) {
   const currentQuiz = practiceQuestions[index];
   const isWritingQuiz = currentQuiz?.type === "HANZI_WRITING";
   const quizSpeechText =
+    (quizMode === "listening" ? currentQuiz?.answer : null) ||
     currentQuiz?.promptPinyin ||
     (currentQuiz?.type === "CHAR_RECOGNITION" ? currentQuiz.answer : null) ||
     "";
   const hasQuizAnswer = quizResponse.trim().length > 0;
   const quizCorrect = hasQuizAnswer && quizResponse.trim() === (currentQuiz?.answer || "").trim();
+  const quizPinyin = useMemo(() => {
+    if (!currentQuiz) return "";
+    if (currentQuiz.promptPinyin) return currentQuiz.promptPinyin;
+    if (currentQuiz.type === "PINYIN") return currentQuiz.answer;
+
+    const matchedVocab = shuffledVocabularies.find((vocab) =>
+      vocab.chinese === currentQuiz.answer ||
+      currentQuiz.question.includes(vocab.chinese) ||
+      vocab.meaningVi === currentQuiz.answer ||
+      vocab.meaningEn === currentQuiz.answer
+    );
+
+    return matchedVocab?.pinyin || "";
+  }, [currentQuiz, shuffledVocabularies]);
   const normalizedUserMeaning = translationAnswer.trim().toLowerCase();
   const normalizedCorrectMeaning = (currentVocab?.meaningVi || "").trim().toLowerCase();
   const translationCorrect =
@@ -189,6 +206,12 @@ export function StudyDetailScreen({ route }: Props) {
     });
   }
 
+  useEffect(() => {
+    if (tab === "quiz" && quizMode === "listening" && quizSpeechText) {
+      speakChinese(quizSpeechText);
+    }
+  }, [index, quizMode, quizSpeechText, tab]);
+
   async function playCorrectSound() {
     try {
       const { sound } = await Audio.Sound.createAsync({ uri: CORRECT_SOUND_URI });
@@ -225,7 +248,7 @@ export function StudyDetailScreen({ route }: Props) {
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-      <View style={styles.tabRow}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tabRow}>
         {[
           { key: "vocabulary", label: "Từ Vựng" },
           { key: "translation", label: "Dịch Nghĩa" },
@@ -236,7 +259,7 @@ export function StudyDetailScreen({ route }: Props) {
             <Text style={[styles.tabText, tab === item.key && styles.tabTextActive]}>{item.label}</Text>
           </Pressable>
         ))}
-      </View>
+      </ScrollView>
 
       {(tab === "vocabulary" || tab === "translation" || tab === "hanzi") && currentVocab ? (
         <View style={{ gap: 16 }}>
@@ -353,11 +376,12 @@ export function StudyDetailScreen({ route }: Props) {
 
       {tab === "quiz" && currentQuiz ? (
         <View style={styles.card}>
-          <View style={styles.quizModeRow}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.quizModeRow}>
             {[
               { key: "meaning", label: "Nghĩa" },
               { key: "pinyin", label: "Pinyin" },
               { key: "recognition", label: "Chữ Hán" },
+              { key: "listening", label: "Nghe" },
             ].map((item) => (
               <Pressable
                 key={item.key}
@@ -369,7 +393,7 @@ export function StudyDetailScreen({ route }: Props) {
                 </Text>
               </Pressable>
             ))}
-          </View>
+          </ScrollView>
 
           <Text style={styles.quizQuestion}>{currentQuiz.question}</Text>
          
@@ -408,12 +432,18 @@ export function StudyDetailScreen({ route }: Props) {
               <Text style={styles.feedbackText}>
                 {quizCorrect ? "Đúng rồi." : `Chưa đúng. Đáp án: ${currentQuiz.answer}`}
               </Text>
+              {quizCorrect && quizPinyin ? (
+                <Text style={styles.feedbackPinyin}>Pinyin: {quizPinyin}</Text>
+              ) : null}
             </View>
           ) : null}
 
           <View style={styles.actionsquiz}>
             
             <SmallButton icon="chevron-back" onPress={prev} />
+            {quizMode === "listening" ? (
+              <SmallButton icon="volume-medium" onPress={() => speakChinese(quizSpeechText)} primary large />
+            ) : null}
             <SmallButton icon="chevron-forward" onPress={next} />
             
           </View>
@@ -455,9 +485,9 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: APP_COLORS.background },
   content: { padding: 20, gap: 16 },
   loading: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: APP_COLORS.background },
-  tabRow: { flexDirection: "row", alignItems: "center", gap: 8 },
+  tabRow: { flexDirection: "row", alignItems: "center", gap: 8, paddingRight: 2 },
   tab: {
-    height: 42,
+    paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 999,
     backgroundColor: "#fff",
@@ -467,9 +497,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   tabActive: { backgroundColor: "#fef2f2", borderColor: "#fecaca" },
-  tabText: { color: APP_COLORS.muted, fontWeight: "700", lineHeight: 18 },
+  tabText: { color: APP_COLORS.muted, fontWeight: "700" },
   tabTextActive: { color: APP_COLORS.primaryDark },
-  quizModeRow: { flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8 },
+  quizModeRow: { flexDirection: "row", alignItems: "center", justifyContent: "center", flexGrow: 1, gap: 8, paddingRight: 2 },
   quizModeTab: {
     height: 36,
     paddingHorizontal: 12,
@@ -514,4 +544,5 @@ const styles = StyleSheet.create({
   feedbackGood: { backgroundColor: "#ecfdf5" },
   feedbackWarn: { backgroundColor: "#fff7ed" },
   feedbackText: { fontWeight: "800", color: APP_COLORS.text },
+  feedbackPinyin: { marginTop: 6, fontSize: 20, fontWeight: "900", color: APP_COLORS.primaryDark },
 });
