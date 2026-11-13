@@ -1,8 +1,10 @@
-import * as FileSystem from "expo-file-system";
-import bundledLessonsData from "@/data/lessons.json";
-import bundledRoadmapData from "@/data/roadmap.json";
-import bundledHsk20Data from "@/data/hsk2.0.json";
-import bundledHsk30Data from "@/data/hsk3.0.json";
+import * as FileSystem from "expo-file-system/legacy";
+import hsk1Data from "@/data/hsk3.0_HSK1.json";
+import hsk2Data from "@/data/hsk3.0_HSK2.json";
+import hsk3Data from "@/data/hsk3.0_HSK3.json";
+import hsk4Data from "@/data/hsk3.0_HSK4.json";
+import hsk5Data from "@/data/hsk3.0_HSK5.json";
+import hsk6Data from "@/data/hsk3.0_HSK6.json";
 import { getStoredUsers, setStoredUsers } from "@/lib/storage";
 import type {
   LearningStats,
@@ -276,20 +278,21 @@ async function writeImportedJson(uri: string, value: unknown) {
 
 async function getLessonsDataset() {
   const imported = await readImportedJson(lessonsImportUri);
-  return normalizeLessons(imported ?? bundledLessonsData);
+  return normalizeLessons(imported ?? []);
 }
 
 async function getRoadmapDataset() {
   const imported = await readImportedJson(roadmapImportUri);
-  return normalizeRoadmap(imported ?? bundledRoadmapData);
+  return normalizeRoadmap(imported ?? []);
 }
 
 function getHsk30Dataset() {
-  return normalizeStructuredLessons(bundledHsk30Data, "File HSK 3.0", "hsk30");
+  const levels = [hsk1Data, hsk2Data, hsk3Data, hsk4Data, hsk5Data, hsk6Data];
+  return normalizeStructuredLessons(levels.flat(), "Dữ liệu HSK 3.0", "hsk30");
 }
 
 function getHsk20Dataset() {
-  return normalizeStructuredLessons(bundledHsk20Data, "File HSK 2.0", "hsk20");
+  return [] as OfflineStructuredLesson[];
 }
 
 export async function getOfflineDataStatus() {

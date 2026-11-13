@@ -8,6 +8,7 @@ import {
   FlatList,
   Pressable,
   RefreshControl,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -32,6 +33,24 @@ function getLevelRank(level: string) {
 function sortLevels(levels: string[]) {
   return levels.sort((a, b) => getLevelRank(a) - getLevelRank(b) || a.localeCompare(b));
 }
+
+const TOPIC_ICONS = [
+  "chatbubbles-outline",
+  "people-outline",
+  "restaurant-outline",
+  "time-outline",
+  "home-outline",
+  "briefcase-outline",
+] as const;
+
+const TOPIC_PALETTES = [
+  { background: "#FFF1F2", foreground: "#BE123C" },
+  { background: "#EFF6FF", foreground: "#1D4ED8" },
+  { background: "#ECFDF5", foreground: "#047857" },
+  { background: "#FFF7ED", foreground: "#C2410C" },
+  { background: "#F5F3FF", foreground: "#6D28D9" },
+  { background: "#FEFCE8", foreground: "#A16207" },
+] as const;
 
 export function HSK30Screen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
@@ -77,12 +96,23 @@ export function HSK30Screen({ navigation }: Props) {
   return (
     <View style={styles.screen}>
       <View style={[styles.header, { paddingTop: insets.top + 12 }]}>
-        <View style={styles.headerBar}>
-          <View style={styles.headerText}>
-            <Text style={styles.title}>HSK 3.0</Text>
+        <View style={styles.heroCard}>
+          <View style={styles.heroDecoration} />
+          <View style={styles.heroTop}>
+            <View style={styles.heroBadge}>
+              <Ionicons name="sparkles" size={14} color="#FECACA" />
+              <Text style={styles.heroBadgeText}>HSK 3.0</Text>
+            </View>
+            <View style={styles.heroIcon}>
+              <Ionicons name="school-outline" size={24} color="#FECACA" />
+            </View>
           </View>
-          <View style={styles.headerIcon}>
-            <Ionicons name="sparkles" size={20} color={APP_COLORS.primaryDark} />
+          <Text style={styles.heroTitle}>Học tiếng Trung{`\n`}qua chủ đề</Text>
+          <Text style={styles.heroSubtitle}>Chọn một chủ đề, bắt đầu học từ vựng và luyện tập ngay.</Text>
+          <View style={styles.heroFooter}>
+            <Text style={styles.heroFooterText}>HSK 1–6</Text>
+            <View style={styles.heroDivider} />
+            <Text style={styles.heroFooterText}>{allLessons.length} chủ đề</Text>
           </View>
         </View>
 
@@ -92,7 +122,8 @@ export function HSK30Screen({ navigation }: Props) {
             style={styles.search}
             value={query}
             onChangeText={setQuery}
-            placeholder="Tìm bài học..."
+            placeholder="Tìm chủ đề hoặc mô tả..."
+            placeholderTextColor="#94A3B8"
             returnKeyType="search"
             onSubmitEditing={() => void loadLessons()}
           />
@@ -120,35 +151,90 @@ export function HSK30Screen({ navigation }: Props) {
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => void loadLessons(true)} />}
           contentContainerStyle={styles.listContent}
           ListHeaderComponent={
-            <View style={styles.filterRow}>
-              {levels.map((level) => (
-                <Pressable
-                  key={level}
-                  style={[styles.filterPill, selectedLevel === level && styles.filterPillActive]}
-                  onPress={() => setSelectedLevel(level)}
-                >
-                  <Text style={[styles.filterText, selectedLevel === level && styles.filterTextActive]}>{level}</Text>
-                </Pressable>
-              ))}
+            <View style={styles.listHeader}>
+              <View style={styles.sectionHeading}>
+                <View>
+                  <Text style={styles.sectionEyebrow}>CHỌN CẤP ĐỘ</Text>
+                  <Text style={styles.sectionTitle}>Chủ đề học</Text>
+                </View>
+                <View style={styles.countBadge}>
+                  <Text style={styles.countText}>{lessons.length}</Text>
+                  <Text style={styles.countLabel}>bài</Text>
+                </View>
+              </View>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
+                {levels.map((level) => (
+                  <Pressable
+                    key={level}
+                    style={[styles.filterPill, selectedLevel === level && styles.filterPillActive]}
+                    onPress={() => setSelectedLevel(level)}
+                  >
+                    <Text style={[styles.filterText, selectedLevel === level && styles.filterTextActive]}>
+                      {level.replace(/(HSK)\s*(\d+)/i, "$1 $2")}
+                    </Text>
+                  </Pressable>
+                ))}
+              </ScrollView>
             </View>
           }
-          renderItem={({ item }) => (
-            <Pressable
-              style={styles.card}
-              onPress={() => navigation.navigate("StudyDetail", { lessonId: item.id, title: item.title })}
-            >
-              <View style={styles.cardTop}>
-                <Text style={styles.badge}>{item.level}</Text>
-                <Text style={styles.order}>Buổi {item.orderNo}</Text>
+          renderItem={({ item }) => {
+            const paletteIndex = (Math.max(item.orderNo, 1) - 1) % TOPIC_PALETTES.length;
+            const palette = TOPIC_PALETTES[paletteIndex];
+            const icon = TOPIC_ICONS[paletteIndex];
+            const title = item.title.replace(/^Chủ đề\s+\d+\s*:\s*/i, "");
+
+            return (
+              <View style={styles.topicCard}>
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityLabel={`Học từ vựng: ${title}`}
+                  style={({ pressed }) => [styles.topicContent, pressed && styles.cardPressed]}
+                  onPress={() => navigation.navigate("StudyDetail", { lessonId: item.id, title: item.title })}
+                >
+                  <View style={styles.cardHeading}>
+                    <View style={[styles.topicIcon, { backgroundColor: palette.background }]}>
+                      <Ionicons name={icon} size={24} color={palette.foreground} />
+                    </View>
+                    <View style={styles.cardMain}>
+                      <View style={styles.cardMetaRow}>
+                        <Text style={styles.levelBadge}>{item.level.replace(/(HSK)\s*(\d+)/i, "$1 $2")}</Text>
+                        <Text style={styles.topicNumber}>CHỦ ĐỀ {String(item.orderNo).padStart(2, "0")}</Text>
+                      </View>
+                      <Text style={styles.cardTitle} numberOfLines={2}>{title}</Text>
+                    </View>
+                  </View>
+                  <Text style={styles.cardDesc} numberOfLines={2}>
+                    {item.description || "Từ vựng và mẫu câu thiết yếu theo chủ đề."}
+                  </Text>
+                </Pressable>
+                <View style={styles.cardFooter}>
+                  <View style={styles.vocabularyMeta}>
+                    <Ionicons name="book-outline" size={16} color={APP_COLORS.primaryDark} />
+                    <Text style={styles.cardMeta}>{item.vocabularyCount} từ vựng</Text>
+                  </View>
+                  <View style={styles.cardActions}>
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityLabel={`Luyện viết chữ Hán: ${title}`}
+                      style={({ pressed }) => [styles.practiceButton, pressed && styles.cardPressed]}
+                      onPress={() => navigation.navigate("HanziPractice", { lessonId: item.id, title: item.title })}
+                    >
+                      <Ionicons name="create-outline" size={16} color={APP_COLORS.primaryDark} />
+                      <Text style={styles.practiceButtonText}>Luyện tập</Text>
+                    </Pressable>
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityLabel={`Mở bài học: ${title}`}
+                      style={({ pressed }) => [styles.arrowButton, { backgroundColor: palette.background }, pressed && styles.cardPressed]}
+                      onPress={() => navigation.navigate("StudyDetail", { lessonId: item.id, title: item.title })}
+                    >
+                      <Ionicons name="arrow-forward" size={17} color={palette.foreground} />
+                    </Pressable>
+                  </View>
+                </View>
               </View>
-              <Text style={styles.cardTitle}>{item.title}</Text>
-              <Text style={styles.cardDesc}>{item.description || "Bài học HSK 3.0."}</Text>
-              <View style={styles.cardFooter}>
-                <Text style={styles.cardMeta}>{item.vocabularyCount} từ vựng</Text>
-                <Ionicons name="arrow-forward" size={18} color={APP_COLORS.primaryDark} />
-              </View>
-            </Pressable>
-          )}
+            );
+          }}
           ListEmptyComponent={<Text style={styles.empty}>Chưa có bài học phù hợp.</Text>}
         />
       )}
@@ -157,68 +243,81 @@ export function HSK30Screen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: APP_COLORS.background },
-  header: { paddingHorizontal: 20, paddingBottom: 10, gap: 14 },
-  headerBar: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 14 },
-  headerText: { flex: 1 },
-  headerIcon: {
-    width: 44,
-    height: 44,
-    borderRadius: 999,
-    backgroundColor: APP_COLORS.dangerBg,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: { fontSize: 30, fontWeight: "900", color: APP_COLORS.text },
-  subtitle: { marginTop: 6, color: APP_COLORS.muted },
+  screen: { flex: 1, backgroundColor: "#F5F7FB" },
+  header: { paddingHorizontal: 18, paddingBottom: 8, gap: 14 },
+  heroCard: { position: "relative", overflow: "hidden", padding: 21, borderRadius: 28, backgroundColor: "#7F1D1D" },
+  heroDecoration: { position: "absolute", width: 170, height: 170, right: -58, top: -72, borderRadius: 85, backgroundColor: "#991B1B" },
+  heroTop: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  heroBadge: { flexDirection: "row", alignItems: "center", gap: 7, paddingHorizontal: 11, paddingVertical: 7, borderRadius: 999, backgroundColor: "rgba(255,255,255,0.13)" },
+  heroBadgeText: { color: "#FEE2E2", fontSize: 11, fontWeight: "900", letterSpacing: 0.8 },
+  heroIcon: { width: 44, height: 44, borderRadius: 16, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.12)" },
+  heroTitle: { marginTop: 14, color: "#fff", fontSize: 27, lineHeight: 32, fontWeight: "900" },
+  heroSubtitle: { marginTop: 7, maxWidth: 290, color: "#FECACA", fontSize: 13, lineHeight: 19 },
+  heroFooter: { flexDirection: "row", alignItems: "center", gap: 10, marginTop: 17 },
+  heroFooterText: { color: "#FEE2E2", fontSize: 12, fontWeight: "800" },
+  heroDivider: { width: 4, height: 4, borderRadius: 2, backgroundColor: "#FDA4AF" },
   searchBox: {
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
     borderWidth: 1,
-    borderColor: APP_COLORS.border,
+    borderColor: "#E8ECF2",
     borderRadius: 18,
-    paddingHorizontal: 14,
+    paddingHorizontal: 15,
     backgroundColor: "#fff",
+    shadowColor: "#0F172A",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.04,
+    shadowRadius: 10,
+    elevation: 1,
   },
-  search: { flex: 1, paddingVertical: 14, backgroundColor: "#fff" },
+  search: { flex: 1, paddingVertical: 13, color: APP_COLORS.text, backgroundColor: "#fff" },
   loadingBox: { flex: 1, alignItems: "center", justifyContent: "center" },
-  listContent: { padding: 20, gap: 14 },
-  filterRow: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  listContent: { paddingHorizontal: 18, paddingTop: 13, paddingBottom: 32, gap: 12 },
+  listHeader: { gap: 13, marginBottom: 2 },
+  sectionHeading: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  sectionEyebrow: { color: APP_COLORS.primaryDark, fontSize: 10, fontWeight: "900", letterSpacing: 1.3 },
+  sectionTitle: { marginTop: 3, color: APP_COLORS.text, fontSize: 22, fontWeight: "900" },
+  countBadge: { flexDirection: "row", alignItems: "baseline", gap: 4, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 14, backgroundColor: "#fff" },
+  countText: { color: APP_COLORS.text, fontSize: 15, fontWeight: "900" },
+  countLabel: { color: APP_COLORS.muted, fontSize: 11, fontWeight: "700" },
+  filterRow: { flexDirection: "row", gap: 8, paddingRight: 18 },
   filterPill: {
-    paddingHorizontal: 10,
-    paddingVertical: 8,
+    paddingHorizontal: 15,
+    paddingVertical: 9,
     borderRadius: 999,
     backgroundColor: "#fff",
     borderWidth: 1,
-    borderColor: APP_COLORS.border,
+    borderColor: "#E8ECF2",
   },
-  filterPillActive: { backgroundColor: APP_COLORS.primary, borderColor: APP_COLORS.primary },
-  filterText: { color: APP_COLORS.muted, fontWeight: "800" },
+  filterPillActive: { backgroundColor: APP_COLORS.primary, borderColor: APP_COLORS.primary, shadowColor: APP_COLORS.primary, shadowOpacity: 0.18, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 3 },
+  filterText: { color: APP_COLORS.muted, fontSize: 13, fontWeight: "800" },
   filterTextActive: { color: "#fff" },
-  card: { backgroundColor: "#fff", borderRadius: 24, padding: 18, borderWidth: 1, borderColor: APP_COLORS.border },
-  cardTop: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12 },
-  badge: {
-    backgroundColor: "#fef2f2",
-    color: APP_COLORS.primaryDark,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 999,
-    overflow: "hidden",
-    fontWeight: "800",
-  },
-  order: { color: APP_COLORS.muted, fontWeight: "800" },
-  cardTitle: { marginTop: 16, fontSize: 20, fontWeight: "800", color: APP_COLORS.text },
-  cardDesc: { marginTop: 8, color: APP_COLORS.muted, lineHeight: 20 },
+  topicCard: { padding: 16, borderRadius: 23, borderWidth: 1, borderColor: "#E8ECF2", backgroundColor: "#fff", shadowColor: "#0F172A", shadowOffset: { width: 0, height: 5 }, shadowOpacity: 0.045, shadowRadius: 12, elevation: 2 },
+  topicContent: { borderRadius: 16 },
+  cardPressed: { opacity: 0.92, transform: [{ scale: 0.99 }] },
+  cardHeading: { flexDirection: "row", alignItems: "center", gap: 13 },
+  topicIcon: { width: 56, height: 56, borderRadius: 19, alignItems: "center", justifyContent: "center" },
+  cardMain: { flex: 1 },
+  cardMetaRow: { flexDirection: "row", alignItems: "center", gap: 8 },
+  levelBadge: { overflow: "hidden", paddingHorizontal: 8, paddingVertical: 4, borderRadius: 8, backgroundColor: "#FEF2F2", color: APP_COLORS.primaryDark, fontSize: 10, fontWeight: "900" },
+  topicNumber: { color: "#94A3B8", fontSize: 9, fontWeight: "900", letterSpacing: 0.8 },
+  cardTitle: { marginTop: 7, color: APP_COLORS.text, fontSize: 16, lineHeight: 21, fontWeight: "900" },
+  cardDesc: { marginTop: 13, color: APP_COLORS.muted, fontSize: 13, lineHeight: 19 },
   cardFooter: {
-    marginTop: 14,
-    paddingTop: 14,
+    marginTop: 13,
+    paddingTop: 12,
     borderTopWidth: 1,
-    borderTopColor: APP_COLORS.border,
+    borderTopColor: "#EEF1F5",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
-  cardMeta: { color: APP_COLORS.muted, fontWeight: "700" },
-  empty: { textAlign: "center", marginTop: 40, color: APP_COLORS.muted },
+  cardActions: { flexDirection: "row", alignItems: "center", gap: 8 },
+  vocabularyMeta: { flexDirection: "row", alignItems: "center", gap: 7 },
+  cardMeta: { color: APP_COLORS.muted, fontSize: 12, fontWeight: "800" },
+  practiceButton: { minHeight: 36, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 5, paddingHorizontal: 11, borderRadius: 12, borderWidth: 1, borderColor: "#FECACA", backgroundColor: "#FFF7F5" },
+  practiceButtonText: { color: APP_COLORS.primaryDark, fontSize: 11, fontWeight: "900" },
+  arrowButton: { width: 34, height: 34, borderRadius: 12, alignItems: "center", justifyContent: "center" },
+  empty: { textAlign: "center", marginTop: 40, color: APP_COLORS.muted, fontWeight: "600" },
 });

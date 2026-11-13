@@ -1,31 +1,27 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ActivityIndicator, Text, View } from "react-native";
-import { useAuth } from "@/context/AuthContext";
 import { APP_COLORS } from "@/config";
-import { HSK20Screen } from "@/screens/HSK20Screen";
+import { LanguageHomeScreen } from "@/screens/LanguageHomeScreen";
 import { StudyDetailScreen } from "@/screens/StudyDetailScreen";
-import { LoginScreen } from "@/screens/LoginScreen";
-import { RegisterScreen } from "@/screens/RegisterScreen";
-import { RoadmapScreen } from "@/screens/RoadmapScreen";
-import { RoadmapDetailScreen } from "@/screens/RoadmapDetailScreen";
-import { ProfileScreen } from "@/screens/ProfileScreen";
 import { HSK30Screen } from "@/screens/HSK30Screen";
+import { EnglishLessonsScreen } from "@/screens/EnglishLessonsScreen";
+import { EnglishLessonDetailScreen } from "@/screens/EnglishLessonDetailScreen";
+import { HanziPracticeScreen } from "@/screens/HanziPracticeScreen";
+import { EnglishPracticeScreen } from "@/screens/EnglishPracticeScreen";
 
 export type RootStackParamList = {
-  AuthLogin: undefined;
-  AuthRegister: undefined;
   MainTabs: undefined;
   StudyDetail: { lessonId: string; title: string };
-  RoadmapDetail: { roadmapId: string; title: string };
+  HanziPractice: { lessonId: string; title: string };
+  EnglishLessonDetail: { lessonId: string; title: string };
+  EnglishPractice: { lessonId: string; title: string };
 };
 
 export type MainTabParamList = {
-  HSK20: undefined;
+  Home: undefined;
   HSK30: undefined;
-  Roadmap: undefined;
-  Profile: undefined;
+  English: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -34,63 +30,50 @@ const Tab = createBottomTabNavigator<MainTabParamList>();
 function MainTabs() {
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: APP_COLORS.primary,
         tabBarInactiveTintColor: APP_COLORS.muted,
-        tabBarStyle: {
-          height: 72,
-          paddingTop: 8,
-          paddingBottom: 8,
-          borderTopColor: APP_COLORS.border,
-          backgroundColor: "#fff",
-        },
+        tabBarStyle: route.name === "Home"
+          ? { display: "none" }
+          : {
+              height: 72,
+              paddingTop: 8,
+              paddingBottom: 8,
+              borderTopColor: APP_COLORS.border,
+              backgroundColor: "#fff",
+            },
         tabBarLabelStyle: {
           fontWeight: "700",
           fontSize: 12,
         },
         tabBarIcon: ({ color, size, focused }) => {
           const iconName =
-            route.name === "HSK20"
+            route.name === "Home"
               ? focused
-                ? "book"
-                : "book-outline"
+                ? "home"
+                : "home-outline"
               : route.name === "HSK30"
-                ? focused
-                  ? "sparkles"
-                  : "sparkles-outline"
-              : route.name === "Roadmap"
-                ? focused
-                  ? "map"
-                  : "map-outline"
-                : focused
-                  ? "person-circle"
-                  : "person-circle-outline";
+              ? focused
+                ? "sparkles"
+                : "sparkles-outline"
+              : focused
+                ? "globe"
+                : "globe-outline";
 
           return <Ionicons name={iconName} size={size ?? 22} color={color} />;
         },
       })}
     >
-      <Tab.Screen name="HSK20" component={HSK20Screen} options={{ title: "HSK 2.0" }} />
-      <Tab.Screen name="HSK30" component={HSK30Screen} options={{ title: "HSK 3.0" }} />
-      <Tab.Screen name="Roadmap" component={RoadmapScreen} options={{ title: "Lộ trình" }} />
-      <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: "Tài khoản" }} />
+      <Tab.Screen name="Home" component={LanguageHomeScreen} options={{ title: "Khám phá" }} />
+      <Tab.Screen name="HSK30" component={HSK30Screen} options={{ title: "Tiếng Trung" }} />
+      <Tab.Screen name="English" component={EnglishLessonsScreen} options={{ title: "Tiếng Anh" }} />
     </Tab.Navigator>
   );
 }
 
 export function AppNavigator() {
-  const { user, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: APP_COLORS.background }}>
-        <ActivityIndicator size="large" color={APP_COLORS.primary} />
-        <Text style={{ marginTop: 12, color: APP_COLORS.muted }}>Đang tải dữ liệu...</Text>
-      </View>
-    );
-  }
-
   return (
     <Stack.Navigator
       screenOptions={{
@@ -100,18 +83,11 @@ export function AppNavigator() {
         contentStyle: { backgroundColor: APP_COLORS.background },
       }}
     >
-      {user ? (
-        <>
-          <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
-          <Stack.Screen name="StudyDetail" component={StudyDetailScreen} options={({ route }) => ({ title: route.params.title })} />
-          <Stack.Screen name="RoadmapDetail" component={RoadmapDetailScreen} options={({ route }) => ({ title: route.params.title })} />
-        </>
-      ) : (
-        <>
-          <Stack.Screen name="AuthLogin" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="AuthRegister" component={RegisterScreen} options={{ headerShown: false }} />
-        </>
-      )}
+      <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
+      <Stack.Screen name="StudyDetail" component={StudyDetailScreen} options={({ route }) => ({ title: route.params.title })} />
+      <Stack.Screen name="HanziPractice" component={HanziPracticeScreen} options={{ title: "Luyện chữ Hán" }} />
+      <Stack.Screen name="EnglishLessonDetail" component={EnglishLessonDetailScreen} options={({ route }) => ({ title: route.params.title })} />
+      <Stack.Screen name="EnglishPractice" component={EnglishPracticeScreen} options={{ title: "Luyện từ tiếng Anh" }} />
     </Stack.Navigator>
   );
 }

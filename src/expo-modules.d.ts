@@ -1,4 +1,4 @@
-declare module "expo-file-system" {
+declare module "expo-file-system/legacy" {
   export const documentDirectory: string | null;
   export const EncodingType: {
     UTF8: string;

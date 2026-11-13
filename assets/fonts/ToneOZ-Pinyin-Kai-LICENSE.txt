@@ -1,0 +1,10 @@
+ToneOZ-Pinyin-Kai-Traditional HSK subset
+
+This app font is a glyph subset of ToneOZ-Pinyin-Kai-Traditional.ttf, retaining the Chinese characters and punctuation used by the bundled HSK datasets.
+
+Copyright notices from the source font:
+Copyright 2021 ToneOZ (https://toneoz.com)
+Copyright 2018 National Development Council, Taiwan. Chinese characters are based on the Taiwan Whole Characters Dataset (https://data.gov.tw/dataset/5961), under the Open Government Data License 1.0 (https://data.gov.tw/en/license).
+Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee).
+
+The font's embedded metadata refers to the Open Government Data License 1.0 and the Klee Project. Consult the linked upstream license pages for full terms.

@@ -1,7 +1,7 @@
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
+import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { AuthProvider } from "@/context/AuthContext";
 import { AppNavigator } from "@/navigation/AppNavigator";
 
 const theme = {
@@ -17,14 +17,18 @@ const theme = {
 };
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    NotoSerifSC: require("./assets/fonts/NotoSerifSC-Semibold-HSK.ttf"),
+  });
+
+  if (!fontsLoaded) return null;
+
   return (
     <SafeAreaProvider>
-      <AuthProvider>
-        <NavigationContainer theme={theme}>
-          <StatusBar style="dark" />
-          <AppNavigator />
-        </NavigationContainer>
-      </AuthProvider>
+      <NavigationContainer theme={theme}>
+        <StatusBar style="dark" />
+        <AppNavigator />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }

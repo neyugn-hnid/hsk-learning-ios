@@ -1,36 +1,26 @@
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
-import { Audio } from "expo-av";
 import * as Speech from "expo-speech";
 import { useEffect, useMemo, useState } from "react";
-import {
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  Vibration,
-  View,
-} from "react-native";
+import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { APP_COLORS } from "@/config";
-import { PronunciationMicButton, PronunciationResultPanel, usePronunciationRecorder } from "@/components/PronunciationRecorder";
+import rawChineseSentences from "@/data/chinese-sentences.json";
 import { fetchLessonDetail } from "@/lib/api";
-import { RootStackParamList } from "@/navigation/AppNavigator";
-import type { LessonDetail } from "@/types";
+import type { RootStackParamList } from "@/navigation/AppNavigator";
+import type { LessonDetail, Vocabulary } from "@/types";
 
 type Props = NativeStackScreenProps<RootStackParamList, "StudyDetail">;
-type QuizMode = "meaning" | "pinyin" | "recognition" | "listening";
-type PracticeQuestion = {
-  type: "MEANING" | "PINYIN" | "CHAR_RECOGNITION" | "HANZI_WRITING";
-  question: string;
-  options: string[];
-  answer: string;
-  promptPinyin?: string | null;
+
+type ChineseExampleSentence = {
+  lesson: number;
+  hanzi: string;
+  pinyin: string;
+  vietnamese: string;
+  vocabulary: string[];
 };
 
-const CORRECT_SOUND_URI =
-  "data:audio/wav;base64,UklGRiQPAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAPAAAAABkAXwDBACYBcgGKAVsB3AAVABn/B/4J/Un87/sW/Mv8Bv6s/40BcQMWBT4GtQZcBi0FPgO+APb9Ovvk+Ej3pfYh9774Wfuu/l0C9wUHCSULAQxwC3MJNQYPAnr9/vgr9X/yWvHy8UP0GfgK/YUC5weGDMwPRhG3EB4OuwkGBKf9W/fo8f3tH+yX7GnvT/TC+gMCOwmJDyUUdRYiFiQTxg2eBn7+WPYo79DpAech5zzqBfDb99YA7AkEEiEYfRugG3UYTRLTCQAA+/X07AfmE+Ke4crkRetb9AD/9QnuE7QbTiAiIQQeQxecDSsCR/ZW66/iYt0g3CLfG+ZJ8ID8Uwk+Fc8e2iSYJsIjnhz0Ef4EP/dX6tPf/ti31lLZlOCu61v5AwjsFWghEinyK58pTyLRFnQI5vj86YDd99Rx0WzT99rj5sf13wVHFSsiBSvILgMt7CVZGqgLl/sL7Nvel9VW0ZrSPNlz5O3y8QKdEhYgxCmBLr8tkye6HHwOiP6/7gHh7da00fXRqNcf4iDwAADgD+EdWCgLLkwuEyn/HkEReAGE8UbjbdhB0n/RPNbq32PtD/0TDY0bxCZmLaouaSolIfUTaQRY9KflFNr90jjR+9TV3bnqIfo5Ch0ZCSWULNoulCwJJR0ZOQoh+rnq1d371DjR/dIU2qflWPRpBPUTJSFpKqouZi3EJo0bEw0P/WPt6t881n/RQdJt2EbjhPF4AUER/x4TKUwuCy5YKOEd4A8AACDwH+Ko1/XRtNHt1gHhv+6I/nwOuhyTJ78tgS7EKRYgnRLxAu3yc+Q82ZrSVtGX1dveC+yX+6gLWRrsJQMtyC4FKysiRxXfBcf14+b32mzTJtFr1Nfca+mr+MgI3BceJBos4C4aLB4k3BfICKv4a+nX3GvUJtFs0/fa4+bH9d8FRxUrIgUryC4DLewlWRqoC5f7C+zb3pfVVtGa0jzZc+Tt8vECnRIWIMQpgS6/LZMnuhx8Doj+v+4B4e3WtNH10ajXH+Ig8AAA4A/hHVgoCy5MLhMp/x5BEXgBhPFG423YQdJ/0TzW6t9j7Q/9Ew2NG8QmZi2qLmkqJSH1E2kEWPSn5RTa/dI40fvU1d256iH6OQodGQkllCzaLpUrKSOVFlUHOPck6OLb5tMg0ebT4tsk6Dj3VQeVFikjlSvaLpQsCSUdGTkKIfq56tXd+9Q40f3SFNqn5Vj0aQT1EyUhaSqqLmYtxCaNGxMND/1j7erfPNZ/0UHSbdhG44TxeAFBEf8eEylMLgsuWCjhHeAPAAAg8B/iqNf10bTR7dYB4b/uiP58Drockye/LYEuxCkWIJ0S8QLt8nPkPNma0lbRl9Xb3gvsl/uoC1ka7CUDLcguBSsrIkcV3wXH9ePm99ps0ybRa9TX3Gvpq/jICNwXHiQaLOAuGiweJNwXyAir+Gvp19xr1CbRbNMy2zPn+PW6BZ0U4yAjKXEseyqNI4kYyArz+8rt9+HU2UvWtdfW3eXnpPSJAvAPRhs9I/ImBiamIIUXxAvR/jPyZuen39XbUdz84Djp/vMAAM8LCRaBHWEhRiFEHeQVFAwFAQv2buxJ5WnhMeGY5CXrBfQg/kEIOBH9F88bShxyGa4TuQuQAk35BPGs6vfmRuac6KPtsvTr/E0F3wzAEkoWIhc/FesQuQpvA/H7HfXA727sfuv77KfwA/Zh/PoCCAnYDeMQ3BG3EKgmkA/L9sPh49MDxzPCn8Sf07/eB/EsBvAVSCakLigzrC+8J4wYwA07/svvI+N72H/aR9hb4b/pJ/UQABQM7BawGOwfoBswFGwQVAgAAHv6k/Lf7Zvup+2j8fP21/uf/5wCdAfoBAAK+AU4BzQBZAAkA7P8=";
+const CHINESE_SENTENCES = rawChineseSentences as ChineseExampleSentence[];
+const CHINESE_FONT_FAMILY = "NotoSerifSC";
 
 function shuffleItems<T>(items: T[]) {
   const shuffled = [...items];
@@ -41,37 +31,36 @@ function shuffleItems<T>(items: T[]) {
   return shuffled;
 }
 
+function findChineseExample(lessonNo: number, vocabulary: Vocabulary) {
+  const sameLesson = CHINESE_SENTENCES.filter((sentence) => sentence.lesson === lessonNo);
+  const word = vocabulary.chinese.trim();
+  const exact = (sentences: ChineseExampleSentence[]) =>
+    sentences.find((sentence) => sentence.vocabulary.includes(word));
+  const related = (sentences: ChineseExampleSentence[]) =>
+    sentences.find((sentence) =>
+      sentence.vocabulary.some((term) => term.includes(word) || word.includes(term)),
+    );
+  const inSentence = (sentences: ChineseExampleSentence[]) =>
+    sentences.find((sentence) => sentence.hanzi.includes(word));
+
+  return exact(sameLesson) ??
+    exact(CHINESE_SENTENCES) ??
+    related(sameLesson) ??
+    related(CHINESE_SENTENCES) ??
+    inSentence(sameLesson) ??
+    inSentence(CHINESE_SENTENCES) ??
+    null;
+}
+
 export function StudyDetailScreen({ route }: Props) {
   const [lesson, setLesson] = useState<LessonDetail | null>(null);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState<"vocabulary" | "translation" | "hanzi" | "quiz">("vocabulary");
   const [index, setIndex] = useState(0);
-  const [showMeaning, setShowMeaning] = useState(false);
-  const [quizResponse, setQuizResponse] = useState("");
-  const [translationAnswer, setTranslationAnswer] = useState("");
-  const [checkedTranslation, setCheckedTranslation] = useState(false);
-  const [hanziAnswer, setHanziAnswer] = useState("");
-  const [checkedHanzi, setCheckedHanzi] = useState(false);
-  const [quizMode, setQuizMode] = useState<QuizMode>("meaning");
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     void load();
   }, [route.params.lessonId]);
-
-  useEffect(() => {
-    setIndex(0);
-    setShowMeaning(false);
-    setQuizResponse("");
-    setTranslationAnswer("");
-    setCheckedTranslation(false);
-    setHanziAnswer("");
-    setCheckedHanzi(false);
-  }, [tab]);
-
-  useEffect(() => {
-    setIndex(0);
-    setQuizResponse("");
-  }, [quizMode]);
 
   async function load() {
     try {
@@ -79,6 +68,7 @@ export function StudyDetailScreen({ route }: Props) {
       const response = await fetchLessonDetail(route.params.lessonId);
       setLesson(response.lesson);
       setIndex(0);
+      setIsFlipped(false);
     } finally {
       setLoading(false);
     }
@@ -88,154 +78,41 @@ export function StudyDetailScreen({ route }: Props) {
     () => shuffleItems(lesson?.vocabularies ?? []),
     [lesson?.id],
   );
-  const shuffledQuizzes = useMemo(
-    () => shuffleItems(lesson?.quizzes ?? []),
-    [lesson?.id],
-  );
-  const generatedQuizzes = useMemo<PracticeQuestion[]>(() => {
-    return shuffledVocabularies.map((vocab) => {
-      const distractorValues = shuffledVocabularies
-        .filter((item) => item.chinese !== vocab.chinese)
-        .map((item) => {
-          if (quizMode === "pinyin") return item.pinyin;
-          if (quizMode === "recognition" || quizMode === "listening") return item.chinese;
-          return item.meaningVi;
-        })
-        .filter(Boolean);
-      const answer =
-        quizMode === "pinyin"
-          ? vocab.pinyin
-          : quizMode === "recognition" || quizMode === "listening"
-            ? vocab.chinese
-            : vocab.meaningVi;
-      const options = shuffleItems(Array.from(new Set([answer, ...distractorValues])).slice(0, 4));
+  const currentVocab = shuffledVocabularies[index];
+  const currentExample = useMemo(
+    () => {
+      if (!currentVocab) return null;
+
+      const fallback = lesson ? findChineseExample(lesson.orderNo, currentVocab) : null;
+      const hanzi = currentVocab.exampleChinese?.trim() || fallback?.hanzi || "";
+      if (!hanzi) return null;
 
       return {
-        type:
-          quizMode === "pinyin"
-            ? "PINYIN"
-            : quizMode === "recognition" || quizMode === "listening"
-              ? "CHAR_RECOGNITION"
-              : "MEANING",
-        question:
-          quizMode === "pinyin"
-            ? `"${vocab.chinese}" đọc pinyin là gì?`
-            : quizMode === "listening"
-              ? "Nghe và chọn chữ Hán đúng"
-            : quizMode === "recognition"
-              ? `Chữ Hán nào có pinyin "${vocab.pinyin}"?`
-              : `"${vocab.chinese}" nghĩa là gì?`,
-        options,
-        answer,
-        promptPinyin: vocab.pinyin,
+        hanzi,
+        pinyin: currentVocab.examplePinyin?.trim() || fallback?.pinyin || "",
+        vietnamese: currentVocab.exampleMeaning?.trim() || fallback?.vietnamese || "",
       };
-    });
-  }, [quizMode, shuffledVocabularies]);
-  const practiceQuestions: PracticeQuestion[] = shuffledQuizzes.length && quizMode === "meaning" ? shuffledQuizzes : generatedQuizzes;
-  const currentVocab = shuffledVocabularies[index];
-  const currentQuiz = practiceQuestions[index];
-  const isWritingQuiz = currentQuiz?.type === "HANZI_WRITING";
-  const quizSpeechText =
-    (quizMode === "listening" ? currentQuiz?.answer : null) ||
-    currentQuiz?.promptPinyin ||
-    (currentQuiz?.type === "CHAR_RECOGNITION" ? currentQuiz.answer : null) ||
-    "";
-  const hasQuizAnswer = quizResponse.trim().length > 0;
-  const quizCorrect = hasQuizAnswer && quizResponse.trim() === (currentQuiz?.answer || "").trim();
-  const quizPinyin = useMemo(() => {
-    if (!currentQuiz) return "";
-    if (currentQuiz.promptPinyin) return currentQuiz.promptPinyin;
-    if (currentQuiz.type === "PINYIN") return currentQuiz.answer;
-
-    const matchedVocab = shuffledVocabularies.find((vocab) =>
-      vocab.chinese === currentQuiz.answer ||
-      currentQuiz.question.includes(vocab.chinese) ||
-      vocab.meaningVi === currentQuiz.answer ||
-      vocab.meaningEn === currentQuiz.answer
-    );
-
-    return matchedVocab?.pinyin || "";
-  }, [currentQuiz, shuffledVocabularies]);
-  const normalizedUserMeaning = translationAnswer.trim().toLowerCase();
-  const normalizedCorrectMeaning = (currentVocab?.meaningVi || "").trim().toLowerCase();
-  const translationCorrect =
-    checkedTranslation &&
-    normalizedUserMeaning.length > 0 &&
-    (normalizedUserMeaning === normalizedCorrectMeaning ||
-      normalizedCorrectMeaning.includes(normalizedUserMeaning) ||
-      normalizedUserMeaning.includes(normalizedCorrectMeaning));
-  const normalizedUserHanzi = hanziAnswer.trim();
-  const normalizedCorrectHanzi = (currentVocab?.chinese || "").trim();
-  const hanziCorrect =
-    checkedHanzi &&
-    normalizedUserHanzi.length > 0 &&
-    normalizedUserHanzi === normalizedCorrectHanzi;
-  const pronunciationTargetText = currentVocab?.chinese || "";
-  const quizPronunciationTargetText = currentQuiz?.answer || "";
-  const pronunciation = usePronunciationRecorder(pronunciationTargetText);
-  const quizPronunciation = usePronunciationRecorder(quizPronunciationTargetText);
-
-  const activeCount = useMemo(() => {
-    if (!lesson) return 0;
-    if (tab === "vocabulary" || tab === "translation" || tab === "hanzi") {
-      return shuffledVocabularies.length;
-    }
-    return practiceQuestions.length;
-  }, [lesson, practiceQuestions.length, shuffledVocabularies.length, tab]);
+    },
+    [currentVocab, lesson?.orderNo],
+  );
+  const count = shuffledVocabularies.length;
 
   function next() {
-    if (!activeCount) return;
-    setIndex((prev) => (prev + 1) % activeCount);
-    setShowMeaning(false);
-    setQuizResponse("");
+    if (!count) return;
+    setIndex((current) => (current + 1) % count);
+    setIsFlipped(false);
   }
 
-  function prev() {
-    if (!activeCount) return;
-    setIndex((prev) => (prev - 1 + activeCount) % activeCount);
-    setShowMeaning(false);
-    setQuizResponse("");
+  function previous() {
+    if (!count) return;
+    setIndex((current) => (current - 1 + count) % count);
+    setIsFlipped(false);
   }
 
   function speakChinese(text?: string | null) {
     if (!text) return;
     void Speech.stop();
-    Speech.speak(text, {
-      language: "zh-CN",
-      rate: 0.9,
-    });
-  }
-
-  useEffect(() => {
-    if (tab === "quiz" && quizMode === "listening" && quizSpeechText) {
-      speakChinese(quizSpeechText);
-    }
-  }, [index, quizMode, quizSpeechText, tab]);
-
-  async function playCorrectSound() {
-    try {
-      const { sound } = await Audio.Sound.createAsync({ uri: CORRECT_SOUND_URI });
-      sound.setOnPlaybackStatusUpdate((status) => {
-        if (status.isLoaded && status.didJustFinish) {
-          void sound.unloadAsync();
-        }
-      });
-      await sound.playAsync();
-    } catch {
-      // Feedback audio is best-effort so quiz interaction is never blocked.
-    }
-  }
-
-  function answerQuiz(option: string) {
-    setQuizResponse(option);
-    if (!currentQuiz) return;
-
-    if (option === currentQuiz.answer) {
-      void playCorrectSound();
-      return;
-    }
-
-    Vibration.vibrate(120);
+    Speech.speak(text, { language: "zh-CN", rate: 0.9 });
   }
 
   if (loading || !lesson) {
@@ -248,301 +125,142 @@ export function StudyDetailScreen({ route }: Props) {
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tabRow}>
-        {[
-          { key: "vocabulary", label: "Từ Vựng" },
-          { key: "translation", label: "Dịch Nghĩa" },
-          { key: "hanzi", label: "Chữ Hán" },
-          { key: "quiz", label: "Luyện Tập" },
-        ].map((item) => (
-          <Pressable key={item.key} style={[styles.tab, tab === item.key && styles.tabActive]} onPress={() => setTab(item.key as typeof tab)}>
-            <Text style={[styles.tabText, tab === item.key && styles.tabTextActive]}>{item.label}</Text>
-          </Pressable>
-        ))}
-      </ScrollView>
+      {currentVocab ? (
+        <View style={styles.study}>
+          {isFlipped ? (
+            <View style={[styles.flashcard, styles.backFace]}>
+              <View style={styles.cardHeader}>
+                <Text style={styles.faceLabel}>MẶT SAU</Text>
+                <Text style={styles.counter}>{index + 1} / {count}</Text>
+              </View>
 
-      {(tab === "vocabulary" || tab === "translation" || tab === "hanzi") && currentVocab ? (
-        <View style={{ gap: 16 }}>
-          <View style={styles.card}>
-            <Text style={styles.hanzi}>{tab === "hanzi" ? "?" : currentVocab.chinese}</Text>
-            <Text style={styles.pinyin}>{currentVocab.pinyin}</Text>
-            {tab === "translation" ? (
-              <>
-                <View style={styles.translationBox}>
-                  <TextInput
-                    style={styles.translationInput}
-                    placeholder="Nhập nghĩa tiếng Việt"
-                    value={translationAnswer}
-                    onChangeText={(value) => {
-                      setTranslationAnswer(value);
-                      if (checkedTranslation) {
-                        setCheckedTranslation(false);
-                      }
-                    }}
-                  />
+              <Text style={styles.backHanzi}>{currentVocab.chinese}</Text>
+
+              <View style={styles.pinyinBox}>
+                <Text style={styles.sectionLabel}>PINYIN</Text>
+                <Text style={styles.backPinyin}>{currentVocab.pinyin}</Text>
+                <View pointerEvents="box-none" style={styles.audioButtonSlot}>
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={"Nghe phát âm " + currentVocab.chinese}
+                    style={({ pressed }) => [styles.audioButton, pressed && styles.audioButtonPressed]}
+                    onPress={() => speakChinese(currentVocab.chinese)}
+                  >
+                    <Ionicons name="volume-high" size={18} color="#fff" />
+                  </Pressable>
                 </View>
-                {checkedTranslation ? (
-                  <View style={[styles.translationResult, translationCorrect ? styles.translationGood : styles.translationWarn]}>
-                    <Text style={styles.translationResultTitle}>
-                      {translationCorrect ? "Đúng rồi" : "Chưa khớp"}
-                    </Text>
-                    <Text style={styles.translationResultText}>
-                      Đáp án: {currentVocab.meaningVi}
-                    </Text>
-                  </View>
-                ) : (
-                  <View style={styles.hiddenBox}>
-                    <Text style={styles.subtle}>Xem từ rồi tự nhập nghĩa tiếng Việt.</Text>
-                  </View>
-                )}
-              </>
-            ) : tab === "hanzi" ? (
-              <>
-                <View style={styles.translationBox}>
-                  <Text style={styles.translationPrompt}>Nghĩa: {currentVocab.meaningVi}</Text>
-                  <TextInput
-                    style={styles.translationInput}
-                    placeholder="Nhập chữ Hán"
-                    value={hanziAnswer}
-                    onChangeText={(value) => {
-                      setHanziAnswer(value);
-                      if (checkedHanzi) {
-                        setCheckedHanzi(false);
-                      }
-                    }}
-                  />
-                </View>
-                {checkedHanzi ? (
-                  <View style={[styles.translationResult, hanziCorrect ? styles.translationGood : styles.translationWarn]}>
-                    <Text style={styles.translationResultTitle}>
-                      {hanziCorrect ? "Đúng rồi" : "Chưa khớp"}
-                    </Text>
-                    <Text style={styles.translationResultText}>
-                      Đáp án: {currentVocab.chinese}
-                    </Text>
-                  </View>
-                ) : (
-                  <View style={styles.hiddenBox}>
-                    <Text style={styles.subtle}>Xem pinyin và nghĩa rồi tự nhập chữ Hán.</Text>
-                  </View>
-                )}
-              </>
-            ) : showMeaning ? (
+              </View>
+
               <View style={styles.meaningBox}>
+                <Text style={styles.sectionLabel}>NGHĨA TIẾNG VIỆT</Text>
                 <Text style={styles.meaning}>{currentVocab.meaningVi}</Text>
-                {!!currentVocab.meaningEn && <Text style={styles.subtle}>{currentVocab.meaningEn}</Text>}
               </View>
-            ) : (
-              <View style={styles.hiddenBox}>
-                <Text style={styles.subtle}>Ẩn nghĩa để tự nhớ trước</Text>
-              </View>
-            )}
-            <View style={styles.actions}>
-              <PronunciationMicButton
-                onPress={pronunciation.onPress}
-                busy={pronunciation.busy}
-                isRecording={pronunciation.isRecording}
-              />
-              <SmallButton icon="chevron-back" onPress={() => {
-                prev();
-                setTranslationAnswer("");
-                setCheckedTranslation(false);
-                setHanziAnswer("");
-                setCheckedHanzi(false);
-              }} />
-              {tab === "translation" ? (
-                <SmallButton icon="checkmark" onPress={() => setCheckedTranslation(true)} primary large disabled={!translationAnswer.trim()} />
-              ) : tab === "hanzi" ? (
-                <SmallButton icon="checkmark" onPress={() => setCheckedHanzi(true)} primary large disabled={!hanziAnswer.trim()} />
+
+              {currentExample ? (
+                <View style={styles.exampleBox}>
+                  <View style={styles.exampleHeader}>
+                    <Text style={styles.sectionLabel}>VÍ DỤ</Text>
+                    <Ionicons name="chatbubble-ellipses-outline" size={16} color={APP_COLORS.primary} />
+                  </View>
+                  <Text style={styles.exampleHanzi}>{currentExample.hanzi}</Text>
+                  <Text style={styles.examplePinyin}>{currentExample.pinyin}</Text>
+                  <Text style={styles.exampleVietnamese}>{currentExample.vietnamese}</Text>
+                </View>
               ) : (
-                <SmallButton icon={showMeaning ? "eye-off" : "eye"} onPress={() => setShowMeaning((prevState) => !prevState)} primary large />
+                <View style={styles.exampleBox}>
+                  <Text style={styles.sectionLabel}>VÍ DỤ</Text>
+                  <Text style={styles.missingExample}>Chưa có câu ví dụ cho từ này.</Text>
+                </View>
               )}
-              <SmallButton icon="chevron-forward" onPress={() => {
-                next();
-                setTranslationAnswer("");
-                setCheckedTranslation(false);
-                setHanziAnswer("");
-                setCheckedHanzi(false);
-              }} />
-              <SmallButton icon="volume-medium" onPress={() => speakChinese(currentVocab.chinese)} primary />
-            </View>
-          </View>
-          <PronunciationResultPanel
-            result={pronunciation.result}
-            durationMs={pronunciation.durationMs}
-          />
-        </View>
-      ) : null}
 
-      {tab === "quiz" && currentQuiz ? (
-        <View style={styles.card}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.quizModeRow}>
-            {[
-              { key: "meaning", label: "Nghĩa" },
-              { key: "pinyin", label: "Pinyin" },
-              { key: "recognition", label: "Chữ Hán" },
-              { key: "listening", label: "Nghe" },
-            ].map((item) => (
-              <Pressable
-                key={item.key}
-                style={[styles.quizModeTab, quizMode === item.key && styles.quizModeTabActive]}
-                onPress={() => setQuizMode(item.key as QuizMode)}
-              >
-                <Text style={[styles.quizModeText, quizMode === item.key && styles.quizModeTextActive]}>
-                  {item.label}
-                </Text>
+              <Pressable style={styles.flipBackButton} onPress={() => setIsFlipped(false)}>
+                <Ionicons name="return-up-back-outline" size={17} color={APP_COLORS.primaryDark} />
+                <Text style={styles.flipBackText}>Chạm để xem lại mặt trước</Text>
               </Pressable>
-            ))}
-          </ScrollView>
-
-          <Text style={styles.quizQuestion}>{currentQuiz.question}</Text>
-         
-
-          {isWritingQuiz ? (
-            <TextInput
-              style={[styles.input, { marginTop: 16 }]}
-              value={quizResponse}
-              onChangeText={(value) => {
-                setQuizResponse(value);
-                if (value.trim() === currentQuiz.answer.trim()) {
-                  void playCorrectSound();
-                }
-              }}
-              placeholder="Nhập chữ Hán"
-            />
-          ) : (
-            <View style={{ gap: 10, marginTop: 16 }}>
-              {currentQuiz.options.map((option) => (
-                <Pressable
-                  key={option}
-                  style={[
-                    styles.optionButton,
-                    quizResponse === option && styles.optionButtonActive,
-                  ]}
-                  onPress={() => answerQuiz(option)}
-                >
-                  <Text style={styles.optionText}>{option}</Text>
-                </Pressable>
-              ))}
             </View>
+          ) : (
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={"Thẻ từ " + currentVocab.chinese + ", pinyin " + currentVocab.pinyin + ". Chạm để lật thẻ."}
+              style={({ pressed }) => [styles.flashcard, styles.frontFace, pressed && styles.pressed]}
+              onPress={() => setIsFlipped(true)}
+            >
+              <View style={styles.cardHeader}>
+                <Text style={styles.faceLabel}>THẺ TỪ VỰNG · {lesson.level}</Text>
+                <Text style={styles.counter}>{index + 1} / {count}</Text>
+              </View>
+
+              <View style={styles.wordBlock}>
+                <Text style={styles.frontHanzi}>{currentVocab.chinese}</Text>
+                <Text style={styles.frontPinyin}>{currentVocab.pinyin}</Text>
+              </View>
+
+              <View style={styles.flipHint}>
+                <Ionicons name="sync-outline" size={17} color={APP_COLORS.primary} />
+                <Text style={styles.flipHintText}>Chạm thẻ để xem nghĩa và ví dụ</Text>
+              </View>
+            </Pressable>
           )}
 
-          {hasQuizAnswer ? (
-            <View style={[styles.feedback, quizCorrect ? styles.feedbackGood : styles.feedbackWarn]}>
-              <Text style={styles.feedbackText}>
-                {quizCorrect ? "Đúng rồi." : `Chưa đúng. Đáp án: ${currentQuiz.answer}`}
-              </Text>
-              {quizCorrect && quizPinyin ? (
-                <Text style={styles.feedbackPinyin}>Pinyin: {quizPinyin}</Text>
-              ) : null}
-            </View>
-          ) : null}
-
-          <View style={styles.actionsquiz}>
-            
-            <SmallButton icon="chevron-back" onPress={prev} />
-            {quizMode === "listening" ? (
-              <SmallButton icon="volume-medium" onPress={() => speakChinese(quizSpeechText)} primary large />
-            ) : null}
-            <SmallButton icon="chevron-forward" onPress={next} />
-            
+          <View style={styles.navigation}>
+            <Pressable style={styles.navigationButton} onPress={previous}>
+              <Ionicons name="chevron-back" size={20} color={APP_COLORS.text} />
+              <Text style={styles.navigationText}>Từ trước</Text>
+            </Pressable>
+            <Pressable style={[styles.navigationButton, styles.nextButton]} onPress={next}>
+              <Text style={styles.nextText}>Từ tiếp</Text>
+              <Ionicons name="chevron-forward" size={20} color="#fff" />
+            </Pressable>
           </View>
-          <PronunciationResultPanel
-            result={quizPronunciation.result}
-            durationMs={quizPronunciation.durationMs}
-          />
         </View>
-      ) : null}
+      ) : (
+        <View style={styles.empty}>
+          <Text style={styles.emptyText}>Bài học này chưa có từ vựng.</Text>
+        </View>
+      )}
     </ScrollView>
-  );
-}
-
-function SmallButton({
-  icon,
-  onPress,
-  primary,
-  large,
-  disabled,
-}: {
-  icon: keyof typeof Ionicons.glyphMap;
-  onPress: () => void;
-  primary?: boolean;
-  large?: boolean;
-  disabled?: boolean;
-}) {
-  return (
-    <Pressable style={[styles.button, large && styles.buttonLarge, primary && styles.buttonPrimary, disabled && styles.buttonDisabled]} onPress={onPress} disabled={disabled}>
-      <Ionicons
-        name={icon}
-        size={large ? 22 : 18}
-        color={primary ? "#fff" : APP_COLORS.text}
-      />
-    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: APP_COLORS.background },
-  content: { padding: 20, gap: 16 },
+  content: { padding: 20, paddingBottom: 36 },
   loading: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: APP_COLORS.background },
-  tabRow: { flexDirection: "row", alignItems: "center", gap: 8, paddingRight: 2 },
-  tab: {
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 999,
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: APP_COLORS.border,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tabActive: { backgroundColor: "#fef2f2", borderColor: "#fecaca" },
-  tabText: { color: APP_COLORS.muted, fontWeight: "700" },
-  tabTextActive: { color: APP_COLORS.primaryDark },
-  quizModeRow: { flexDirection: "row", alignItems: "center", justifyContent: "center", flexGrow: 1, gap: 8, paddingRight: 2 },
-  quizModeTab: {
-    height: 36,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: APP_COLORS.border,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  quizModeTabActive: { backgroundColor: "#0f172a", borderColor: "#0f172a" },
-  quizModeText: { color: APP_COLORS.muted, fontWeight: "800" },
-  quizModeTextActive: { color: "#fff" },
-  card: { position: "relative", backgroundColor: "#fff", borderRadius: 32, borderWidth: 1, borderColor: APP_COLORS.border, paddingHorizontal: 22, paddingVertical: 28, minHeight: 440 },
-  hanzi: { fontSize: 72, fontWeight: "900", color: APP_COLORS.primary, textAlign: "center", minHeight: 108, lineHeight: 88 },
-  pinyin: { fontSize: 28, fontWeight: "800", color: APP_COLORS.text, textAlign: "center", marginTop: 18 },
-  meaningBox: { marginTop: 24, borderRadius: 22, backgroundColor: "#fff7ed", padding: 18 },
-  meaning: { fontSize: 24, fontWeight: "900", color: APP_COLORS.text, textAlign: "center" },
-  translationBox: { marginTop: 18, gap: 12 },
-  translationPrompt: { color: APP_COLORS.primaryDark, fontWeight: "700", textAlign: "center" },
-  translationInput: { borderWidth: 1, borderColor: APP_COLORS.border, borderRadius: 18, paddingHorizontal: 16, paddingVertical: 14, backgroundColor: "#fff", fontSize: 16, color: APP_COLORS.text },
-  translationResult: { marginTop: 12, borderRadius: 18, padding: 14, gap: 4 },
-  translationGood: { backgroundColor: "#ecfdf5" },
-  translationWarn: { backgroundColor: "#fff7ed" },
-  translationResultTitle: { color: APP_COLORS.text, fontWeight: "900", fontSize: 18 },
-  translationResultText: { color: APP_COLORS.text, lineHeight: 20 },
-  subtle: { color: APP_COLORS.muted, textAlign: "center", marginTop: 6, lineHeight: 20 },
-  hiddenBox: { marginTop: 24, borderRadius: 22, borderWidth: 1, borderStyle: "dashed", borderColor: "#cbd5e1", padding: 18 },
-  actions: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 6, marginTop: 22 },
-  actionsquiz: { flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 50, marginTop: 22 },
-  button: { width: 48, height: 48, borderRadius: 999, borderWidth: 1, borderColor: APP_COLORS.border, alignItems: "center", justifyContent: "center", backgroundColor: "#fff" },
-  buttonLarge: { width: 56, height: 56 },
-  buttonPrimary: { backgroundColor: APP_COLORS.primary, borderColor: APP_COLORS.primary, shadowColor: APP_COLORS.primary, shadowOpacity: 0.18, shadowRadius: 12, shadowOffset: { width: 0, height: 8 }, elevation: 4 },
-  buttonDisabled: { opacity: 0.45 },
-  quizType: { alignSelf: "flex-start", backgroundColor: "#0f172a", color: "#fff", paddingHorizontal: 10, paddingVertical: 5, borderRadius: 999, overflow: "hidden", fontWeight: "800" },
-  quizQuestion: { marginTop: 16, fontSize: 24, fontWeight: "900", color: APP_COLORS.text },
-  optionButton: { borderWidth: 1, borderColor: APP_COLORS.border, borderRadius: 18, paddingHorizontal: 16, paddingVertical: 16, backgroundColor: "#fff" },
-  optionButtonActive: { borderColor: "#fecaca", backgroundColor: "#fef2f2" },
-  optionText: { color: APP_COLORS.text, fontWeight: "700" },
-  input: { borderWidth: 1, borderColor: APP_COLORS.border, borderRadius: 18, paddingHorizontal: 16, paddingVertical: 14, backgroundColor: "#fff", fontSize: 18, fontWeight: "700" },
-  feedback: { marginTop: 16, borderRadius: 18, paddingHorizontal: 16, paddingVertical: 14 },
-  feedbackGood: { backgroundColor: "#ecfdf5" },
-  feedbackWarn: { backgroundColor: "#fff7ed" },
-  feedbackText: { fontWeight: "800", color: APP_COLORS.text },
-  feedbackPinyin: { marginTop: 6, fontSize: 20, fontWeight: "900", color: APP_COLORS.primaryDark },
+  study: { gap: 14 },
+  flashcard: { borderRadius: 30, padding: 22, borderWidth: 1, borderColor: APP_COLORS.border, backgroundColor: "#fff" },
+  frontFace: { minHeight: 390, justifyContent: "space-between", alignItems: "center", overflow: "hidden" },
+  backFace: { gap: 17, borderColor: APP_COLORS.border, backgroundColor: "#fff" },
+  pressed: { opacity: 0.92, transform: [{ scale: 0.99 }] },
+  audioButtonPressed: { opacity: 0.78 },
+  cardHeader: { width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  faceLabel: { color: APP_COLORS.primaryDark, fontSize: 10, letterSpacing: 1.2, fontWeight: "900" },
+  counter: { color: APP_COLORS.muted, fontSize: 12, fontWeight: "800" },
+  wordBlock: { alignItems: "center", paddingVertical: 28 },
+  frontHanzi: { fontFamily: CHINESE_FONT_FAMILY, color: APP_COLORS.primary, fontSize: 84, lineHeight: 100, fontWeight: "600", textAlign: "center" },
+  frontPinyin: { marginTop: 8, color: APP_COLORS.text, fontSize: 24, fontWeight: "800", textAlign: "center" },
+  flipHint: { width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingTop: 16, borderTopWidth: 1, borderTopColor: "#EEF1F5" },
+  flipHintText: { color: APP_COLORS.primaryDark, fontSize: 12, fontWeight: "800" },
+  backHanzi: { fontFamily: CHINESE_FONT_FAMILY, color: APP_COLORS.text, fontSize: 34, lineHeight: 42, fontWeight: "600" },
+  pinyinBox: { width: "100%", position: "relative", padding: 14, paddingRight: 60, borderRadius: 16, borderWidth: 1, borderColor: APP_COLORS.border, backgroundColor: "#F8FAFC" },
+  sectionLabel: { color: APP_COLORS.muted, fontSize: 10, letterSpacing: 1, fontWeight: "900" },
+  backPinyin: { marginTop: 6, color: APP_COLORS.primaryDark, fontSize: 21, lineHeight: 29, fontWeight: "900" },
+  audioButtonSlot: { position: "absolute", top: 0, right: 14, bottom: 0, width: 32, justifyContent: "center" },
+  audioButton: { width: 32, height: 32, alignItems: "center", justifyContent: "center", borderRadius: 16, backgroundColor: APP_COLORS.primary },
+  meaningBox: { gap: 7 },
+  meaning: { color: APP_COLORS.text, fontSize: 19, lineHeight: 27, fontWeight: "900" },
+  exampleBox: { paddingTop: 15, borderTopWidth: 1, borderTopColor: "#EEF1F5", gap: 8 },
+  exampleHeader: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  exampleHanzi: { fontFamily: CHINESE_FONT_FAMILY, color: APP_COLORS.text, fontSize: 22, lineHeight: 31, fontWeight: "600" },
+  examplePinyin: { color: APP_COLORS.primaryDark, fontSize: 15, lineHeight: 22, fontWeight: "700" },
+  exampleVietnamese: { color: APP_COLORS.muted, fontSize: 14, lineHeight: 21 },
+  missingExample: { color: APP_COLORS.muted, marginTop: 6, lineHeight: 20 },
+  flipBackButton: { flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7, paddingTop: 1 },
+  flipBackText: { color: APP_COLORS.primaryDark, fontSize: 12, fontWeight: "800" },
+  navigation: { flexDirection: "row", gap: 12 },
+  navigationButton: { flex: 1, minHeight: 50, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, borderRadius: 16, borderWidth: 1, borderColor: APP_COLORS.border, backgroundColor: "#fff" },
+  navigationText: { color: APP_COLORS.text, fontWeight: "800" },
+  nextButton: { backgroundColor: APP_COLORS.primary, borderColor: APP_COLORS.primary },
+  nextText: { color: "#fff", fontWeight: "900" },
+  empty: { alignItems: "center", padding: 26 },
+  emptyText: { color: APP_COLORS.muted, fontWeight: "700" },
 });
