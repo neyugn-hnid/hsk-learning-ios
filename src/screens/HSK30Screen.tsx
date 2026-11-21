@@ -2,7 +2,7 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -54,12 +54,14 @@ const TOPIC_PALETTES = [
 
 export function HSK30Screen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
+  const listRef = useRef<FlatList<LessonSummary>>(null);
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [allLessons, setAllLessons] = useState<LessonSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   const levels = useMemo(
     () => sortLevels(Array.from(new Set(allLessons.map((item) => item.level).filter(Boolean)))),
@@ -99,21 +101,14 @@ export function HSK30Screen({ navigation }: Props) {
         <View style={styles.heroCard}>
           <View style={styles.heroDecoration} />
           <View style={styles.heroTop}>
-            <View style={styles.heroBadge}>
-              <Ionicons name="sparkles" size={14} color="#FECACA" />
-              <Text style={styles.heroBadgeText}>HSK 3.0</Text>
-            </View>
+            <Text style={styles.heroTitle}>Học tiếng Trung{`\n`}qua chủ đề</Text>
             <View style={styles.heroIcon}>
               <Ionicons name="school-outline" size={24} color="#FECACA" />
             </View>
           </View>
-          <Text style={styles.heroTitle}>Học tiếng Trung{`\n`}qua chủ đề</Text>
-          <Text style={styles.heroSubtitle}>Chọn một chủ đề, bắt đầu học từ vựng và luyện tập ngay.</Text>
-          <View style={styles.heroFooter}>
-            <Text style={styles.heroFooterText}>HSK 1–6</Text>
-            <View style={styles.heroDivider} />
-            <Text style={styles.heroFooterText}>{allLessons.length} chủ đề</Text>
-          </View>
+          
+          <Text style={styles.heroSubtitle}>Bắt đầu học từ vựng và luyện tập ngay.</Text>
+          
         </View>
 
         <View style={styles.searchBox}>
@@ -146,15 +141,17 @@ export function HSK30Screen({ navigation }: Props) {
         </View>
       ) : (
         <FlatList
+          ref={listRef}
           data={lessons}
           keyExtractor={(item) => item.id}
+          onScroll={(event) => setShowScrollToTop(event.nativeEvent.contentOffset.y > 280)}
+          scrollEventThrottle={16}
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => void loadLessons(true)} />}
           contentContainerStyle={styles.listContent}
           ListHeaderComponent={
             <View style={styles.listHeader}>
               <View style={styles.sectionHeading}>
                 <View>
-                  <Text style={styles.sectionEyebrow}>CHỌN CẤP ĐỘ</Text>
                   <Text style={styles.sectionTitle}>Chủ đề học</Text>
                 </View>
                 <View style={styles.countBadge}>
@@ -192,17 +189,11 @@ export function HSK30Screen({ navigation }: Props) {
                   onPress={() => navigation.navigate("StudyDetail", { lessonId: item.id, title: item.title })}
                 >
                   <View style={styles.cardHeading}>
-                    <View style={[styles.topicIcon, { backgroundColor: palette.background }]}>
-                      <Ionicons name={icon} size={24} color={palette.foreground} />
-                    </View>
                     <View style={styles.cardMain}>
-                      <View style={styles.cardMetaRow}>
-                        <Text style={styles.levelBadge}>{item.level.replace(/(HSK)\s*(\d+)/i, "$1 $2")}</Text>
-                        <Text style={styles.topicNumber}>CHỦ ĐỀ {String(item.orderNo).padStart(2, "0")}</Text>
-                      </View>
                       <Text style={styles.cardTitle} numberOfLines={2}>{title}</Text>
                     </View>
                   </View>
+                  
                   <Text style={styles.cardDesc} numberOfLines={2}>
                     {item.description || "Từ vựng và mẫu câu thiết yếu theo chủ đề."}
                   </Text>
@@ -215,20 +206,12 @@ export function HSK30Screen({ navigation }: Props) {
                   <View style={styles.cardActions}>
                     <Pressable
                       accessibilityRole="button"
-                      accessibilityLabel={`Luyện viết chữ Hán: ${title}`}
+                      accessibilityLabel={`Mở luyện tập tiếng Trung: ${title}`}
                       style={({ pressed }) => [styles.practiceButton, pressed && styles.cardPressed]}
                       onPress={() => navigation.navigate("HanziPractice", { lessonId: item.id, title: item.title })}
                     >
                       <Ionicons name="create-outline" size={16} color={APP_COLORS.primaryDark} />
                       <Text style={styles.practiceButtonText}>Luyện tập</Text>
-                    </Pressable>
-                    <Pressable
-                      accessibilityRole="button"
-                      accessibilityLabel={`Mở bài học: ${title}`}
-                      style={({ pressed }) => [styles.arrowButton, { backgroundColor: palette.background }, pressed && styles.cardPressed]}
-                      onPress={() => navigation.navigate("StudyDetail", { lessonId: item.id, title: item.title })}
-                    >
-                      <Ionicons name="arrow-forward" size={17} color={palette.foreground} />
                     </Pressable>
                   </View>
                 </View>
@@ -238,6 +221,16 @@ export function HSK30Screen({ navigation }: Props) {
           ListEmptyComponent={<Text style={styles.empty}>Chưa có bài học phù hợp.</Text>}
         />
       )}
+      {!loading && showScrollToTop ? (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Cuộn lên đầu danh sách chủ đề"
+          style={({ pressed }) => [styles.scrollToTopButton, pressed && styles.scrollToTopButtonPressed]}
+          onPress={() => listRef.current?.scrollToOffset({ offset: 0, animated: true })}
+        >
+          <Ionicons name="arrow-up" size={20} color={APP_COLORS.primaryDark} />
+        </Pressable>
+      ) : null}
     </View>
   );
 }
@@ -302,7 +295,7 @@ const styles = StyleSheet.create({
   cardMetaRow: { flexDirection: "row", alignItems: "center", gap: 8 },
   levelBadge: { overflow: "hidden", paddingHorizontal: 8, paddingVertical: 4, borderRadius: 8, backgroundColor: "#FEF2F2", color: APP_COLORS.primaryDark, fontSize: 10, fontWeight: "900" },
   topicNumber: { color: "#94A3B8", fontSize: 9, fontWeight: "900", letterSpacing: 0.8 },
-  cardTitle: { marginTop: 7, color: APP_COLORS.text, fontSize: 16, lineHeight: 21, fontWeight: "900" },
+  cardTitle: {  color: APP_COLORS.text, fontSize: 16, lineHeight: 21, fontWeight: "900" },
   cardDesc: { marginTop: 13, color: APP_COLORS.muted, fontSize: 13, lineHeight: 19 },
   cardFooter: {
     marginTop: 13,
@@ -319,5 +312,24 @@ const styles = StyleSheet.create({
   practiceButton: { minHeight: 36, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 5, paddingHorizontal: 11, borderRadius: 12, borderWidth: 1, borderColor: "#FECACA", backgroundColor: "#FFF7F5" },
   practiceButtonText: { color: APP_COLORS.primaryDark, fontSize: 11, fontWeight: "900" },
   arrowButton: { width: 34, height: 34, borderRadius: 12, alignItems: "center", justifyContent: "center" },
+  scrollToTopButton: {
+    position: "absolute",
+    right: 18,
+    bottom: 18,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFFFFF",
+    borderWidth: 1,
+    borderColor: "#E8ECF2",
+    shadowColor: "#334155",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.12,
+    shadowRadius: 5,
+    elevation: 3,
+  },
+  scrollToTopButtonPressed: { opacity: 0.75 },
   empty: { textAlign: "center", marginTop: 40, color: APP_COLORS.muted, fontWeight: "600" },
 });

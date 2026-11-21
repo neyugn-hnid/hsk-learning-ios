@@ -1,9 +1,10 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
 import * as Speech from "expo-speech";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   KeyboardAvoidingView,
+  Modal,
   Platform,
   Pressable,
   ScrollView,
@@ -19,6 +20,7 @@ import type { RootStackParamList } from "@/navigation/AppNavigator";
 type Props = NativeStackScreenProps<RootStackParamList, "EnglishPractice">;
 
 const ENGLISH_ACCENT = "#2563EB";
+type PracticeMode = "typing" | "multipleChoice";
 
 function normalizeAnswer(value: string) {
   return value
@@ -29,12 +31,23 @@ function normalizeAnswer(value: string) {
     .replace(/\s+/g, " ");
 }
 
+function shuffle<T,>(items: T[]) {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
+}
+
 export function EnglishPracticeScreen({ route, navigation }: Props) {
   const lesson = findEnglishLesson(route.params.lessonId);
   const words = lesson?.words ?? [];
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [feedback, setFeedback] = useState<boolean | null>(null);
+  const [practiceMode, setPracticeMode] = useState<PracticeMode>("typing");
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showPronunciation, setShowPronunciation] = useState(false);
   const [correctIndexes, setCorrectIndexes] = useState<number[]>([]);
   const [isComplete, setIsComplete] = useState(false);
@@ -46,6 +59,8 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
     setIndex(0);
     setAnswer("");
     setFeedback(null);
+    setPracticeMode("typing");
+    setSelectedOption(null);
     setShowPronunciation(false);
     setCorrectIndexes([]);
     setIsComplete(false);
@@ -56,6 +71,10 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
       void Speech.stop();
     };
   }, [route.params.lessonId]);
+
+  useEffect(() => {
+    navigation.setOptions({ headerShown: !isComplete });
+  }, [isComplete, navigation]);
 
   function moveTo(nextIndex: number) {
     if (autoCheckTimer.current) {
@@ -73,8 +92,48 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
     }
     setIndex(Math.max(0, nextIndex));
     setAnswer("");
+    setSelectedOption(null);
     setFeedback(null);
     setShowPronunciation(false);
+  }
+
+  function changePracticeMode(nextMode: PracticeMode) {
+    if (nextMode === practiceMode) return;
+    if (autoCheckTimer.current) {
+      clearTimeout(autoCheckTimer.current);
+      autoCheckTimer.current = null;
+    }
+    if (autoAdvanceTimer.current) {
+      clearTimeout(autoAdvanceTimer.current);
+      autoAdvanceTimer.current = null;
+    }
+    setPracticeMode(nextMode);
+    setIndex(0);
+    setAnswer("");
+    setSelectedOption(null);
+    setFeedback(null);
+    setShowPronunciation(false);
+    setCorrectIndexes([]);
+    setIsComplete(false);
+  }
+
+  function chooseOption(value: string) {
+    if (!word || feedback === true) return;
+    if (autoAdvanceTimer.current) {
+      clearTimeout(autoAdvanceTimer.current);
+      autoAdvanceTimer.current = null;
+    }
+    setSelectedOption(value);
+    const isCorrect = normalizeAnswer(value) === normalizeAnswer(word.word);
+    setFeedback(isCorrect);
+    if (isCorrect) {
+      setCorrectIndexes((current) => current.includes(index) ? current : [...current, index]);
+      const answeredIndex = index;
+      autoAdvanceTimer.current = setTimeout(() => {
+        autoAdvanceTimer.current = null;
+        moveTo(answeredIndex + 1);
+      }, 650);
+    }
   }
 
   function checkAnswer(value = answer) {
@@ -124,6 +183,7 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
     }
     setIndex(0);
     setAnswer("");
+    setSelectedOption(null);
     setFeedback(null);
     setShowPronunciation(false);
     setCorrectIndexes([]);
@@ -135,6 +195,19 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
     void Speech.stop();
     Speech.speak(word.word, { language: "en-US", rate: 0.88 });
   }
+
+  const usPronunciations = word?.pronunciation_ipa?.us ?? [];
+  const progress = words.length ? (index + 1) / words.length : 0;
+  const wordOptions = useMemo(() => {
+    const correctWord = words[index]?.word?.trim();
+    if (!correctWord) return [];
+    const distractors = Array.from(new Map(
+      words.map((item) => [normalizeAnswer(item.word), item.word.trim()]),
+    ).entries())
+      .filter(([normalized]) => normalized !== normalizeAnswer(correctWord))
+      .map(([, candidate]) => candidate);
+    return shuffle([correctWord, ...shuffle(distractors).slice(0, 3)]);
+  }, [index, words]);
 
   if (!lesson) {
     return (
@@ -160,9 +233,6 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
     );
   }
 
-  const usPronunciations = word?.pronunciation_ipa?.us ?? [];
-  const progress = words.length ? (index + 1) / words.length : 0;
-
   return (
     <KeyboardAvoidingView
       style={styles.screen}
@@ -170,25 +240,29 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
       keyboardVerticalOffset={88}
     >
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-        {isComplete ? (
-          <View style={styles.completionCard}>
-            <View style={styles.completionIcon}>
-              <Ionicons name="checkmark-done" size={30} color="#047857" />
-            </View>
-            <Text style={styles.completionTitle}>Hoàn thành bài luyện tập!</Text>
-            <Text style={styles.completionDescription}>
-              Bạn đã viết đúng {correctIndexes.length}/{words.length} từ trong bài.
-            </Text>
-            <Pressable style={styles.primaryButton} onPress={restart}>
-              <Ionicons name="refresh-outline" size={18} color="#fff" />
-              <Text style={styles.primaryButtonText}>Luyện lại</Text>
-            </Pressable>
-            <Pressable style={styles.textButton} onPress={() => navigation.goBack()}>
-              <Text style={styles.textButtonLabel}>Về danh sách bài học</Text>
-            </Pressable>
-          </View>
-        ) : (
+        {!isComplete ? (
           <>
+            <View style={styles.modeSelector} accessibilityRole="tablist">
+              <Pressable
+                accessibilityRole="tab"
+                accessibilityState={{ selected: practiceMode === "typing" }}
+                style={[styles.modeTab, practiceMode === "typing" && styles.modeTabActive]}
+                onPress={() => changePracticeMode("typing")}
+              >
+                <Ionicons name="create-outline" size={17} color={practiceMode === "typing" ? ENGLISH_ACCENT : APP_COLORS.muted} />
+                <Text style={[styles.modeTabText, practiceMode === "typing" && styles.modeTabTextActive]}>Điền từ</Text>
+              </Pressable>
+              <Pressable
+                accessibilityRole="tab"
+                accessibilityState={{ selected: practiceMode === "multipleChoice" }}
+                style={[styles.modeTab, practiceMode === "multipleChoice" && styles.modeTabActive]}
+                onPress={() => changePracticeMode("multipleChoice")}
+              >
+                <Ionicons name="list-outline" size={17} color={practiceMode === "multipleChoice" ? ENGLISH_ACCENT : APP_COLORS.muted} />
+                <Text style={[styles.modeTabText, practiceMode === "multipleChoice" && styles.modeTabTextActive]}>Trắc nghiệm</Text>
+              </Pressable>
+            </View>
+
             <View style={styles.progressSection}>
               <View style={styles.progressLabels}>
                 <Text style={styles.progressTitle}>TIẾN ĐỘ BÀI LUYỆN</Text>
@@ -205,92 +279,127 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
                   <View style={styles.cardLabelIcon}>
                     <Ionicons name="language-outline" size={16} color={ENGLISH_ACCENT} />
                   </View>
-                  <Text style={styles.cardLabel}>NHẬP TỪ TIẾNG ANH</Text>
+                  <Text style={styles.cardLabel}>
+                    {practiceMode === "typing" ? "NHẬP TỪ TIẾNG ANH" : "TRẮC NGHIỆM TỪ VỰNG"}
+                  </Text>
                 </View>
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityLabel="Nghe phát âm tiếng Anh"
-                  style={styles.audioButton}
-                  onPress={speakWord}
-                >
-                  <Ionicons name="volume-high" size={19} color={ENGLISH_ACCENT} />
-                </Pressable>
+                {practiceMode === "typing" ? (
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel="Nghe phát âm tiếng Anh"
+                    style={styles.audioButton}
+                    onPress={speakWord}
+                  >
+                    <Ionicons name="volume-high" size={19} color={ENGLISH_ACCENT} />
+                  </Pressable>
+                ) : null}
               </View>
 
-              <Text style={styles.promptLabel}>TỪ NÀY CÓ NGHĨA LÀ</Text>
               <Text style={styles.meaningPrompt}>{word?.meaning_vi || "Chưa có nghĩa tiếng Việt"}</Text>
               {word?.part_of_speech?.length ? (
                 <Text style={styles.partOfSpeech}>{word.part_of_speech.join(" · ")}</Text>
               ) : null}
 
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel={showPronunciation ? "Ẩn gợi ý phiên âm" : "Hiện gợi ý phiên âm"}
-                style={[styles.pronunciationHint, showPronunciation && styles.pronunciationHintActive]}
-                onPress={() => setShowPronunciation((current) => !current)}
-              >
-                <Ionicons name={showPronunciation ? "eye-off-outline" : "eye-outline"} size={15} color={ENGLISH_ACCENT} />
-                <Text style={styles.pronunciationHintText}>
-                  {showPronunciation
-                    ? usPronunciations.join(" · ") || "Chưa có phiên âm"
-                    : "Hiện gợi ý phiên âm"}
-                </Text>
-              </Pressable>
+              {practiceMode === "typing" ? (
+                <>
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={showPronunciation ? "Ẩn gợi ý phiên âm" : "Hiện gợi ý phiên âm"}
+                    style={[styles.pronunciationHint, showPronunciation && styles.pronunciationHintActive]}
+                    onPress={() => setShowPronunciation((current) => !current)}
+                  >
+                    <Ionicons name={showPronunciation ? "eye-off-outline" : "eye-outline"} size={15} color={ENGLISH_ACCENT} />
+                    <Text style={styles.pronunciationHintText}>
+                      {showPronunciation
+                        ? usPronunciations.join(" · ") || "Chưa có phiên âm"
+                        : "Hiện phiên âm"}
+                    </Text>
+                  </Pressable>
 
-              <TextInput
-                value={answer}
-                onChangeText={updateAnswer}
-                onSubmitEditing={() => checkAnswer()}
-                returnKeyType="done"
-                autoCapitalize="none"
-                autoCorrect={false}
-                placeholder="Type the English word..."
-                placeholderTextColor="#94A3B8"
-                accessibilityLabel="Nhập từ tiếng Anh"
-                style={[
-                  styles.answerInput,
-                  feedback === true && styles.answerInputCorrect,
-                  feedback === false && styles.answerInputIncorrect,
-                ]}
-              />
-              <Text style={styles.inputHint}>Nhập đúng từ để tự kiểm tra và chuyển sang từ tiếp theo.</Text>
-
-              {feedback !== null ? (
-                <View style={[styles.feedbackBox, feedback ? styles.feedbackCorrect : styles.feedbackIncorrect]}>
-                  <Ionicons
-                    name={feedback ? "checkmark-circle" : "close-circle"}
-                    size={19}
-                    color={feedback ? "#047857" : "#B91C1C"}
-                  />
-                  <Text style={[styles.feedbackText, feedback ? styles.feedbackTextCorrect : styles.feedbackTextIncorrect]}>
-                    {feedback ? `Chính xác! ${word?.word}` : "Chưa đúng, thử lại nhé."}
-                  </Text>
+                  <View style={styles.answerInputWrap}>
+                    <TextInput
+                      value={answer}
+                      onChangeText={updateAnswer}
+                      onSubmitEditing={() => checkAnswer()}
+                      returnKeyType="done"
+                      autoCapitalize="none"
+                      autoCorrect={false}
+                      accessibilityLabel="Nhập từ tiếng Anh"
+                      style={[
+                        styles.answerInput,
+                        feedback === true && styles.answerInputCorrect,
+                        feedback === false && styles.answerInputIncorrect,
+                      ]}
+                    />
+                    {!answer ? (
+                      <View pointerEvents="none" style={styles.answerPlaceholderWrap}>
+                        <Text accessible={false} style={styles.answerPlaceholder}>Nhập từ tiếng Anh...</Text>
+                      </View>
+                    ) : null}
+                  </View>
+                </>
+              ) : (
+                <View style={styles.choiceOptions}>
+                  {wordOptions.map((option, optionIndex) => {
+                    const isSelected = selectedOption === option;
+                    const isCorrectOption = normalizeAnswer(option) === normalizeAnswer(word?.word ?? "");
+                    return (
+                      <Pressable
+                        key={`${option}-${optionIndex}`}
+                        accessibilityRole="button"
+                        accessibilityLabel={`Chọn từ ${option}`}
+                        accessibilityState={{ selected: isSelected, disabled: feedback === true }}
+                        disabled={feedback === true}
+                        style={[
+                          styles.choiceOption,
+                          feedback !== null && isCorrectOption && styles.choiceOptionCorrect,
+                          feedback === false && isSelected && !isCorrectOption && styles.choiceOptionIncorrect,
+                        ]}
+                        onPress={() => chooseOption(option)}
+                      >
+                        <Text style={[
+                          styles.choiceOptionText,
+                          feedback !== null && isCorrectOption && styles.choiceOptionTextCorrect,
+                          feedback === false && isSelected && !isCorrectOption && styles.choiceOptionTextIncorrect,
+                        ]}>{option}</Text>
+                        {feedback !== null && isCorrectOption ? (
+                          <Ionicons name="checkmark-circle" size={19} color="#047857" />
+                        ) : feedback === false && isSelected ? (
+                          <Ionicons name="close-circle" size={19} color="#B91C1C" />
+                        ) : null}
+                      </Pressable>
+                    );
+                  })}
                 </View>
-              ) : null}
+              )}
+
             </View>
 
-            <View style={styles.navigationRow}>
-              <Pressable
-                accessibilityRole="button"
-                disabled={index === 0}
-                style={[styles.navigationButton, index === 0 && styles.navigationButtonDisabled]}
-                onPress={() => moveTo(index - 1)}
-              >
-                <Ionicons name="chevron-back" size={19} color={index === 0 ? "#A8B0BC" : APP_COLORS.text} />
-                <Text style={[styles.navigationText, index === 0 && styles.navigationTextDisabled]}>Từ trước</Text>
-              </Pressable>
-              <Pressable
-                accessibilityRole="button"
-                style={[styles.navigationButton, styles.nextButton]}
-                onPress={() => moveTo(index + 1)}
-              >
-                <Text style={styles.nextButtonText}>{index === words.length - 1 ? "Hoàn thành" : "Từ tiếp"}</Text>
-                <Ionicons name={index === words.length - 1 ? "checkmark-done" : "chevron-forward"} size={19} color="#fff" />
-              </Pressable>
-            </View>
           </>
-        )}
+        ) : null}
       </ScrollView>
+
+      <Modal
+        transparent
+        visible={isComplete}
+        animationType="fade"
+        onRequestClose={() => navigation.goBack()}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.completionCard}>
+            <View style={styles.completionIcon}>
+              <Ionicons name="checkmark-done" size={30} color="#047857" />
+            </View>
+            <Text style={styles.completionTitle}>Hoàn thành bài luyện tập!</Text>
+            <Text style={styles.completionDescription}>
+              Bạn đã trả lời đúng {correctIndexes.length}/{words.length} từ trong bài.
+            </Text>
+            <Pressable style={styles.textButton} onPress={() => navigation.goBack()}>
+              <Text style={styles.textButtonLabel}>Về danh sách bài học</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
     </KeyboardAvoidingView>
   );
 }
@@ -298,6 +407,11 @@ export function EnglishPracticeScreen({ route, navigation }: Props) {
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: APP_COLORS.background },
   content: { padding: 18, gap: 16, paddingBottom: 36 },
+  modeSelector: { flexDirection: "row", gap: 5, padding: 5, borderWidth: 1, borderColor: APP_COLORS.border, borderRadius: 17, backgroundColor: "#fff" },
+  modeTab: { minHeight: 43, flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingHorizontal: 8, borderRadius: 12 },
+  modeTabActive: { backgroundColor: "#EFF6FF" },
+  modeTabText: { color: APP_COLORS.muted, fontSize: 12, fontWeight: "800" },
+  modeTabTextActive: { color: ENGLISH_ACCENT },
   emptyState: { flex: 1, alignItems: "center", justifyContent: "center", padding: 28, gap: 12, backgroundColor: APP_COLORS.background },
   emptyTitle: { color: APP_COLORS.text, fontSize: 19, fontWeight: "900", textAlign: "center" },
   secondaryButton: { minHeight: 46, alignItems: "center", justifyContent: "center", marginTop: 4, paddingHorizontal: 22, borderRadius: 14, backgroundColor: "#EFF6FF" },
@@ -327,7 +441,17 @@ const styles = StyleSheet.create({
   pronunciationHint: { alignSelf: "center", flexDirection: "row", alignItems: "center", gap: 6, marginTop: 14, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 999, backgroundColor: "#F8FAFC" },
   pronunciationHintActive: { backgroundColor: "#EFF6FF" },
   pronunciationHintText: { color: ENGLISH_ACCENT, fontSize: 12, fontWeight: "800" },
-  answerInput: { minHeight: 60, marginTop: 18, paddingHorizontal: 16, borderWidth: 1.5, borderColor: APP_COLORS.border, borderRadius: 18, backgroundColor: "#FBFCFE", color: APP_COLORS.text, fontSize: 22, fontWeight: "700", textAlign: "center" },
+  choiceOptions: { marginTop: 23, flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", gap: 9 },
+  choiceOption: { width: "48%", minHeight: 54, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7, paddingHorizontal: 10, borderWidth: 1, borderColor: APP_COLORS.border, borderRadius: 15, backgroundColor: "#FBFCFE" },
+  choiceOptionCorrect: { borderColor: "#6EE7B7", backgroundColor: "#ECFDF5" },
+  choiceOptionIncorrect: { borderColor: "#FCA5A5", backgroundColor: "#FEF2F2" },
+  choiceOptionText: { flex: 1, color: APP_COLORS.text, fontSize: 14, fontWeight: "800", textAlign: "center" },
+  choiceOptionTextCorrect: { color: "#047857" },
+  choiceOptionTextIncorrect: { color: "#B91C1C" },
+  answerInputWrap: { position: "relative", marginTop: 18 },
+  answerPlaceholderWrap: { position: "absolute", top: 0, right: 0, bottom: 0, left: 0, alignItems: "center", justifyContent: "center" },
+  answerPlaceholder: { color: "#94A3B8", fontFamily: "serif", fontSize: 16, fontWeight: "500", letterSpacing: 0.2 },
+  answerInput: { minHeight: 54, paddingHorizontal: 16, borderWidth: 1.5, borderColor: APP_COLORS.border, borderRadius: 18, backgroundColor: "#FBFCFE", color: APP_COLORS.text, fontFamily: "serif", fontSize: 22, fontWeight: "700", textAlign: "center" },
   answerInputCorrect: { borderColor: "#34D399", backgroundColor: "#ECFDF5", color: "#047857" },
   answerInputIncorrect: { borderColor: "#F87171", backgroundColor: "#FEF2F2", color: "#B91C1C" },
   inputHint: { marginTop: 9, color: APP_COLORS.muted, fontSize: 12, lineHeight: 18, textAlign: "center" },
@@ -337,19 +461,11 @@ const styles = StyleSheet.create({
   feedbackText: { fontSize: 13, fontWeight: "800" },
   feedbackTextCorrect: { color: "#047857" },
   feedbackTextIncorrect: { color: "#B91C1C" },
-  navigationRow: { flexDirection: "row", gap: 11 },
-  navigationButton: { minHeight: 50, flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 5, borderWidth: 1, borderColor: APP_COLORS.border, borderRadius: 16, backgroundColor: "#fff" },
-  navigationButtonDisabled: { opacity: 0.55 },
-  navigationText: { color: APP_COLORS.text, fontSize: 13, fontWeight: "800" },
-  navigationTextDisabled: { color: "#A8B0BC" },
-  nextButton: { borderColor: ENGLISH_ACCENT, backgroundColor: ENGLISH_ACCENT },
-  nextButtonText: { color: "#fff", fontSize: 13, fontWeight: "900" },
-  completionCard: { alignItems: "center", padding: 24, borderRadius: 25, borderWidth: 1, borderColor: "#A7F3D0", backgroundColor: "#fff" },
+  modalBackdrop: { flex: 1, alignItems: "center", justifyContent: "center", padding: 24, backgroundColor: APP_COLORS.background },
+  completionCard: { width: "100%", maxWidth: 360, alignItems: "center", padding: 24, borderRadius: 25, borderWidth: 1, borderColor: ENGLISH_ACCENT, backgroundColor: "#fff" },
   completionIcon: { width: 62, height: 62, alignItems: "center", justifyContent: "center", borderRadius: 22, backgroundColor: "#D1FAE5" },
   completionTitle: { marginTop: 16, color: APP_COLORS.text, fontSize: 21, fontWeight: "900", textAlign: "center" },
   completionDescription: { marginTop: 7, color: APP_COLORS.muted, fontSize: 14, lineHeight: 21, textAlign: "center" },
-  primaryButton: { minHeight: 50, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 17, paddingHorizontal: 16, borderRadius: 16, backgroundColor: ENGLISH_ACCENT },
-  primaryButtonText: { color: "#fff", fontSize: 14, fontWeight: "900" },
   textButton: { marginTop: 16, padding: 8 },
-  textButtonLabel: { color: ENGLISH_ACCENT, fontSize: 13, fontWeight: "800" },
+  textButtonLabel: { color: APP_COLORS.primaryDark, fontSize: 13, fontWeight: "800" },
 });

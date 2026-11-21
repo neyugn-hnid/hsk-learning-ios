@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import type { NavigatorScreenParams } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { APP_COLORS } from "@/config";
 import { LanguageHomeScreen } from "@/screens/LanguageHomeScreen";
@@ -11,7 +12,7 @@ import { HanziPracticeScreen } from "@/screens/HanziPracticeScreen";
 import { EnglishPracticeScreen } from "@/screens/EnglishPracticeScreen";
 
 export type RootStackParamList = {
-  MainTabs: undefined;
+  MainTabs: NavigatorScreenParams<MainTabParamList> | undefined;
   StudyDetail: { lessonId: string; title: string };
   HanziPractice: { lessonId: string; title: string };
   EnglishLessonDetail: { lessonId: string; title: string };
@@ -85,7 +86,7 @@ export function AppNavigator() {
     >
       <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
       <Stack.Screen name="StudyDetail" component={StudyDetailScreen} options={({ route }) => ({ title: route.params.title })} />
-      <Stack.Screen name="HanziPractice" component={HanziPracticeScreen} options={{ title: "Luyện chữ Hán" }} />
+      <Stack.Screen name="HanziPractice" component={HanziPracticeScreen} options={{ title: "Luyện tập tiếng Trung" }} />
       <Stack.Screen name="EnglishLessonDetail" component={EnglishLessonDetailScreen} options={({ route }) => ({ title: route.params.title })} />
       <Stack.Screen name="EnglishPractice" component={EnglishPracticeScreen} options={{ title: "Luyện từ tiếng Anh" }} />
     </Stack.Navigator>

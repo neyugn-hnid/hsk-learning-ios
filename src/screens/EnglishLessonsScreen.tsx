@@ -2,7 +2,7 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   FlatList,
   Pressable,
@@ -44,8 +44,10 @@ const LESSON_PALETTES = [
 
 export function EnglishLessonsScreen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
+  const listRef = useRef<FlatList<EnglishLesson>>(null);
   const [selectedLevel, setSelectedLevel] = useState<EnglishLevel>("A1");
   const [query, setQuery] = useState("");
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const allLessons = useMemo(() => getEnglishLessons(selectedLevel), [selectedLevel]);
   const levelInfo = ENGLISH_LEVELS.find((item) => item.level === selectedLevel);
   const lessons = useMemo(() => {
@@ -76,23 +78,14 @@ export function EnglishLessonsScreen({ navigation }: Props) {
         <View style={styles.heroCard}>
           <View style={styles.heroDecoration} />
           <View style={styles.heroTop}>
-            <View style={styles.heroBadge}>
-              <Ionicons name="globe-outline" size={14} color="#BFDBFE" />
-              <Text style={styles.heroBadgeText}>OXFORD 3000 + 5000</Text>
-            </View>
+            <Text style={styles.heroTitle}>Mở rộng vốn từ{`\n`}tiếng Anh</Text>
             <View style={styles.heroIcon}>
               <Ionicons name="book-outline" size={24} color="#BFDBFE" />
             </View>
           </View>
-          <Text style={styles.heroTitle}>Mở rộng vốn từ{`\n`}tiếng Anh</Text>
+          
           <Text style={styles.heroSubtitle}>Học theo lộ trình CEFR, từ căn bản đến nâng cao.</Text>
-          <View style={styles.heroFooter}>
-            <Text style={styles.heroFooterText}>{selectedLevel}</Text>
-            <View style={styles.heroDivider} />
-            <Text style={styles.heroFooterText}>{levelInfo?.lesson_count ?? 0} bài học</Text>
-            <View style={styles.heroDivider} />
-            <Text style={styles.heroFooterText}>{(levelInfo?.word_count ?? 0).toLocaleString("vi-VN")} từ</Text>
-          </View>
+          
         </View>
 
         <View style={styles.searchBox}>
@@ -114,15 +107,17 @@ export function EnglishLessonsScreen({ navigation }: Props) {
       </View>
 
       <FlatList
+        ref={listRef}
         data={lessons}
         keyExtractor={(item) => item.id}
+        onScroll={(event) => setShowScrollToTop(event.nativeEvent.contentOffset.y > 280)}
+        scrollEventThrottle={16}
         contentContainerStyle={styles.listContent}
         keyboardShouldPersistTaps="handled"
         ListHeaderComponent={
           <View style={styles.listHeader}>
             <View style={styles.sectionHeading}>
               <View>
-                <Text style={styles.sectionEyebrow}>CHỌN CẤP ĐỘ</Text>
                 <Text style={styles.sectionTitle}>Bài học</Text>
               </View>
               <View style={styles.countBadge}>
@@ -158,14 +153,9 @@ export function EnglishLessonsScreen({ navigation }: Props) {
                 onPress={() => openLesson(item)}
               >
                 <View style={styles.cardHeading}>
-                  <View style={[styles.lessonIcon, { backgroundColor: palette.background }]}>
-                    <Ionicons name={icon} size={23} color={palette.foreground} />
-                  </View>
+                  
                   <View style={styles.cardMain}>
-                    <View style={styles.cardMetaRow}>
-                      <Text style={styles.levelBadge}>{selectedLevel}</Text>
-                      <Text style={styles.lessonNumber}>BÀI HỌC {String(item.number).padStart(2, "0")}</Text>
-                    </View>
+                    
                     <Text style={styles.lessonTitle} numberOfLines={2}>{title}</Text>
                   </View>
                 </View>
@@ -189,14 +179,7 @@ export function EnglishLessonsScreen({ navigation }: Props) {
                     <Ionicons name="create-outline" size={16} color={ENGLISH_ACCENT} />
                     <Text style={styles.practiceButtonText}>Luyện tập</Text>
                   </Pressable>
-                  <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel={`Mở bài học: ${title}`}
-                    style={({ pressed }) => [styles.arrowButton, { backgroundColor: palette.background }, pressed && styles.cardPressed]}
-                    onPress={() => openLesson(item)}
-                  >
-                    <Ionicons name="arrow-forward" size={17} color={palette.foreground} />
-                  </Pressable>
+                  
                 </View>
               </View>
             </View>
@@ -204,6 +187,16 @@ export function EnglishLessonsScreen({ navigation }: Props) {
         }}
         ListEmptyComponent={<Text style={styles.empty}>Không tìm thấy bài học hoặc từ phù hợp.</Text>}
       />
+      {showScrollToTop ? (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Cuộn lên đầu danh sách bài học"
+          style={({ pressed }) => [styles.scrollToTopButton, pressed && styles.scrollToTopButtonPressed]}
+          onPress={() => listRef.current?.scrollToOffset({ offset: 0, animated: true })}
+        >
+          <Ionicons name="arrow-up" size={20} color={ENGLISH_ACCENT} />
+        </Pressable>
+      ) : null}
     </View>
   );
 }
@@ -258,5 +251,24 @@ const styles = StyleSheet.create({
   practiceButton: { minHeight: 36, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 5, paddingHorizontal: 11, borderRadius: 12, borderWidth: 1, borderColor: "#BFDBFE", backgroundColor: "#F2F6FF" },
   practiceButtonText: { color: ENGLISH_ACCENT, fontSize: 11, fontWeight: "900" },
   arrowButton: { width: 34, height: 34, borderRadius: 12, alignItems: "center", justifyContent: "center" },
+  scrollToTopButton: {
+    position: "absolute",
+    right: 18,
+    bottom: 18,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFFFFF",
+    borderWidth: 1,
+    borderColor: "#E8ECF2",
+    shadowColor: "#334155",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.12,
+    shadowRadius: 5,
+    elevation: 3,
+  },
+  scrollToTopButtonPressed: { opacity: 0.75 },
   empty: { textAlign: "center", marginTop: 40, color: APP_COLORS.muted, fontWeight: "600" },
 });
